@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://synnovatocloe.vercel.app/sitemap.xml
