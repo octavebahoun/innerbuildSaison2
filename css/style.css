@@ -1,0 +1,131 @@
+/* ── Google Fonts ── */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600&family=Kaushan+Script&display=swap');
+@import "tailwindcss";
+@config "../tailwind.config.js";
+/* ── Root variables (utilisées par GSAP/JS) ── */
+:root {
+  --rose:       #C2185B;
+  --gold:       #F9A825;
+  --dark:       #0D0D0D;
+  --snow:       #FAFAFA;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: #0D0D0D; }
+::-webkit-scrollbar-thumb { background: #C2185B; border-radius: 2px; }
+
+/* ── Custom cursor (desktop uniquement) ── */
+@media (pointer: fine) {
+  body { cursor: none; }
+  #cursor {
+    position: fixed;
+    width: 10px; height: 10px;
+    background: #C2185B;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width .25s ease, height .25s ease, background .25s ease;
+    mix-blend-mode: difference;
+  }
+  #cursor.hovering {
+    width: 36px; height: 36px;
+    background: #F9A825;
+  }
+}
+
+/* ── Grain overlay ── */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9998;
+  opacity: .4;
+}
+
+/* ── Hero gradient & accent line (pseudo-elements) ── */
+#hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(13,13,13,.05) 0%,
+    rgba(13,13,13,.25) 35%,
+    rgba(13,13,13,.82) 70%,
+    rgba(13,13,13,1) 100%
+  );
+  z-index: 1;
+}
+#hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 100%; height: 2px;
+  background: linear-gradient(90deg, #C2185B, #F9A825, #C2185B);
+  z-index: 2;
+}
+
+/* ── Section quote — accent vertical line ── */
+#section-quote::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 50%;
+  transform: translateY(-50%);
+  width: 3px; height: 60%;
+  background: linear-gradient(to bottom, #C2185B, #F9A825);
+}
+
+/* ── Btn shimmer effect ── */
+.btn-shimmer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,.12);
+  transform: translateX(-100%);
+  transition: transform .45s ease;
+}
+.btn-shimmer:hover::before { transform: translateX(0); }
+
+/* ── Nav link underline ── */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -3px; left: 0;
+  width: 0; height: 1px;
+  background: #C2185B;
+  transition: width .3s ease;
+}
+.nav-link:hover::after { width: 100%; }
+
+/* ── Card facette — border glow on hover ── */
+.card-facette {
+  transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+}
+.card-facette:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(194,24,91,.18);
+  border-color: rgba(194,24,91,.5);
+}
+
+/* ── Galerie — zoom image ── */
+.galerie-item img {
+  transition: transform .6s cubic-bezier(.25,.46,.45,.94);
+}
+.galerie-item:hover img { transform: scale(1.06); }
+
+/* ── Compteur chiffres clés ── */
+.stat-number { font-variant-numeric: tabular-nums; }
+
+/* ── Scroll hint animation ── */
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(6px); }
+}
+.scroll-bounce { animation: scrollBounce 1.8s ease-in-out infinite; }
+
+/* ── GSAP will-change hints ── */
+.gsap-reveal { will-change: transform, opacity; }

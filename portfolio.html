@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- ═══ SEO ═══ -->
+  <title>Portfolio & Galerie — Réalisations de Synnova Tocloe</title>
+  <meta name="description" content="Explorez le portfolio et les réalisations de Synnova Tocloe : photos d'événements, projets cinéma, actions sociales et témoignages." />
+  <meta name="keywords" content="Portfolio Synnova Tocloe, réalisations, événements Bénin, Festival des Arts du Bénin, témoignages" />
+  <meta name="author" content="Synnova Belvine Kybarance Tocloe" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://synnovatocloe.com/portfolio.html" />
+
+  <!-- ═══ Open Graph ═══ -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://synnovatocloe.com/portfolio.html" />
+  <meta property="og:title"       content="Portfolio & Galerie — Synnova Tocloe" />
+  <meta property="og:description" content="Découvrez mes réalisations en images et les témoignages de mes partenaires." />
+  <meta property="og:image"       content="assets/images/synnova-og.webp" />
+  <meta property="og:locale"      content="fr_BJ" />
+  <meta property="og:site_name"   content="Synnova Tocloe" />
+
+  <!-- ═══ Twitter Card ═══ -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Portfolio — Synnova Tocloe" />
+  <meta name="twitter:description" content="Découvrez mes réalisations en images et les témoignages de mes partenaires." />
+  <meta name="twitter:image"       content="assets/images/synnova-og.webp" />
+
+  <!-- ═══ Fonts ═══ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600&family=Kaushan+Script&display=swap" rel="stylesheet" />
+
+  <!-- ═══ Tailwind CSS ═══ -->
+  <link rel="stylesheet" href="css/output.css" />
+
+  <!-- ═══ Favicon ═══ -->
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+</head>
+
+<body class="bg-dark text-snow font-body overflow-x-hidden">
+
+  <!-- Cursor custom -->
+  <div id="cursor" aria-hidden="true"></div>
+
+  <!-- SKIP LINK -->
+  <a href="#main-content"
+     class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999]
+            focus:bg-rose focus:text-snow focus:px-5 focus:py-2.5 focus:rounded-full
+            focus:text-sm focus:font-semibold focus:shadow-lg">
+    Aller au contenu principal
+  </a>
+
+  <!-- NAVIGATION -->
+  <header role="banner">
+    <nav id="navbar"
+         class="fixed top-0 left-0 right-0 z-[1000] flex items-center justify-between
+                px-6 py-5 md:px-12 transition-all duration-300"
+         aria-label="Navigation principale">
+
+      <a href="index.html"
+         class="font-display text-2xl font-bold tracking-wide text-snow hover:opacity-90 transition-opacity"
+         aria-label="Synnova Tocloe — Retour à l'accueil">
+        Syn<span class="text-rose">nova</span>
+      </a>
+
+      <ul class="hidden md:flex items-center gap-8 list-none m-0 p-0" role="list">
+        <li>
+          <a href="index.html"
+             class="nav-link relative text-[0.7rem] tracking-[.18em] uppercase text-snow/70
+                    hover:text-snow transition-colors focus:outline-none focus:text-snow">
+            Accueil
+          </a>
+        </li>
+        <li>
+          <a href="a-propos.html"
+             class="nav-link relative text-[0.7rem] tracking-[.18em] uppercase text-snow/70
+                    hover:text-snow transition-colors focus:outline-none focus:text-snow">
+            À Propos
+          </a>
+        </li>
+        <li>
+          <a href="univers.html"
+             class="nav-link relative text-[0.7rem] tracking-[.18em] uppercase text-snow/70
+                    hover:text-snow transition-colors focus:outline-none focus:text-snow">
+            Univers
+          </a>
+        </li>
+        <li>
+          <a href="portfolio.html"
+             class="nav-link relative text-[0.7rem] tracking-[.18em] uppercase text-rose
+                    transition-colors focus:outline-none focus:text-rose"
+             aria-current="page">
+            Portfolio
+          </a>
+        </li>
+        <li>
+          <a href="contact.html"
+             class="btn-shimmer relative overflow-hidden inline-flex items-center gap-2
+                    bg-rose text-snow text-[0.7rem] font-semibold tracking-[.15em] uppercase
+                    px-6 py-3 rounded-full transition-transform hover:-translate-y-0.5
+                    focus:outline-none focus:ring-2 focus:ring-rose focus:ring-offset-2
+                    focus:ring-offset-dark">
+            Me contacter
+          </a>
+        </li>
+      </ul>
+
+      <button id="burger"
+              class="md:hidden flex flex-col gap-[5px] bg-transparent border-none p-2 z-[1001]"
+              aria-expanded="false"
+              aria-controls="mobile-menu"
+              aria-label="Ouvrir le menu de navigation">
+        <span class="burger-line block w-6 h-[1.5px] bg-snow transition-all duration-300" aria-hidden="true"></span>
+        <span class="burger-line block w-6 h-[1.5px] bg-snow transition-all duration-300" aria-hidden="true"></span>
+        <span class="burger-line block w-4 h-[1.5px] bg-snow transition-all duration-300" aria-hidden="true"></span>
+      </button>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu"
+         class="fixed inset-0 z-[999] flex flex-col items-center justify-center gap-10
+                bg-dark/[.97] backdrop-blur-2xl translate-x-full transition-transform duration-500"
+         aria-hidden="true"
+         role="dialog"
+         aria-modal="true"
+         aria-label="Menu de navigation mobile">
+      <nav aria-label="Menu mobile">
+        <ul class="flex flex-col items-center gap-8 list-none m-0 p-0" role="list">
+          <li><a href="index.html" class="font-display text-4xl font-semibold text-snow hover:text-rose transition-colors">Accueil</a></li>
+          <li><a href="a-propos.html" class="font-display text-4xl font-semibold text-snow hover:text-rose transition-colors">À Propos</a></li>
+          <li><a href="univers.html" class="font-display text-4xl font-semibold text-snow hover:text-rose transition-colors">Univers</a></li>
+          <li><a href="portfolio.html" class="font-display text-4xl font-semibold text-rose transition-colors" aria-current="page">Portfolio</a></li>
+          <li><a href="contact.html" class="font-display text-4xl font-semibold text-snow hover:text-rose transition-colors">Contact</a></li>
+        </ul>
+      </nav>
+      <!-- Réseaux -->
+      <div class="flex items-center gap-6 mt-2" aria-label="Réseaux sociaux">
+        <a href="https://facebook.com/synnovalumiere" target="_blank" rel="noopener noreferrer" class="opacity-50 hover:opacity-100 transition-opacity">
+          <img src="assets/icons/facebook.svg" alt="Facebook" width="22" height="22" />
+        </a>
+        <a href="https://tiktok.com/@_synnova" target="_blank" rel="noopener noreferrer" class="opacity-50 hover:opacity-100 transition-opacity">
+          <img src="assets/icons/tiktok.svg" alt="TikTok" width="22" height="22" />
+        </a>
+        <a href="https://instagram.com/_synnova" target="_blank" rel="noopener noreferrer" class="opacity-50 hover:opacity-100 transition-opacity">
+          <img src="assets/icons/instagram.svg" alt="Instagram" width="22" height="22" />
+        </a>
+        <a href="https://bj.linkedin.com/in/synnova-belvine-kybarance-tocloe-3882a9232" target="_blank" rel="noopener noreferrer" class="opacity-50 hover:opacity-100 transition-opacity">
+          <img src="assets/icons/linkedin.svg" alt="LinkedIn" width="22" height="22" />
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main id="main-content">
+
+    <!-- HERO PORTFOLIO -->
+    <section class="relative pt-32 pb-16 px-6 md:pt-48 md:pb-20 md:px-16 overflow-hidden flex flex-col items-center text-center">
+      <div class="relative z-10 max-w-3xl mx-auto">
+        <h1 class="gsap-reveal font-display font-bold text-snow leading-tight mb-6 opacity-0"
+            style="font-size: clamp(2.5rem, 6vw, 4.5rem);">
+          Mes <em class="text-rose">Réalisations</em>
+        </h1>
+        <p class="gsap-reveal text-snow/70 text-sm md:text-base leading-relaxed max-w-2xl mx-auto mb-10 opacity-0">
+          Un aperçu visuel de mes engagements, de mes scènes et de mes projets marquants au Bénin.
+        </p>
+      </div>
+    </section>
+
+    <!-- GALERIE FILTRABLE -->
+    <section class="px-6 py-10 md:px-16 md:pb-24">
+      <div class="max-w-6xl mx-auto">
+        
+        <!-- Filtres (CSS only approach for visual or simple JS in main.js) -->
+        <div class="flex flex-wrap justify-center gap-3 mb-12">
+          <button class="filter-btn active px-6 py-2 rounded-full border border-rose text-rose text-[0.65rem] tracking-widest uppercase focus:outline-none transition-colors" data-filter="all">Tout voir</button>
+          <button class="filter-btn px-6 py-2 rounded-full border border-snow/20 text-snow/60 hover:text-snow hover:border-snow/50 text-[0.65rem] tracking-widest uppercase focus:outline-none transition-colors" data-filter="evenements">Événements</button>
+          <button class="filter-btn px-6 py-2 rounded-full border border-snow/20 text-snow/60 hover:text-snow hover:border-snow/50 text-[0.65rem] tracking-widest uppercase focus:outline-none transition-colors" data-filter="cinema">Cinéma</button>
+          <button class="filter-btn px-6 py-2 rounded-full border border-snow/20 text-snow/60 hover:text-snow hover:border-snow/50 text-[0.65rem] tracking-widest uppercase focus:outline-none transition-colors" data-filter="eco">Eco/Social</button>
+        </div>
+
+        <!-- Grille Masonry (CSS Grid) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="portfolio-grid">
+          
+          <!-- Item 1 -->
+          <div class="portfolio-item evenements group relative overflow-hidden rounded-2xl">
+            <img src="assets/images/portrait-traditional-2.webp" alt="Synnova animation" class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
+            <div class="absolute inset-0 bg-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+              <span class="text-rose text-[0.6rem] tracking-widest uppercase mb-1">Événements</span>
+              <h3 class="font-display text-xl font-bold text-snow">Animation sur scène</h3>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="portfolio-item cinema group relative overflow-hidden rounded-2xl">
+            <img src="assets/images/formal-event.webp" alt="Synnova Cinéma" class="w-full h-64 sm:h-80 object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
+            <div class="absolute inset-0 bg-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+              <span class="text-indigo text-[0.6rem] tracking-widest uppercase mb-1">Cinéma</span>
+              <h3 class="font-display text-xl font-bold text-snow">Festival des Arts du Bénin</h3>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="portfolio-item eco group relative overflow-hidden rounded-2xl">
+            <img src="assets/images/casual-bridge.webp" alt="Synnova Entrepreneuriat" class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
+            <div class="absolute inset-0 bg-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+              <span class="text-green-eco text-[0.6rem] tracking-widest uppercase mb-1">Éco/Social</span>
+              <h3 class="font-display text-xl font-bold text-snow">Emballages Biodégradables</h3>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="portfolio-item evenements group relative overflow-hidden rounded-2xl sm:col-span-2 lg:col-span-1">
+            <img src="assets/images/conference-notes.webp" alt="Synnova Communication" class="w-full h-64 sm:h-80 object-cover object-top transition-transform duration-700 group-hover:scale-110" loading="lazy" />
+            <div class="absolute inset-0 bg-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+              <span class="text-gold text-[0.6rem] tracking-widest uppercase mb-1">Communication</span>
+              <h3 class="font-display text-xl font-bold text-snow">Stratégie Digitale</h3>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- TEMOIGNAGES -->
+    <section class="px-6 py-16 md:py-24 md:px-16 bg-rose/[.02] border-t border-rose/10">
+      <div class="max-w-4xl mx-auto text-center">
+        <p class="font-signature text-rose text-3xl mb-4">Ils m'ont fait confiance</p>
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-snow mb-16">Témoignages</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-dark border border-snow/10 p-8 rounded-2xl text-left">
+            <p class="text-sm text-snow/60 italic leading-relaxed mb-6">
+              "Synnova a su dynamiser notre événement avec un professionnalisme remarquable. Son énergie est contagieuse et elle sait s'adapter à tout type de public."
+            </p>
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 rounded-full bg-rose/20 flex items-center justify-center font-display font-bold text-rose">O</div>
+              <div>
+                <p class="text-sm font-semibold text-snow">Organisateur</p>
+                <p class="text-[0.6rem] tracking-widest uppercase text-snow/40">Festival Local</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-dark border border-snow/10 p-8 rounded-2xl text-left">
+            <p class="text-sm text-snow/60 italic leading-relaxed mb-6">
+              "En tant que régisseuse plateau, Synnova a démontré une rigueur impressionnante. Une vraie valeur ajoutée pour notre production cinématographique au Bénin."
+            </p>
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 rounded-full bg-indigo/20 flex items-center justify-center font-display font-bold text-indigo">P</div>
+              <div>
+                <p class="text-sm font-semibold text-snow">Producteur</p>
+                <p class="text-[0.6rem] tracking-widest uppercase text-snow/40">Cinéma Béninois</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="px-6 py-8 md:px-16 border-t border-snow/5 bg-dark" role="contentinfo">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="font-display text-xl font-bold text-snow/35">
+        Syn<span class="text-rose/50">nova</span>
+      </p>
+      <p class="text-[0.62rem] text-snow/30 tracking-widest uppercase text-center">
+        © <time datetime="2026">2026</time> Synnova Belvine Kybarance Tocloe — Tous droits réservés
+      </p>
+      <nav aria-label="Liens légaux">
+        <ul class="flex gap-4 list-none m-0 p-0">
+          <li>
+            <a href="mentions-legales.html"
+               class="text-[0.62rem] text-snow/30 hover:text-snow/60 tracking-widest uppercase
+                      transition-colors focus:outline-none focus:underline">
+              Mentions légales
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/animations.js" defer></script>
+  <script>
+    // JS for simple filtering
+    document.addEventListener('DOMContentLoaded', () => {
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const items = document.querySelectorAll('.portfolio-item');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Reset styles
+          filterBtns.forEach(b => {
+            b.classList.remove('border-rose', 'text-rose');
+            b.classList.add('border-snow/20', 'text-snow/60');
+          });
+          // Active style
+          btn.classList.add('border-rose', 'text-rose');
+          btn.classList.remove('border-snow/20', 'text-snow/60');
+
+          const filter = btn.getAttribute('data-filter');
+
+          items.forEach(item => {
+            if (filter === 'all' || item.classList.contains(filter)) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>
