@@ -28,9 +28,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileMenu  = document.getElementById('mobile-menu');
   const burgerLines = burger ? burger.querySelectorAll('.burger-line') : [];
   let menuOpen = false;
+  let lastFocusedElement = null;
 
   const openMenu = () => {
     menuOpen = true;
+    lastFocusedElement = document.activeElement; // Stocker le focus avant menu
     mobileMenu.classList.add('open');
     mobileMenu.classList.remove('translate-x-full');
     mobileMenu.setAttribute('aria-hidden', 'false');
@@ -46,9 +48,30 @@ document.addEventListener('DOMContentLoaded', () => {
       burgerLines[2].style.width     = '24px';
     }
 
-    // Focus trap — premier lien du menu
-    const firstLink = mobileMenu.querySelector('a');
-    if (firstLink) firstLink.focus();
+    // ✨ Focus trap — gérer la navigation clavier
+    const focusableElements = mobileMenu.querySelectorAll(
+      'a, button, [tabindex]:not([tabindex="-1"])'
+    );
+    const firstElement = focusableElements[0];
+    const lastElement = focusableElements[focusableElements.length - 1];
+
+    if (firstElement) firstElement.focus();
+
+    // Empêcher Tab de sortir du menu
+    const trapFocus = (e) => {
+      if (e.key === 'Tab') {
+        if (e.shiftKey && document.activeElement === firstElement) {
+          e.preventDefault();
+          lastElement.focus();
+        } else if (!e.shiftKey && document.activeElement === lastElement) {
+          e.preventDefault();
+          firstElement.focus();
+        }
+      }
+    };
+    
+    mobileMenu.addEventListener('keydown', trapFocus);
+    mobileMenu._trapFocusHandler = trapFocus; // Sauvegarder pour cleanup
   };
 
   const closeMenu = () => {
@@ -66,6 +89,17 @@ document.addEventListener('DOMContentLoaded', () => {
       burgerLines[1].style.opacity   = '1';
       burgerLines[2].style.transform = '';
       burgerLines[2].style.width     = '16px';
+    }
+
+    // Nettoyer le focus trap
+    if (mobileMenu._trapFocusHandler) {
+      mobileMenu.removeEventListener('keydown', mobileMenu._trapFocusHandler);
+      delete mobileMenu._trapFocusHandler;
+    }
+
+    // Restaurer le focus au burger
+    if (lastFocusedElement) {
+      lastFocusedElement.focus();
     }
   };
 

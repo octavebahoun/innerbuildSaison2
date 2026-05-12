@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "buildcss":"npx @tailwindcss/cli -i ./css/style.css -o ./css/output.css --watch"
+    "buildcss": "npx @tailwindcss/cli -i ./css/style.css -o ./css/output.css --watch",
+    "buildjs": "npx esbuild js/main.js js/animations.js js/contact.js --bundle --minify --outdir=js/dist",
+    "build": "npm run buildcss & npm run buildjs"
   },
   "keywords": [],
   "author": "",
@@ -14,5 +16,8 @@
   "dependencies": {
     "@tailwindcss/cli": "^4.3.0",
     "tailwindcss": "^4.3.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.20.2"
   }
 }
