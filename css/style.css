@@ -46,6 +46,8 @@ body::after {
   opacity: .4;
 }
 
+
+
 /* ── Hero gradient & accent line (pseudo-elements) ── */
 #hero::before {
   content: '';
