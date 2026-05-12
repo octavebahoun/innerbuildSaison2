@@ -130,4 +130,97 @@ body::after {
 .scroll-bounce { animation: scrollBounce 1.8s ease-in-out infinite; }
 
 /* ── GSAP will-change hints ── */
+
+/* ═════════════════════════════════════════════════
+   FORMULAIRE — Animations légères
+═════════════════════════════════════════════════ */
+.form-group {
+  animation: formSlideIn 0.6s ease-out backwards;
+}
+
+.form-group:nth-child(1) { animation-delay: 0.1s; }
+.form-group:nth-child(2) { animation-delay: 0.2s; }
+.form-group:nth-child(3) { animation-delay: 0.3s; }
+.form-group:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes formSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Input focus animation */
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+select:focus,
+textarea:focus {
+  box-shadow: 0 0 0 2px rgba(194, 24, 91, 0.1);
+}
+
+/* Button hover animation */
+button[type="submit"] {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.2s ease;
+  position: relative;
+}
+
+button[type="submit"]:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+
+button[type="submit"]:active {
+  transform: translateY(0);
+}
+
+/* Form feedback animations */
+#form-feedback {
+  animation: feedbackSlideIn 0.4s ease-out;
+  opacity: 0;
+}
+
+#form-feedback:not(.hidden) {
+  opacity: 1;
+}
+
+@keyframes feedbackSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Success/Error state */
+#form-feedback.text-green-500 {
+  animation: successPulse 0.6s ease-out;
+}
+
+@keyframes successPulse {
+  0% {
+    opacity: 0;
+    transform: scale(0.95) translateY(-8px);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
 .gsap-reveal { will-change: transform, opacity; }
