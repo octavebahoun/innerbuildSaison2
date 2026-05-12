@@ -1,8 +1,3 @@
-/* ═══════════════════════════════════════════════
-   contact.js — Synnova Tocloe
-   Validation formulaire & feedback accessible
-═══════════════════════════════════════════════ */
-
 'use strict';
 
 document.addEventListener('DOMContentLoaded', () => {
