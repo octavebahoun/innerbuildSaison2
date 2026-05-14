@@ -19,7 +19,8 @@
     {
       "src": "/(.*)",
       "status": 404,
-      "dest": "/404.html"
+      "dest": "/404.html",
+      "check": true
     }
   ],
   "headers": [
