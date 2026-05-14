@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════
-   animations.js — Synnova Tocloe
+   animations.js — Synnova TOCLOE
    GSAP hero · ScrollTrigger reveals · Anime.js counters
 ═══════════════════════════════════════════════ */
 

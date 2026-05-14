@@ -1,6 +1,6 @@
-# Synnova Tocloe — Portfolio & Personal Brand
+# Synnova TOCLOE — Portfolio & Personal Brand
 
-Un site vitrine premium et interactif pour **Synnova Belvine Kybarance Tocloe**, animatrice d'événements, communicatrice digitale, actrice et entrepreneuse sociale basée au Bénin.
+Un site vitrine premium et interactif pour **Synnova Belvine Kybarance TOCLOE**, animatrice d'événements, communicatrice digitale, actrice et entrepreneuse sociale basée au Bénin.
 
 🌍 **Live Demo:** [synnovatocloe.vercel.app](https://synnovatocloe.vercel.app/)
 

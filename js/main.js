@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════
-   main.js — Synnova Tocloe
+   main.js — Synnova TOCLOE
    Navbar · Burger menu · Custom cursor
 ═══════════════════════════════════════════════ */
 
