@@ -136,4 +136,97 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ─── MAGNETIC BUTTONS ─── */
+  const magneticButtons = document.querySelectorAll('.btn-shimmer, .btn-magnetic');
+  if (magneticButtons.length && window.matchMedia('(pointer: fine)').matches) {
+    magneticButtons.forEach(btn => {
+      btn.addEventListener('mousemove', (e) => {
+        const position = btn.getBoundingClientRect();
+        const x = e.clientX - position.left;
+        const y = e.clientY - position.top;
+
+        const centerX = position.width / 2;
+        const centerY = position.height / 2;
+
+        const deltaX = x - centerX;
+        const deltaY = y - centerY;
+
+        if (typeof gsap !== 'undefined') {
+          gsap.to(btn, {
+            x: deltaX * 0.35,
+            y: deltaY * 0.35,
+            duration: 0.4,
+            ease: 'power2.out'
+          });
+        }
+      });
+
+      btn.addEventListener('mouseleave', () => {
+        if (typeof gsap !== 'undefined') {
+          gsap.to(btn, {
+            x: 0,
+            y: 0,
+            duration: 0.6,
+            ease: 'elastic.out(1, 0.3)'
+          });
+        }
+      });
+    });
+  }
+
+  /* ─── PAGE TRANSITIONS & PRELOADER ─── */
+  const preloader = document.getElementById('preloader');
+  const overlay = document.getElementById('page-transition-overlay');
+
+  if (typeof gsap !== 'undefined') {
+    // 1. Gestion du Preloader (Première visite sur l'accueil)
+    if (preloader) {
+      if (!sessionStorage.getItem('synnova-loaded')) {
+        const tl = gsap.timeline();
+        // L'animation CSS 'bloom' dure 2s, on attend un peu avant le fade-out
+        tl.to(preloader, {
+          opacity: 0,
+          duration: 1.2,
+          delay: 2.5,
+          ease: 'power2.inOut',
+          onComplete: () => {
+            preloader.style.display = 'none';
+            sessionStorage.setItem('synnova-loaded', 'true');
+          }
+        });
+      } else {
+        preloader.style.display = 'none';
+      }
+    }
+
+    // 2. Gestion de l'Overlay de Navigation
+    if (overlay) {
+      // Fade out à l'arrivée
+      gsap.to(overlay, {
+        opacity: 0,
+        duration: 0.4,
+        onComplete: () => { overlay.style.display = 'none'; }
+      });
+
+      document.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', (e) => {
+          const href = link.getAttribute('href');
+          if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || link.getAttribute('target') === '_blank') return;
+
+          e.preventDefault();
+          overlay.style.display = 'block';
+          gsap.fromTo(overlay, { opacity: 0 }, {
+            opacity: 1,
+            duration: 0.4,
+            ease: 'power2.inOut',
+            onComplete: () => {
+              window.location.href = href;
+            }
+          });
+        });
+      });
+    }
+  }
+
 });
+

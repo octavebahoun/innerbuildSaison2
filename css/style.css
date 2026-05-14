@@ -15,6 +15,53 @@
 ::-webkit-scrollbar-track { background: #0D0D0D; }
 ::-webkit-scrollbar-thumb { background: #C2185B; border-radius: 2px; }
 
+/* ── Page Transition Overlay ── */
+#page-transition-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: #0D0D0D;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.rose-loader {
+  width: 200px;
+  height: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.rose-loader svg {
+  width: 100%;
+  height: auto;
+}
+
+/* Animations Rose Premium */
+@keyframes bloom {
+  from { transform: scale(.06) rotate(-100deg); opacity: 0; }
+  to { transform: scale(1) rotate(0); opacity: 1; }
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.018); }
+}
+
+.r-bloom {
+  animation: bloom 2s cubic-bezier(.34, 1.56, .64, 1) forwards;
+  transform-origin: 50% 41%;
+}
+
+.r-bloom:hover {
+  animation: breathe 4s ease-in-out infinite;
+}
+
 /* ── Custom cursor (desktop uniquement) ── */
 @media (pointer: fine) {
   body { cursor: none; }
@@ -130,6 +177,26 @@ body::after {
 .scroll-bounce { animation: scrollBounce 1.8s ease-in-out infinite; }
 
 /* ── GSAP will-change hints ── */
+.gsap-reveal { will-change: transform, opacity; }
+
+/* ── Glow effect pour les compteurs ── */
+@keyframes statGlow {
+  0% { text-shadow: 0 0 0px rgba(194, 24, 91, 0); }
+  50% { text-shadow: 0 0 20px rgba(194, 24, 91, 0.4); }
+  100% { text-shadow: 0 0 10px rgba(194, 24, 91, 0.2); }
+}
+.stat-glow {
+  animation: statGlow 1.2s ease-out forwards;
+}
+
+/* ── Magnetic buttons - smooth return ── */
+.btn-shimmer, .btn-magnetic {
+  will-change: transform;
+  transition: transform 0.1s linear; /* Transition rapide pour le mouvement magnétique */
+}
+.btn-shimmer:not(:hover), .btn-magnetic:not(:hover) {
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1); /* Ressort élastique au retour */
+}
 
 /* ═════════════════════════════════════════════════
    FORMULAIRE — Animations légères

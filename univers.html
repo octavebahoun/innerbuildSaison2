@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" class="scroll-smooth">
+<html lang="fr" class="scroll-smooth snap-y snap-mandatory bg-dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -42,6 +42,9 @@
 </head>
 
 <body class="bg-dark text-snow font-body overflow-x-hidden">
+  
+  <!-- Page Transition Overlay -->
+  <div id="page-transition-overlay" class="hidden"></div>
 
   <!-- Cursor custom -->
   <div id="cursor" aria-hidden="true"></div>
@@ -155,36 +158,48 @@
     </div>
   </header>
 
+
   <!-- MAIN CONTENT -->
   <main id="main-content">
 
     <!-- HERO UNIVERS -->
-    <section class="relative pt-32 pb-20 px-6 md:pt-48 md:pb-28 md:px-16 overflow-hidden flex flex-col items-center text-center">
+    <section id="hero-univers" class="relative min-h-dvh snap-start flex flex-col items-center justify-center text-center px-6 overflow-hidden bg-dark">
+      <!-- Glow Arrière-plan -->
+      <div class="absolute inset-0 bg-gradient-to-b from-dark via-dark to-dark z-0"></div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-rose/[0.03] blur-[120px] rounded-full pointer-events-none z-0"></div>
+      
+      <!-- Chiffre fantôme -->
+      <div class="absolute bottom-0 left-0 font-display font-bold text-[25rem] text-snow opacity-[0.02] select-none pointer-events-none leading-none -translate-x-1/4 translate-y-1/4 z-0" aria-hidden="true">0</div>
       <div class="absolute inset-0 z-0 opacity-20 pointer-events-none" aria-hidden="true">
         <div class="absolute top-0 left-0 w-96 h-96 rounded-full bg-gold blur-3xl opacity-20"></div>
         <div class="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-indigo blur-3xl opacity-20"></div>
       </div>
       
       <div class="relative z-10 max-w-3xl mx-auto">
-        <div class="gsap-reveal flex items-center justify-center gap-4 mb-6 opacity-0">
+        <div class="flex items-center justify-center gap-4 mb-6">
           <span class="block w-12 h-px bg-rose" aria-hidden="true"></span>
           <p class="text-[0.62rem] tracking-[.22em] uppercase text-rose font-medium">Mes 4 Pôles</p>
           <span class="block w-12 h-px bg-rose" aria-hidden="true"></span>
         </div>
         
-        <h1 class="gsap-reveal font-display font-bold text-snow leading-tight mb-8 opacity-0"
+        <h1 class="font-display font-bold text-snow leading-tight mb-8"
             style="font-size: clamp(2.5rem, 6vw, 4.5rem);">
           Découvrez mon <br/><em class="text-rose">champ d'action</em>
         </h1>
         
-        <p class="gsap-reveal text-snow/70 text-sm md:text-base leading-relaxed max-w-2xl mx-auto mb-10 opacity-0">
+        <p class="text-snow/70 text-sm md:text-base leading-relaxed max-w-2xl mx-auto mb-10">
           De l'animation sur scène à la stratégie digitale, de la production cinématographique à l'innovation éco-responsable. Chaque univers est une nouvelle façon de m'engager.
         </p>
       </div>
     </section>
 
     <!-- UNIVERS 1: ANIMATION -->
-    <section id="animation" class="px-6 py-16 md:py-24 md:px-16 bg-dark border-t border-snow/5 scroll-mt-24">
+    <section id="animation" class="relative min-h-dvh snap-start flex flex-col justify-center px-6 py-16 md:px-16 bg-dark scroll-mt-24 overflow-hidden" data-accent="#C2185B">
+      <!-- Glow Arrière-plan -->
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-rose/[0.07] blur-[150px] rounded-full pointer-events-none z-0"></div>
+      
+      <!-- Chiffre fantôme -->
+      <div class="absolute bottom-0 right-0 font-display font-bold text-[25rem] text-rose opacity-[0.03] select-none pointer-events-none leading-none translate-x-1/4 translate-y-1/4 z-0" aria-hidden="true">1</div>
       <div class="max-w-6xl mx-auto">
         <div class="flex flex-col lg:flex-row gap-12 items-center">
           <div class="w-full lg:w-1/2">
@@ -211,7 +226,12 @@
     </section>
 
     <!-- UNIVERS 2: COMMUNICATION -->
-    <section id="communication" class="px-6 py-16 md:py-24 md:px-16 bg-rose/[.02] border-t border-rose/10 scroll-mt-24">
+    <section id="communication" class="relative min-h-dvh snap-start flex flex-col justify-center px-6 py-16 md:px-16 bg-dark scroll-mt-24 overflow-hidden" data-accent="#F9A825">
+      <!-- Glow Arrière-plan -->
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-gold/[0.06] blur-[150px] rounded-full pointer-events-none z-0"></div>
+
+      <!-- Chiffre fantôme -->
+      <div class="absolute bottom-0 left-0 font-display font-bold text-[25rem] text-gold opacity-[0.03] select-none pointer-events-none leading-none -translate-x-1/4 translate-y-1/4 z-0" aria-hidden="true">2</div>
       <div class="max-w-6xl mx-auto">
         <div class="flex flex-col lg:flex-row-reverse gap-12 items-center">
           <div class="w-full lg:w-1/2">
@@ -237,7 +257,12 @@
     </section>
 
     <!-- UNIVERS 3: CINEMA -->
-    <section id="cinema" class="px-6 py-16 md:py-24 md:px-16 bg-dark border-t border-snow/5 scroll-mt-24">
+    <section id="cinema" class="relative min-h-dvh snap-start flex flex-col justify-center px-6 py-16 md:px-16 bg-dark scroll-mt-24 overflow-hidden" data-accent="#1A237E">
+      <!-- Glow Arrière-plan -->
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-indigo/[0.1] blur-[150px] rounded-full pointer-events-none z-0"></div>
+
+      <!-- Chiffre fantôme -->
+      <div class="absolute bottom-0 right-0 font-display font-bold text-[25rem] text-indigo opacity-[0.06] select-none pointer-events-none leading-none translate-x-1/4 translate-y-1/4 z-0" aria-hidden="true">3</div>
       <div class="max-w-6xl mx-auto">
         <div class="flex flex-col lg:flex-row gap-12 items-center">
           <div class="w-full lg:w-1/2">
@@ -263,7 +288,12 @@
     </section>
 
     <!-- UNIVERS 4: ENTREPRENEURIAT -->
-    <section id="entrepreneuriat" class="px-6 py-16 md:py-24 md:px-16 bg-green-eco/[.05] border-t border-green-eco/20 scroll-mt-24">
+    <section id="entrepreneuriat" class="relative min-h-dvh snap-start flex flex-col justify-center px-6 py-16 md:px-16 bg-dark scroll-mt-24 overflow-hidden" data-accent="#1B5E20">
+      <!-- Glow Arrière-plan -->
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-green-eco/[0.08] blur-[150px] rounded-full pointer-events-none z-0"></div>
+
+      <!-- Chiffre fantôme -->
+      <div class="absolute bottom-0 left-0 font-display font-bold text-[25rem] text-green-eco opacity-[0.05] select-none pointer-events-none leading-none -translate-x-1/4 translate-y-1/4 z-0" aria-hidden="true">4</div>
       <div class="max-w-6xl mx-auto">
         <div class="flex flex-col lg:flex-row-reverse gap-12 items-center">
           <div class="w-full lg:w-1/2">
@@ -314,11 +344,53 @@
   </footer>
 
   <!-- SCRIPTS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
   <script src="js/dist/main.js" defer></script>
-  <script src="js/dist/animations.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof gsap === 'undefined') return;
+      gsap.registerPlugin(ScrollTrigger);
+
+      const sections = document.querySelectorAll('section[id]');
+
+      sections.forEach((section) => {
+        // Animation du contenu
+        const content = section.querySelector('.max-w-6xl, .max-w-3xl');
+        if (content) {
+          gsap.fromTo(content, 
+            { opacity: 0, y: 60, scale: 0.98 },
+            { 
+              opacity: 1, y: 0, scale: 1, duration: 1.4, ease: 'power4.out',
+              scrollTrigger: {
+                trigger: section,
+                start: section.id === 'hero-univers' ? 'top 100%' : 'top 60%',
+                toggleActions: 'play none none none'
+              }
+            }
+          );
+        }
+
+        // Animation du glow en fond
+        const glow = section.querySelector('.absolute.blur-[150px], .absolute.blur-[120px]');
+        if (glow) {
+          gsap.fromTo(glow, 
+            { opacity: 0, scale: 0.8 },
+            { 
+              opacity: 1, scale: 1, duration: 2, ease: 'power2.out',
+              scrollTrigger: {
+                trigger: section,
+                start: 'top 50%',
+                toggleActions: 'play reverse play reverse'
+              }
+            }
+          );
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>

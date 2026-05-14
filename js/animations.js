@@ -157,6 +157,7 @@ window.addEventListener('load', () => {
             },
             complete: () => {
               counter.textContent = target;
+              counter.classList.add('stat-glow');
             },
           });
         }
@@ -200,3 +201,5 @@ window.addEventListener('load', () => {
   }
 
 });
+
+

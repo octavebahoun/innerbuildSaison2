@@ -31,12 +31,9 @@
   <!-- ═══ Twitter Card ═══ -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Synnova Belvine Kybarance Tocloe — Animatrice & Communicatrice Bénin" />
-  <meta name="twitter:description" content="Animatrice, communicatrice, actrice et entrepreneuse sociale au Bénin." />
+  <meta name="twitter:description" content="Animatrice d'événements, communicatrice digitale, actrice et entrepreneuse sociale basée au Bénin." />
   <meta name="twitter:image" content="https://synnovatocloe.vercel.app/assets/images/synnova-og.webp" />
 
-  <!-- ═══ Sécurité ═══ -->
-  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
-  <meta name="referrer" content="strict-origin-when-cross-origin" />
 
   <!-- ═══ Schema.org JSON-LD ═══ -->
   <script type="application/ld+json">
@@ -79,6 +76,17 @@
 </head>
 
 <body class="bg-dark text-snow font-body overflow-x-hidden">
+  
+  <!-- Preloader (Première visite uniquement) -->
+  <div id="preloader" class="fixed inset-0 bg-dark z-[10000] flex items-center justify-center pointer-events-none">
+    <div class="rose-loader">
+      <img src="assets/icons/rose-loader.svg" alt="Chargement Synnova" class="w-full h-auto" />
+      <p class="text-[0.62rem] tracking-[.22em] text-snow/30 uppercase font-sans">Synnova</p>
+    </div>
+  </div>
+
+  <!-- Page Transition Overlay (Navigation) -->
+  <div id="page-transition-overlay" class="hidden"></div>
 
   <!-- Cursor custom (desktop only, géré via CSS dans style.css) -->
   <div id="cursor" aria-hidden="true"></div>
