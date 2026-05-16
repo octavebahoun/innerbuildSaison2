@@ -766,6 +766,9 @@
   .border-gold\/50 {
     border-color: color-mix(in oklab, #F9A825 50%, transparent);
   }
+  .border-green-eco {
+    border-color: #1B5E20;
+  }
   .border-green-eco\/30 {
     border-color: color-mix(in oklab, #1B5E20 30%, transparent);
   }
@@ -950,11 +953,11 @@
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
   .from-green-eco-light\/20 {
-    --tw-gradient-from: color-mix(in oklab, #A5D6A7 20%, transparent);
+    --tw-gradient-from: color-mix(in oklab, #71e375 20%, transparent);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
   .from-indigo-light\/20 {
-    --tw-gradient-from: color-mix(in oklab, #9FA8DA 20%, transparent);
+    --tw-gradient-from: color-mix(in oklab, #5367d7 20%, transparent);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
   .from-rose\/10 {
@@ -998,11 +1001,11 @@
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
   .to-green-eco-light\/5 {
-    --tw-gradient-to: color-mix(in oklab, #A5D6A7 5%, transparent);
+    --tw-gradient-to: color-mix(in oklab, #71e375 5%, transparent);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
   .to-indigo-light\/5 {
-    --tw-gradient-to: color-mix(in oklab, #9FA8DA 5%, transparent);
+    --tw-gradient-to: color-mix(in oklab, #5367d7 5%, transparent);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
   .to-rose\/5 {
@@ -1282,7 +1285,7 @@
     color: #1B5E20;
   }
   .text-green-eco-light {
-    color: #A5D6A7;
+    color: #71e375;
   }
   .text-green-eco\/80 {
     color: color-mix(in oklab, #1B5E20 80%, transparent);
@@ -1291,7 +1294,7 @@
     color: #1A237E;
   }
   .text-indigo-light {
-    color: #9FA8DA;
+    color: #5367d7;
   }
   .text-indigo\/70 {
     color: color-mix(in oklab, #1A237E 70%, transparent);
@@ -1467,6 +1470,11 @@
     -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
     backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
   }
+  .transition {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
   .transition-all {
     transition-property: all;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
@@ -1575,14 +1583,14 @@
   .group-hover\:text-green-eco-light {
     &:is(:where(.group):hover *) {
       @media (hover: hover) {
-        color: #A5D6A7;
+        color: #71e375;
       }
     }
   }
   .group-hover\:text-indigo-light {
     &:is(:where(.group):hover *) {
       @media (hover: hover) {
-        color: #9FA8DA;
+        color: #5367d7;
       }
     }
   }
@@ -1667,14 +1675,14 @@
   .hover\:border-green-eco-light\/30 {
     &:hover {
       @media (hover: hover) {
-        border-color: color-mix(in oklab, #A5D6A7 30%, transparent);
+        border-color: color-mix(in oklab, #71e375 30%, transparent);
       }
     }
   }
   .hover\:border-indigo-light\/30 {
     &:hover {
       @media (hover: hover) {
-        border-color: color-mix(in oklab, #9FA8DA 30%, transparent);
+        border-color: color-mix(in oklab, #5367d7 30%, transparent);
       }
     }
   }
@@ -2376,20 +2384,11 @@
     background: #F9A825;
   }
 }
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 9998;
-  opacity: .4;
-}
 #hero::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient( to bottom, rgba(13,13,13,.05) 0%, rgba(13,13,13,.25) 35%, rgba(13,13,13,.82) 70%, rgba(13,13,13,1) 100% );
+  background: linear-gradient(to bottom, rgba(13, 13, 13, .05) 0%, rgba(13, 13, 13, .25) 35%, rgba(13, 13, 13, .82) 70%, rgba(13, 13, 13, 1) 100%);
   z-index: 1;
 }
 #hero::after {
@@ -2416,7 +2415,7 @@ body::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(255,255,255,.12);
+  background: rgba(255, 255, 255, .12);
   transform: translateX(-100%);
   transition: transform .45s ease;
 }
@@ -2441,11 +2440,11 @@ body::after {
 }
 .card-facette:hover {
   transform: translateY(-6px);
-  box-shadow: 0 20px 60px rgba(194,24,91,.18);
-  border-color: rgba(194,24,91,.5);
+  box-shadow: 0 20px 60px rgba(194, 24, 91, .18);
+  border-color: rgba(194, 24, 91, .5);
 }
 .galerie-item img {
-  transition: transform .6s cubic-bezier(.25,.46,.45,.94);
+  transition: transform .6s cubic-bezier(.25, .46, .45, .94);
 }
 .galerie-item:hover img {
   transform: scale(1.06);
@@ -2484,7 +2483,7 @@ body::after {
 .portfolio-carousel::-webkit-scrollbar {
   height: 0;
 }
-.portfolio-carousel > .portfolio-item {
+.portfolio-carousel>.portfolio-item {
   scroll-snap-align: start;
 }
 @media (min-width: 1024px) {

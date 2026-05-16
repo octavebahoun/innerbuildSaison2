@@ -21,8 +21,7 @@
   <!-- ═══ Open Graph ═══ -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://synnovatocloe.vercel.app/" />
-  <meta property="og:title"
-    content="Synnova TOCLOE | Animatrice, Communicatrice & Actrice au Bénin" />
+  <meta property="og:title" content="Synnova TOCLOE | Animatrice, Communicatrice & Actrice au Bénin" />
   <meta property="og:description"
     content="Site officiel de Synnova TOCLOE. Animatrice d'événements, communicatrice digitale, actrice et entrepreneuse sociale basée à Grand-Popo, Bénin." />
   <meta property="og:image" content="https://synnovatocloe.vercel.app/assets/images/synnova-og.webp" />
@@ -101,6 +100,14 @@
             focus:text-sm focus:font-semibold focus:shadow-lg">
     Aller au contenu principal
   </a>
+
+  <!-- ── Orbs d'ambiance (Global) ── -->
+  <div class="hero-particles" aria-hidden="true" style="position: fixed; z-index: 0;">
+    <span class="particle p1"></span>
+    <span class="particle p2"></span>
+    <span class="particle p3"></span>
+    <span class="particle p4"></span>
+  </div>
 
   <!-- ══════════════════════════════════════
        NAVIGATION
@@ -213,130 +220,113 @@
     <!-- ────────────────────────────────────
          SECTION 1 — HERO CINÉMATIQUE
     ──────────────────────────────────── -->
-<!-- ────────────────────────────────────
-     SECTION 1 — HERO CINÉMATIQUE + CAROUSEL
-     Remplace l'ancienne section#hero en entier
-──────────────────────────────────── -->
-<section id="hero" class="relative min-h-svh flex flex-col justify-end overflow-hidden"
-  aria-label="Présentation de Synnova TOCLOE">
 
-  <!-- ── Carousel images (crossfade + Ken Burns) ── -->
-  <div id="hero-carousel" class="absolute inset-0 z-0" aria-hidden="true">
-    <div class="hero-slide active"
-      style="background-image:url('assets/images/synnova-portrait-traditional-full.webp')"></div>
-    <div class="hero-slide"
-      style="background-image:url('assets/images/synnova-portrait-traditional-full1.webp')"></div>
-    <div class="hero-slide"
-      style="background-image:url('assets/images/synnova-event-speaking-white-shirt.webp')"></div>
-    <div class="hero-slide"
-      style="background-image:url('assets/images/synnova-portrait-blue-dress.webp')"></div>
-    <div class="hero-slide"
-      style="background-image:url('assets/images/synnova-formal-event.webp')"></div>
-  </div>
+    <section id="hero" class="relative min-h-svh flex flex-col justify-end overflow-hidden"
+      aria-label="Présentation de Synnova TOCLOE">
 
-  <!-- ── Animation légère — orbs flottants derrière les images ── -->
-  <div class="hero-particles" aria-hidden="true">
-    <span class="particle p1"></span>
-    <span class="particle p2"></span>
-    <span class="particle p3"></span>
-    <span class="particle p4"></span>
-  </div>
+      <!-- ── Carousel images (crossfade + Ken Burns) ── -->
+      <div id="hero-carousel" class="absolute inset-0 z-0" aria-hidden="true">
+        <div class="hero-slide active"
+          style="background-image:url('assets/images/synnova-portrait-traditional-full.webp')"></div>
+        <div class="hero-slide" style="background-image:url('assets/images/synnova-portrait-light.webp')"></div>
+        <div class="hero-slide" style="background-image:url('assets/images/synnova-gratitude-1.webp')"></div>
+        <div class="hero-slide" style="background-image:url('assets/images/synnova-gratitude-2.webp')"></div>
+        <div class="hero-slide" style="background-image:url('assets/images/synnova-osc-salon.webp')"></div>
+      </div>
 
-  <!-- ── Filigrane ── -->
-  <p class="hero-filigrane" aria-hidden="true">SYNNOVA</p>
+      <!-- ── Filigrane ── -->
+      <p class="hero-filigrane" aria-hidden="true">SYNNOVA</p>
 
-  <!-- ── Gradient overlay (géré en CSS via #hero::before) ── -->
+      <!-- ── Gradient overlay (géré en CSS via #hero::before) ── -->
 
-  <!-- ── Contenu ── -->
-  <div class="relative z-10 px-6 pb-24 md:px-16 md:pb-32 max-w-4xl">
+      <!-- ── Contenu ── -->
+      <div class="relative z-10 px-6 pb-24 md:px-16 md:pb-32 max-w-4xl">
 
-    <!-- Label géo -->
-    <p class="gsap-reveal inline-flex items-center gap-3 text-gold text-[0.62rem] tracking-[.22em] uppercase mb-6 opacity-0">
-      <span class="block w-8 h-px bg-gold" aria-hidden="true"></span>
-      Grand-Popo · Bénin
-    </p>
+        <!-- Label géo -->
+        <p
+          class="gsap-reveal inline-flex items-center gap-3 text-gold text-[0.62rem] tracking-[.22em] uppercase mb-6 opacity-0">
+          <span class="block w-8 h-px bg-gold" aria-hidden="true"></span>
+          Grand-Popo · Bénin
+        </p>
 
-    <!-- H1 -->
-    <h1 class="gsap-reveal font-display font-bold leading-tight tracking-tight text-snow mb-2 opacity-0"
-      style="font-size: clamp(2.5rem, 6vw, 4rem);">
-      Synnova TOCLOE
-      <span class="block text-[1rem] md:text-[1.8rem] font-light text-rose mt-2 leading-snug">
-        Animatrice, communicatrice et actrice au Bénin
-      </span>
-    </h1>
+        <!-- H1 -->
+        <h1 class="gsap-reveal font-display font-bold leading-tight tracking-tight text-snow mb-2 opacity-0"
+          style="font-size: clamp(2.5rem, 6vw, 4rem);">
+          Synnova TOCLOE
+          <span class="block text-[1rem] md:text-[1.8rem] font-light text-rose mt-2 leading-snug">
+            Animatrice, communicatrice et actrice au Bénin
+          </span>
+        </h1>
 
-    <!-- Sous-titre -->
-    <p class="gsap-reveal font-display font-light text-snow/75 mb-6 opacity-0 text-base md:text-lg">
-      Création, parole et engagement au service de vos projets.
-    </p>
+        <!-- Sous-titre -->
+        <p class="gsap-reveal font-display font-light text-snow/75 mb-6 opacity-0 text-base md:text-lg">
+          Création, parole et engagement au service de vos projets.
+        </p>
 
-    <!-- Rôles -->
-    <div class="gsap-reveal flex flex-wrap gap-2 mb-8 opacity-0" role="list"
-      aria-label="Domaines d'activité de Synnova">
-      <span role="listitem"
-        class="text-[0.62rem] tracking-[.15em] uppercase text-snow/55 border border-snow/15 px-3 py-1.5 rounded-full">Animatrice</span>
-      <span role="listitem"
-        class="text-[0.62rem] tracking-[.15em] uppercase text-snow/55 border border-snow/15 px-3 py-1.5 rounded-full">Communicatrice</span>
-      <span role="listitem"
-        class="text-[0.62rem] tracking-[.15em] uppercase text-snow/55 border border-snow/15 px-3 py-1.5 rounded-full">Actrice</span>
-      <span role="listitem"
-        class="text-[0.62rem] tracking-[.15em] uppercase text-snow/55 border border-snow/15 px-3 py-1.5 rounded-full">Entrepreneuse sociale</span>
-    </div>
+        <!-- Rôles -->
+        <div class="gsap-reveal flex flex-wrap gap-2 mb-8 opacity-0" role="list"
+          aria-label="Domaines d'activité de Synnova">
+          <span role="listitem"
+            class="text-[0.62rem] tracking-[.15em] uppercase text-snow/55 border border-snow/15 px-3 py-1.5 rounded-full">Animatrice</span>
+          <span role="listitem"
+            class="text-[0.62rem] tracking-[.15em] uppercase text-snow/55 border border-snow/15 px-3 py-1.5 rounded-full">Communicatrice</span>
+          <span role="listitem"
+            class="text-[0.62rem] tracking-[.15em] uppercase text-snow/55 border border-snow/15 px-3 py-1.5 rounded-full">Actrice</span>
+          <span role="listitem"
+            class="text-[0.62rem] tracking-[.15em] uppercase text-snow/55 border border-snow/15 px-3 py-1.5 rounded-full">Entrepreneuse
+            sociale</span>
+        </div>
 
-    <!-- CTAs — 3 boutons dont le nouveau CTA réservation -->
-    <div class="gsap-reveal flex flex-wrap gap-4 opacity-0">
-      <a href="univers.html"
-        class="btn-shimmer relative overflow-hidden inline-flex items-center gap-2
+        <!-- CTAs — 3 boutons dont le nouveau CTA réservation -->
+        <div class="gsap-reveal flex flex-wrap gap-4 opacity-0">
+          <a href="univers.html" class="btn-shimmer relative overflow-hidden inline-flex items-center gap-2
                bg-rose text-snow text-[0.72rem] font-semibold tracking-[.14em] uppercase
                px-7 py-3.5 rounded-full transition-transform hover:-translate-y-1
                focus:outline-none focus:ring-2 focus:ring-rose focus:ring-offset-2 focus:ring-offset-dark">
-        <img src="assets/icons/star.svg" alt="" width="13" height="13" aria-hidden="true" />
-        Découvrir mon univers
-      </a>
-      <a href="contact.html"
-        class="inline-flex items-center gap-2 border border-snow/25 text-snow
+            <img src="assets/icons/star.svg" alt="" width="13" height="13" aria-hidden="true" />
+            Découvrir mon univers
+          </a>
+          <a href="contact.html" class="inline-flex items-center gap-2 border border-snow/25 text-snow
                text-[0.72rem] font-semibold tracking-[.14em] uppercase
                px-7 py-3.5 rounded-full transition-all hover:border-rose hover:-translate-y-1
                focus:outline-none focus:ring-2 focus:ring-snow/30 focus:ring-offset-2 focus:ring-offset-dark">
-        <img src="assets/icons/mail.svg" alt="" width="13" height="13" aria-hidden="true" />
-        Me contacter
-      </a>
-      <!-- ★ NOUVEAU CTA — Réservation événement -->
-      <a href="contact.html"
-        class="btn-reserve inline-flex items-center gap-2 text-snow
+            <img src="assets/icons/mail.svg" alt="" width="13" height="13" aria-hidden="true" />
+            Me contacter
+          </a>
+          <!-- ★ NOUVEAU CTA — Réservation événement -->
+          <a href="contact.html" class="btn-reserve inline-flex items-center gap-2 text-snow
                text-[0.72rem] font-semibold tracking-[.14em] uppercase
                px-7 py-3.5 rounded-full transition-all hover:-translate-y-1
                focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-dark">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-          <line x1="16" y1="2" x2="16" y2="6"/>
-          <line x1="8" y1="2" x2="8" y2="6"/>
-          <line x1="3" y1="10" x2="21" y2="10"/>
-        </svg>
-        Réserver pour mon événement
-      </a>
-    </div>
-  </div>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+              <line x1="16" y1="2" x2="16" y2="6" />
+              <line x1="8" y1="2" x2="8" y2="6" />
+              <line x1="3" y1="10" x2="21" y2="10" />
+            </svg>
+            Réserver pour mon événement
+          </a>
+        </div>
+      </div>
 
-  <!-- ── Carousel dots ── -->
-  <div id="hero-dots"
-    class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2"
-    role="tablist" aria-label="Diapositives du carousel">
-    <button class="hero-dot active" data-idx="0" role="tab" aria-selected="true" aria-label="Image 1"></button>
-    <button class="hero-dot" data-idx="1" role="tab" aria-selected="false" aria-label="Image 2"></button>
-    <button class="hero-dot" data-idx="2" role="tab" aria-selected="false" aria-label="Image 3"></button>
-    <button class="hero-dot" data-idx="3" role="tab" aria-selected="false" aria-label="Image 4"></button>
-    <button class="hero-dot" data-idx="4" role="tab" aria-selected="false" aria-label="Image 5"></button>
-  </div>
+      <!-- ── Carousel dots ── -->
+      <div id="hero-dots" class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2"
+        role="tablist" aria-label="Diapositives du carousel">
+        <button class="hero-dot active" data-idx="0" role="tab" aria-selected="true" aria-label="Image 1"></button>
+        <button class="hero-dot" data-idx="1" role="tab" aria-selected="false" aria-label="Image 2"></button>
+        <button class="hero-dot" data-idx="2" role="tab" aria-selected="false" aria-label="Image 3"></button>
+        <button class="hero-dot" data-idx="3" role="tab" aria-selected="false" aria-label="Image 4"></button>
+        <button class="hero-dot" data-idx="4" role="tab" aria-selected="false" aria-label="Image 5"></button>
+      </div>
 
-  <!-- Scroll hint -->
-  <div class="absolute bottom-8 right-6 z-20 flex flex-col items-center gap-2 scroll-bounce" aria-hidden="true">
-    <span class="text-[0.58rem] tracking-[.2em] uppercase text-snow/35"
-      style="writing-mode: vertical-rl;">Scroll</span>
-    <img src="assets/icons/arrow-down.svg" alt="" width="14" height="14" class="opacity-35" />
-  </div>
-</section>
+      <!-- Scroll hint -->
+      <div class="absolute bottom-8 right-6 z-20 flex flex-col items-center gap-2 scroll-bounce" aria-hidden="true">
+        <span class="text-[0.58rem] tracking-[.2em] uppercase text-snow/35"
+          style="writing-mode: vertical-rl;">Scroll</span>
+        <img src="assets/icons/arrow-down.svg" alt="svg icone fleche" width="14" height="14" class="opacity-35" />
+      </div>
+    </section>
 
 
     <!-- ────────────────────────────────────
@@ -540,15 +530,6 @@
 
       <div class="max-w-6xl mx-auto">
 
-        <!-- Right: Image Hero -->
-        <div
-          class="w-full lg:w-1/2 relative h-[500px] lg:h-[600px] flex items-center justify-center opacity-0 gsap-reveal delay-300">
-          <div class="absolute inset-0 bg-gradient-to-tr from-rose/20 to-transparent rounded-full blur-3xl"
-            aria-hidden="true"></div>
-          <img class="relative z-10 w-full max-w-sm lg:max-w-md object-contain drop-shadow-2xl hero-img" loading="eager"
-            decoding="async" alt="Portrait professionnel de Synnova TOCLOE"
-            src="assets/images/synnova-portrait-blue-dress.webp" width="500" height="750" />
-        </div>
 
         <div class="gsap-reveal flex items-center justify-between mb-10 opacity-0">
           <div class="flex items-center gap-4">
@@ -574,7 +555,7 @@
           <div
             class="galerie-item gsap-reveal col-span-2 md:col-span-1 md:row-span-2 overflow-hidden rounded-2xl relative group opacity-0"
             role="listitem">
-            <img src="assets/images/synnova-event-speaking-white-shirt.webp"
+            <img src="assets/images/synnova-meetup-launch-2.webp"
               alt="Synnova TOCLOE animant un événement en direct sur scène" width="600" height="800" loading="lazy"
               decoding="async" class="w-full h-56 md:h-full object-cover" />
             <div class="absolute inset-0 bg-dark/0 group-hover:bg-dark/25 transition-all duration-500 rounded-2xl"
@@ -583,7 +564,7 @@
 
           <!-- Photo 2 -->
           <div class="gsap-reveal overflow-hidden rounded-2xl relative group h-80 opacity-0" role="listitem">
-            <img src="assets/images/synnova-portrait-bw.webp" alt="Synnova TOCLOE créatrice de contenu"
+            <img src="assets/images/synnova-portrait-light.webp" alt="Synnova TOCLOE créatrice de contenu"
               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy"
               decoding="async" width="800" height="800" />
             <div
@@ -593,7 +574,7 @@
 
           <!-- Photo 3 -->
           <div class="galerie-item gsap-reveal overflow-hidden rounded-2xl relative group opacity-0" role="listitem">
-            <img src="assets/images/synnova-outdoor-relaxed.webp" alt="Synnova TOCLOE - Animation d'événement"
+            <img src="assets/images/synnova-outdoor-friends.webp" alt="Synnova TOCLOE - Animation d'événement"
               width="400" height="400" loading="lazy" decoding="async" class="w-full h-40 md:h-52 object-cover" />
             <div class="absolute inset-0 bg-dark/0 group-hover:bg-dark/25 transition-all duration-500 rounded-2xl"
               aria-hidden="true"></div>
@@ -602,7 +583,7 @@
           <!-- Photo 4 — large -->
           <div class="galerie-item gsap-reveal col-span-2 overflow-hidden rounded-2xl relative group opacity-0"
             role="listitem">
-            <img src="assets/images/synnova-social-ureport.webp"
+            <img src="assets/images/synnova-ureport-clapping.webp"
               alt="Synnova TOCLOE, entrepreneuse sociale — emballages biodégradables Grand-Popo Bénin" width="800"
               height="400" loading="lazy" decoding="async" class="w-full h-40 md:h-52 object-cover" />
             <div class="absolute inset-0 bg-dark/0 group-hover:bg-dark/25 transition-all duration-500 rounded-2xl"

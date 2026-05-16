@@ -54,6 +54,14 @@
     Aller au contenu principal
   </a>
 
+  <!-- ── Orbs d'ambiance (Global) ── -->
+  <div class="hero-particles" aria-hidden="true" style="position: fixed; z-index: 0;">
+    <span class="particle p1"></span>
+    <span class="particle p2"></span>
+    <span class="particle p3"></span>
+    <span class="particle p4"></span>
+  </div>
+
   <!-- NAVIGATION -->
   <header role="banner">
     <nav id="navbar"
@@ -196,11 +204,12 @@
         </div>
 
         <!-- Carousel Portfolio (multi-lignes responsive) -->
-        <div class="grid gap-8 portfolio-carousel" id="portfolio-grid">
+        <div class="portfolio-carousel-wrapper">
+          <div class="grid gap-8 portfolio-carousel" id="portfolio-grid">
           
           <!-- Item 1 -->
           <div class="portfolio-item evenements group relative aspect-[4/5] overflow-hidden rounded-3xl cursor-none-on-hover" data-category="evenements">
-            <img src="assets/images/synnova-portrait-traditional-2.webp" alt="Synnova animation" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 portfolio-img" />
+            <img src="assets/images/synnova-event-red-shirt.webp" alt="Synnova animation" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 portfolio-img" />
             <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div class="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
               <span class="w-fit px-3 py-1 bg-rose/20 border border-rose/30 rounded-full text-rose text-[0.55rem] tracking-widest uppercase mb-3">Événements</span>
@@ -210,7 +219,7 @@
 
           <!-- Item 2 -->
           <div class="portfolio-item cinema group relative aspect-[4/5] overflow-hidden rounded-3xl" data-category="cinema">
-            <img src="assets/images/synnova-formal-event.webp" alt="Synnova Cinéma" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 portfolio-img" />
+            <img src="assets/images/synnova-osc-salon.webp" alt="Synnova Cinéma" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 portfolio-img" />
             <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div class="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
               <span class="w-fit px-3 py-1 bg-indigo/20 border border-indigo/30 rounded-full text-indigo-light text-[0.55rem] tracking-widest uppercase mb-3">Cinéma</span>
@@ -220,7 +229,7 @@
 
           <!-- Item 3 -->
           <div class="portfolio-item eco group relative aspect-[4/5] overflow-hidden rounded-3xl" data-category="eco">
-            <img src="assets/images/synnova-casual-bridge.webp" alt="Synnova Entrepreneuriat" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 portfolio-img" />
+            <img src="assets/images/synnova-garden-flower.webp" alt="Synnova Entrepreneuriat" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 portfolio-img" />
             <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div class="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
               <span class="w-fit px-3 py-1 bg-green-eco/20 border border-green-eco/30 rounded-full text-green-eco-light text-[0.55rem] tracking-widest uppercase mb-3">Éco/Social</span>
@@ -230,7 +239,7 @@
 
           <!-- Item 4 -->
           <div class="portfolio-item evenements group relative aspect-[4/5] overflow-hidden rounded-3xl" data-category="evenements">
-            <img src="assets/images/synnova-conference-notes.webp" alt="Synnova Communication" class="w-full h-full object-cover object-top transition-transform duration-1000 group-hover:scale-110 portfolio-img" />
+            <img src="assets/images/synnova-meetup-change.webp" alt="Synnova Communication" class="w-full h-full object-cover object-top transition-transform duration-1000 group-hover:scale-110 portfolio-img" />
             <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div class="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
               <span class="w-fit px-3 py-1 bg-gold/20 border border-gold/30 rounded-full text-gold text-[0.55rem] tracking-widest uppercase mb-3">Communication</span>
@@ -240,7 +249,7 @@
 
           <!-- Item 5 -->
           <div class="portfolio-item evenements group relative aspect-[4/5] overflow-hidden rounded-3xl" data-category="evenements">
-            <img src="assets/images/synnova-event-speaking-white-shirt.webp" alt="Animation scène" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 portfolio-img" />
+            <img src="assets/images/synnova-joyful-animator-1.webp" alt="Animation scène" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 portfolio-img" />
             <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div class="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
               <span class="w-fit px-3 py-1 bg-rose/20 border border-rose/30 rounded-full text-rose text-[0.55rem] tracking-widest uppercase mb-3">Événements</span>
@@ -250,7 +259,7 @@
 
           <!-- Item 6 -->
           <div class="portfolio-item eco group relative aspect-[4/5] overflow-hidden rounded-3xl" data-category="eco">
-            <img src="assets/images/synnova-social-ureport.webp" alt="Engagement social" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 portfolio-img" />
+            <img src="assets/images/synnova-ureport-clapping.webp" alt="Engagement social" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 portfolio-img" />
             <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div class="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
               <span class="w-fit px-3 py-1 bg-green-eco/20 border border-green-eco/30 rounded-full text-green-eco-light text-[0.55rem] tracking-widest uppercase mb-3">Social</span>
@@ -260,7 +269,7 @@
 
           <!-- Item 7 -->
           <div class="portfolio-item cinema group relative aspect-[4/5] overflow-hidden rounded-3xl" data-category="cinema">
-            <img src="assets/images/synnova-portrait-bw.webp" alt="Portrait Cinéma" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 portfolio-img" />
+            <img src="assets/images/synnova-conference-listening-bw.webp" alt="Portrait Cinéma" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 portfolio-img" />
             <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div class="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
               <span class="w-fit px-3 py-1 bg-indigo/20 border border-indigo/30 rounded-full text-indigo-light text-[0.55rem] tracking-widest uppercase mb-3">Cinéma</span>
@@ -287,7 +296,67 @@
               <h3 class="font-display text-2xl font-bold text-snow">Action Humanitaire</h3>
             </div>
           </div>
-          
+
+          <!-- Item 10 -->
+          <div class="portfolio-item eco group relative aspect-[4/5] overflow-hidden rounded-3xl" data-category="eco">
+            <img src="assets/images/synnova-kits-scolaires-1.webp" alt="Distribution kits scolaires" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 portfolio-img" />
+            <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+              <span class="w-fit px-3 py-1 bg-green-eco/20 border border-green-eco/30 rounded-full text-green-eco-light text-[0.55rem] tracking-widest uppercase mb-3">Social</span>
+              <h3 class="font-display text-2xl font-bold text-snow">Kits Scolaires 2024</h3>
+            </div>
+          </div>
+
+          <!-- Item 11 -->
+          <div class="portfolio-item eco group relative aspect-[4/5] overflow-hidden rounded-3xl" data-category="eco">
+            <img src="assets/images/synnova-unicef-airport-1.webp" alt="UNICEF Aéroport" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 portfolio-img" />
+            <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+              <span class="w-fit px-3 py-1 bg-indigo/20 border border-indigo/30 rounded-full text-indigo-light text-[0.55rem] tracking-widest uppercase mb-3">Social</span>
+              <h3 class="font-display text-2xl font-bold text-snow">Journée de l'Enfance</h3>
+            </div>
+          </div>
+
+          <!-- Item 12 -->
+          <div class="portfolio-item cinema group relative aspect-[4/5] overflow-hidden rounded-3xl" data-category="cinema">
+            <img src="assets/images/synnova-miss-photogenique.webp" alt="Miss Photogénique" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 portfolio-img" />
+            <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+              <span class="w-fit px-3 py-1 bg-rose/20 border border-rose/30 rounded-full text-rose text-[0.55rem] tracking-widest uppercase mb-3">Cinéma</span>
+              <h3 class="font-display text-2xl font-bold text-snow">Miss Photogénique</h3>
+            </div>
+          </div>
+
+          <!-- Item 13 -->
+          <div class="portfolio-item evenements group relative aspect-[4/5] overflow-hidden rounded-3xl" data-category="evenements">
+            <img src="assets/images/synnova-meetup-launch-3.webp" alt="MeetUp for Change" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 portfolio-img" />
+            <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+              <span class="w-fit px-3 py-1 bg-rose/20 border border-rose/30 rounded-full text-rose text-[0.55rem] tracking-widest uppercase mb-3">Événements</span>
+              <h3 class="font-display text-2xl font-bold text-snow">MeetUp for Change</h3>
+            </div>
+          </div>
+
+          <!-- Item 14 -->
+          <div class="portfolio-item evenements group relative aspect-[4/5] overflow-hidden rounded-3xl" data-category="evenements">
+            <img src="assets/images/synnova-speech-culture.webp" alt="Prise de parole" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 portfolio-img" />
+            <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+              <span class="w-fit px-3 py-1 bg-gold/20 border border-gold/30 rounded-full text-gold text-[0.55rem] tracking-widest uppercase mb-3">Culture</span>
+              <h3 class="font-display text-2xl font-bold text-snow">Parole & Culture</h3>
+            </div>
+          </div>
+
+          <!-- Item 15 -->
+          <div class="portfolio-item evenements group relative aspect-[4/5] overflow-hidden rounded-3xl" data-category="evenements">
+            <img src="assets/images/synnova-friendship-3.webp" alt="Amitié et partage" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 portfolio-img" />
+            <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+              <span class="w-fit px-3 py-1 bg-rose/20 border border-rose/30 rounded-full text-rose text-[0.55rem] tracking-widest uppercase mb-3">Événements</span>
+              <h3 class="font-display text-2xl font-bold text-snow">Rires & Amitiés</h3>
+            </div>
+          </div>
+        </div>
         </div>
       </div>
     </section>
@@ -359,188 +428,181 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" defer></script>
   <script src="js/dist/main.js" defer></script>
   <script src="js/dist/animations.js" defer></script>
+  <style>
+    /* ── PORTFOLIO GRID & MARQUEE ── */
+    .portfolio-carousel-wrapper {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      padding: 2rem 0;
+      cursor: grab;
+    }
+    .portfolio-carousel-wrapper:active { cursor: grabbing; }
+
+    #portfolio-grid {
+      display: grid !important;
+      grid-auto-flow: column !important;
+      grid-template-rows: repeat(2, 1fr) !important;
+      gap: 1rem !important;
+      width: max-content;
+      will-change: transform;
+    }
+    
+    @media (min-width: 768px) {
+      #portfolio-grid { gap: 1.5rem !important; }
+    }
+
+    @media (min-width: 1024px) {
+      #portfolio-grid {
+        grid-template-rows: repeat(3, 1fr) !important;
+      }
+    }
+
+    .portfolio-item {
+      width: clamp(220px, 30vw, 350px); /* Plus petit sur mobile pour voir plus d'images */
+      aspect-ratio: 4/5;
+      position: relative;
+    }
+  </style>
+
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       if (typeof gsap === 'undefined') return;
-      
-      const grid = document.querySelector('#portfolio-grid');
-      const items = document.querySelectorAll('.portfolio-item');
-      const filterBtns = document.querySelectorAll('.filter-btn');
+      gsap.registerPlugin(ScrollTrigger);
 
-      // 1. Filtrage Fluide GSAP
+      const grid = document.querySelector('#portfolio-grid');
+      const items = gsap.utils.toArray('.portfolio-item');
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      let loop;
+
+      // 1. Fonction Marquee Infini (Adaptée Multi-Row)
+      function setupMarquee() {
+        if (loop) loop.kill();
+        
+        const visibleItems = items.filter(item => getComputedStyle(item).display !== 'none');
+        if (visibleItems.length < 3) return;
+
+        // Reset positions avant de recalculer
+        gsap.set(visibleItems, { x: 0, xPercent: 0 });
+
+        loop = horizontalLoop(visibleItems, {
+          repeat: -1,
+          speed: 0.8,
+          paddingRight: 48,
+          paused: false
+        });
+      }
+
+      // Helper horizontalLoop (standard GSAP avec patch pour multi-row)
+      function horizontalLoop(items, config) {
+        items = gsap.utils.toArray(items);
+        config = config || {};
+        let tl = gsap.timeline({
+          repeat: config.repeat,
+          paused: config.paused,
+          defaults: {ease: "none"},
+          onReverseComplete: () => tl.totalTime(tl.rawTime() + tl.duration() * 100)
+        }),
+        length = items.length,
+        startX = items[0].offsetLeft,
+        times = [],
+        widths = [],
+        xPercents = [],
+        pixelsPerSecond = (config.speed || 1) * 100,
+        totalWidth, item, i;
+        
+        gsap.set(items, {
+          xPercent: (i, target) => {
+            let w = widths[i] = parseFloat(gsap.getProperty(target, "width", "px"));
+            xPercents[i] = gsap.utils.snap(0.01, parseFloat(gsap.getProperty(target, "x", "px")) / w * 100);
+            return xPercents[i];
+          }
+        });
+        gsap.set(items, {x: 0});
+
+        // PATCH MULTI-ROW : On cherche la fin réelle de la grille (max offsetLeft + width)
+        const maxX = Math.max(...items.map(el => el.offsetLeft + el.offsetWidth));
+        totalWidth = maxX - startX + (parseFloat(config.paddingRight) || 0);
+
+        for (i = 0; i < length; i++) {
+          item = items[i];
+          let curX = xPercents[i] / 100 * widths[i];
+          let distanceToStart = item.offsetLeft - startX;
+          let distanceToLoop = distanceToStart + widths[i] * gsap.getProperty(item, "scaleX");
+          
+          tl.to(item, {xPercent: gsap.utils.snap(0.01, (curX - distanceToLoop) / widths[i] * 100), duration: distanceToLoop / pixelsPerSecond}, 0)
+            .fromTo(item, {xPercent: gsap.utils.snap(0.01, (curX - distanceToLoop + totalWidth) / widths[i] * 100)}, {xPercent: xPercents[i], duration: (curX - distanceToLoop + totalWidth - curX) / pixelsPerSecond, immediateRender: false}, distanceToLoop / pixelsPerSecond)
+            .add("label" + i, distanceToStart / pixelsPerSecond);
+          times[i] = distanceToStart / pixelsPerSecond;
+        }
+        tl.progress(1, true).progress(0, true);
+        return tl;
+      }
+
+      // 2. Logique de Filtrage
       filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
           const filter = btn.getAttribute('data-filter');
           
           // UI Active
-          filterBtns.forEach(b => {
-            b.classList.remove('active', 'border-rose');
-            const bg = b.querySelector('div');
-            if(bg) gsap.to(bg, { scaleX: 0, duration: 0.3 });
-          });
+          filterBtns.forEach(b => b.classList.remove('active', 'border-rose'));
           btn.classList.add('active');
-          const activeBg = btn.querySelector('div');
-          if(activeBg) gsap.to(activeBg, { scaleX: 1, duration: 0.3, opacity: 1 });
 
-          // Animation des items
-          const itemsToHide = Array.from(items).filter(item => filter !== 'all' && !item.classList.contains(filter));
-          const itemsToShow = Array.from(items).filter(item => filter === 'all' || item.classList.contains(filter));
+          // Arrêt du loop pendant la transition
+          if (loop) loop.pause();
 
-          gsap.to(itemsToHide, {
-            opacity: 0,
-            scale: 0.8,
-            y: 20,
-            duration: 0.4,
-            stagger: 0.05,
-            display: 'none',
-            ease: 'power2.in'
+          const itemsToHide = items.filter(item => filter !== 'all' && !item.classList.contains(filter));
+          const itemsToShow = items.filter(item => filter === 'all' || item.classList.contains(filter));
+
+          const tl = gsap.timeline({
+            onComplete: () => {
+              setupMarquee(); // Relance avec les nouveaux éléments
+            }
           });
 
-          gsap.fromTo(itemsToShow, 
-            { opacity: 0, scale: 0.9, y: 30, display: 'none' },
+          if (itemsToHide.length) {
+            tl.to(itemsToHide, {
+              opacity: 0, scale: 0.8, duration: 0.4, stagger: 0.05,
+              display: 'none', ease: 'power2.in'
+            });
+          }
+
+          tl.fromTo(itemsToShow, 
+            { opacity: 0, scale: 0.9, display: 'none' },
             {
-              opacity: 1, scale: 1, y: 0,
-              duration: 0.6,
-              stagger: 0.1,
-              display: 'block',
-              ease: 'power3.out',
-              delay: 0.2
-            }
+              opacity: 1, scale: 1, duration: 0.5, stagger: 0.05,
+              display: 'block', ease: 'power3.out', clearProps: "transform"
+            }, "-=0.2"
           );
         });
       });
 
-      // 2. Parallaxe de survol sur les images
+      // 3. Interactions Hover
+      grid.addEventListener('mouseenter', () => loop && loop.pause());
+      grid.addEventListener('mouseleave', () => loop && loop.play());
+
+      // Parallaxe de survol
       items.forEach(item => {
         const img = item.querySelector('.portfolio-img');
-        
         item.addEventListener('mousemove', (e) => {
           const rect = item.getBoundingClientRect();
           const xPos = (e.clientX - rect.left) / rect.width - 0.5;
           const yPos = (e.clientY - rect.top) / rect.height - 0.5;
-
-          gsap.to(img, {
-            x: xPos * 25,
-            y: yPos * 25,
-            duration: 0.8,
-            ease: 'power2.out'
-          });
+          gsap.to(img, { x: xPos * 20, y: yPos * 20, duration: 0.6, ease: 'power2.out' });
         });
-
         item.addEventListener('mouseleave', () => {
-          gsap.to(img, {
-            x: 0,
-            y: 0,
-            duration: 1,
-            ease: 'elastic.out(1, 0.3)'
-          });
+          gsap.to(img, { x: 0, y: 0, duration: 1, ease: 'power2.out' });
         });
       });
+
+      // Init au chargement
+      window.addEventListener('load', setupMarquee);
+      if (document.readyState === 'complete') setupMarquee();
+      
+      window.addEventListener('resize', () => {
+        setupMarquee();
+      });
     });
-  </script>
-
-  <script>
-    (function () {
-      const init = () => {
-        const carousel = document.querySelector('#portfolio-grid');
-        if (!carousel) return;
-
-        const reduceMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-        const pxPerSecond = 26;
-        const startDelayMs = 700;
-        const resumeDelayMs = 1400;
-
-        let intervalId = null;
-        let lastTime = null;
-        let paused = reduceMotionQuery.matches;
-        let resumeTimer = null;
-
-        const canScroll = () => carousel.scrollWidth > carousel.clientWidth + 2;
-
-        const stop = () => {
-          paused = true;
-          lastTime = null;
-          carousel.classList.remove('is-autoplaying');
-          if (intervalId) {
-            clearInterval(intervalId);
-            intervalId = null;
-          }
-        };
-
-        const step = () => {
-          if (paused || reduceMotionQuery.matches) return;
-          if (!canScroll()) return;
-
-          const now = performance.now();
-          if (lastTime === null) lastTime = now;
-          const dt = (now - lastTime) / 1000;
-          lastTime = now;
-
-          carousel.scrollLeft += pxPerSecond * dt;
-
-          const endThreshold = carousel.scrollWidth - carousel.clientWidth - 1;
-          if (carousel.scrollLeft >= endThreshold) {
-            carousel.scrollLeft = 0;
-          }
-        };
-
-        const start = () => {
-          if (reduceMotionQuery.matches) return;
-          if (!canScroll()) return;
-          if (!paused && intervalId) return;
-          paused = false;
-          carousel.classList.add('is-autoplaying');
-          if (!intervalId) {
-            lastTime = null;
-            intervalId = setInterval(step, 16);
-          }
-        };
-
-        const scheduleResume = (delayMs = resumeDelayMs) => {
-          if (reduceMotionQuery.matches) return;
-          clearTimeout(resumeTimer);
-          resumeTimer = setTimeout(() => start(), delayMs);
-        };
-
-        setTimeout(() => start(), startDelayMs);
-
-        carousel.addEventListener('mouseenter', stop);
-        carousel.addEventListener('mouseleave', () => scheduleResume(250));
-        carousel.addEventListener('focusin', stop);
-        carousel.addEventListener('focusout', () => scheduleResume(250));
-
-        carousel.addEventListener('wheel', () => {
-          stop();
-          scheduleResume();
-        }, { passive: true });
-
-        carousel.addEventListener('touchstart', stop, { passive: true });
-        carousel.addEventListener('touchend', () => scheduleResume(), { passive: true });
-
-        document.addEventListener('visibilitychange', () => {
-          if (document.hidden) stop();
-          else scheduleResume(300);
-        });
-
-        window.addEventListener('resize', () => {
-          stop();
-          scheduleResume(300);
-        }, { passive: true });
-
-        if (typeof reduceMotionQuery.addEventListener === 'function') {
-          reduceMotionQuery.addEventListener('change', (e) => {
-            if (e.matches) stop();
-            else scheduleResume(300);
-          });
-        }
-      };
-
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
-      } else {
-        init();
-      }
-    })();
   </script>
 </body>
 </html>

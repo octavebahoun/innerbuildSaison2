@@ -66,12 +66,17 @@ window.addEventListener('load', () => {
   );
 
   reveals.forEach((el) => {
+    let xOffset = 0;
+    if (el.classList.contains('reveal-left'))  xOffset = -60;
+    if (el.classList.contains('reveal-right')) xOffset = 60;
+
     gsap.fromTo(el,
-      { opacity: 0, y: 40 },
+      { opacity: 0, y: 40, x: xOffset },
       {
         opacity: 1,
         y: 0,
-        duration: .85,
+        x: 0,
+        duration: 1.1,
         ease: 'power3.out',
         scrollTrigger: {
           trigger: el,
@@ -89,13 +94,13 @@ window.addEventListener('load', () => {
   const cards = document.querySelectorAll('.card-facette.gsap-reveal');
   if (cards.length) {
     gsap.fromTo(cards,
-      { opacity: 0, y: 50 },
+      { opacity: 0, y: 30 },
       {
         opacity: 1,
         y: 0,
-        duration: .7,
+        duration: 0.55,
         ease: 'power3.out',
-        stagger: 0.1,
+        stagger: 0.08,
         scrollTrigger: {
           trigger: cards[0],
           start: 'top 85%',

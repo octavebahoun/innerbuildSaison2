@@ -21,8 +21,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://synnovatocloe.vercel.app/a-propos.html" />
   <meta property="og:title" content="Synnova TOCLOE | À Propos" />
-  <meta property="og:description"
-    content="Découvrez le parcours et l'engagement de Synnova TOCLOE." />
+  <meta property="og:description" content="Découvrez le parcours et l'engagement de Synnova TOCLOE." />
   <meta property="og:image" content="https://synnovatocloe.vercel.app/assets/images/synnova-og.webp" />
   <meta property="og:locale" content="fr_BJ" />
   <meta property="og:site_name" content="Synnova TOCLOE" />
@@ -58,6 +57,14 @@
             focus:text-sm focus:font-semibold focus:shadow-lg">
     Aller au contenu principal
   </a>
+
+  <!-- ── Orbs d'ambiance (Global) ── -->
+  <div class="hero-particles" aria-hidden="true" style="position: fixed; z-index: 0;">
+    <span class="particle p1"></span>
+    <span class="particle p2"></span>
+    <span class="particle p3"></span>
+    <span class="particle p4"></span>
+  </div>
 
   <!-- NAVIGATION -->
   <header role="banner">
@@ -199,14 +206,14 @@
       <div class="max-w-6xl mx-auto flex flex-col gap-32 relative z-10">
 
         <!-- Formation -->
-        <article class="gsap-reveal flex flex-col md:flex-row items-center opacity-0 group">
-          <div class="w-full md:w-[55%] overflow-hidden rounded-3xl relative z-10 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-            <img src="assets/images/synnova-conference-notes.webp" alt="Synnova en formation"
-              class="w-full h-[400px] object-cover transition-transform duration-1000 group-hover:scale-105"
-              loading="lazy" decoding="async" width="800" height="600" />
+        <article class="flex flex-col md:flex-row items-center group">
+          <div class="gsap-reveal reveal-left opacity-0 w-full md:w-[55%] overflow-hidden rounded-3xl relative z-10 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+            <img src="assets/images/synnova-press-conference-2.webp" alt="Synnova en formation"
+              class="w-full h-auto transition-transform duration-1000 group-hover:scale-105" loading="lazy"
+              decoding="async" width="800" height="600" />
             <div class="absolute inset-0 bg-gradient-to-t from-dark/80 via-transparent to-transparent opacity-60"></div>
           </div>
-          <div class="w-full md:w-[55%] md:-ml-[10%] relative z-20 mt-[-40px] md:mt-0">
+          <div class="gsap-reveal reveal-right opacity-0 w-full md:w-[55%] md:-ml-[10%] relative z-20 mt-[-40px] md:mt-0">
             <div
               class="bg-dark/60 backdrop-blur-xl border border-snow/10 rounded-3xl p-8 md:p-12 shadow-2xl transition-all duration-500 hover:border-rose/30 hover:shadow-[0_10px_40px_-10px_rgba(194,24,91,0.2)]">
               <span class="text-rose tracking-[.2em] uppercase text-[0.65rem] font-bold mb-4 block">01 —
@@ -224,14 +231,14 @@
         </article>
 
         <!-- Engagement Social -->
-        <article class="gsap-reveal flex flex-col md:flex-row-reverse items-center opacity-0 group">
-          <div class="w-full md:w-[55%] overflow-hidden rounded-3xl relative z-10 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-            <img src="assets/images/synnova-unicef-social.webp" alt="Synnova engagée socialement"
-              class="w-full h-[400px] object-cover transition-transform duration-1000 group-hover:scale-105"
-              loading="lazy" decoding="async" width="800" height="600" />
+        <article class="flex flex-col md:flex-row-reverse items-center group">
+          <div class="gsap-reveal reveal-right opacity-0 w-full md:w-[55%] overflow-hidden rounded-3xl relative z-10 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+            <img src="assets/images/synnova-unicef-airport-2.webp" alt="Synnova engagée socialement"
+              class="w-full h-auto transition-transform duration-1000 group-hover:scale-105" loading="lazy"
+              decoding="async" width="800" height="600" />
             <div class="absolute inset-0 bg-gradient-to-t from-dark/80 via-transparent to-transparent opacity-60"></div>
           </div>
-          <div class="w-full md:w-[55%] md:-mr-[10%] relative z-20 mt-[-40px] md:mt-0">
+          <div class="gsap-reveal reveal-left opacity-0 w-full md:w-[55%] md:-mr-[10%] relative z-20 mt-[-40px] md:mt-0">
             <div
               class="bg-dark/60 backdrop-blur-xl border border-snow/10 rounded-3xl p-8 md:p-12 shadow-2xl transition-all duration-500 hover:border-gold/30 hover:shadow-[0_10px_40px_-10px_rgba(249,168,37,0.2)]">
               <span class="text-gold tracking-[.2em] uppercase text-[0.65rem] font-bold mb-4 block">02 — Social</span>
@@ -247,14 +254,14 @@
         </article>
 
         <!-- Cinéma -->
-        <article class="gsap-reveal flex flex-col md:flex-row items-center opacity-0 group">
-          <div class="w-full md:w-[55%] overflow-hidden rounded-3xl relative z-10 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-            <img src="assets/images/synnova-formal-event.webp" alt="Synnova actrice au Festival"
-              class="w-full h-[400px] object-cover object-top transition-transform duration-1000 group-hover:scale-105"
-              loading="lazy" decoding="async" width="800" height="600" />
+        <article class="flex flex-col md:flex-row items-center group">
+          <div class="gsap-reveal reveal-left opacity-0 w-full md:w-[55%] overflow-hidden rounded-3xl relative z-10 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+            <img src="assets/images/synnova-pink-mic-portrait.webp" alt="Synnova actrice au Festival"
+              class="w-full h-auto transition-transform duration-1000 group-hover:scale-105" loading="lazy"
+              decoding="async" width="800" height="600" />
             <div class="absolute inset-0 bg-gradient-to-t from-dark/80 via-transparent to-transparent opacity-60"></div>
           </div>
-          <div class="w-full md:w-[55%] md:-ml-[10%] relative z-20 mt-[-40px] md:mt-0">
+          <div class="gsap-reveal reveal-right opacity-0 w-full md:w-[55%] md:-ml-[10%] relative z-20 mt-[-40px] md:mt-0">
             <div
               class="bg-dark/60 backdrop-blur-xl border border-snow/10 rounded-3xl p-8 md:p-12 shadow-2xl transition-all duration-500 hover:border-indigo-light/30 hover:shadow-[0_10px_40px_-10px_rgba(159,168,218,0.2)]">
               <span class="text-indigo-light tracking-[.2em] uppercase text-[0.65rem] font-bold mb-4 block">03 —
@@ -274,7 +281,7 @@
         <!-- Entrepreneuriat -->
         <article class="gsap-reveal flex flex-col md:flex-row-reverse items-center opacity-0 group">
           <div class="w-full md:w-[55%] overflow-hidden rounded-3xl relative z-10 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-            <img src="assets/images/synnova-casual-bridge.webp" alt="Synnova entrepreneuse éco"
+            <img src="assets/images/synnova-garden-flower.webp" alt="Synnova entrepreneuse éco"
               class="w-full h-[400px] object-cover object-top transition-transform duration-1000 group-hover:scale-105"
               loading="lazy" decoding="async" width="800" height="600" />
             <div class="absolute inset-0 bg-gradient-to-t from-dark/80 via-transparent to-transparent opacity-60"></div>
@@ -314,9 +321,9 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           <!-- Carte 1 -->
           <div
-            class="gsap-reveal group p-8 rounded-3xl bg-snow/[0.02] backdrop-blur-md border border-snow/5 hover:bg-snow/[0.04] hover:border-rose/30 transition-all duration-500 hover:-translate-y-2 opacity-0">
+            class="gsap-reveal card-facette group p-8 rounded-3xl bg-snow/[0.02] backdrop-blur-md border border-snow/5 hover:bg-snow/[0.04] hover:border-rose/30 transition-all duration-300 hover:-translate-y-2 opacity-0">
             <div
-              class="w-14 h-14 rounded-2xl bg-gradient-to-br from-rose/20 to-rose/5 text-rose flex items-center justify-center mx-auto mb-6 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)] group-hover:scale-110 transition-transform duration-500">
+              class="w-14 h-14 rounded-2xl bg-gradient-to-br from-rose/20 to-rose/5 text-rose flex items-center justify-center mx-auto mb-6 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)] group-hover:scale-110 transition-transform duration-300">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <path d="M12 19l7-7 3 3-7 7-3-3z" />
                 <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
@@ -332,10 +339,10 @@
 
           <!-- Carte 2 -->
           <div
-            class="gsap-reveal group p-8 rounded-3xl bg-snow/[0.02] backdrop-blur-md border border-snow/5 hover:bg-snow/[0.04] hover:border-gold/30 transition-all duration-500 hover:-translate-y-2 opacity-0"
+            class="gsap-reveal card-facette group p-8 rounded-3xl bg-snow/[0.02] backdrop-blur-md border border-snow/5 hover:bg-snow/[0.04] hover:border-gold/30 transition-all duration-300 hover:-translate-y-2 opacity-0"
             style="transition-delay: 100ms;">
             <div
-              class="w-14 h-14 rounded-2xl bg-gradient-to-br from-gold/20 to-gold/5 text-gold flex items-center justify-center mx-auto mb-6 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)] group-hover:scale-110 transition-transform duration-500">
+              class="w-14 h-14 rounded-2xl bg-gradient-to-br from-gold/20 to-gold/5 text-gold flex items-center justify-center mx-auto mb-6 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)] group-hover:scale-110 transition-transform duration-300">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                 <circle cx="9" cy="7" r="4"></circle>
@@ -351,10 +358,10 @@
 
           <!-- Carte 3 -->
           <div
-            class="gsap-reveal group p-8 rounded-3xl bg-snow/[0.02] backdrop-blur-md border border-snow/5 hover:bg-snow/[0.04] hover:border-indigo-light/30 transition-all duration-500 hover:-translate-y-2 opacity-0"
+            class="gsap-reveal card-facette group p-8 rounded-3xl bg-snow/[0.02] backdrop-blur-md border border-snow/5 hover:bg-snow/[0.04] hover:border-indigo-light/30 transition-all duration-300 hover:-translate-y-2 opacity-0"
             style="transition-delay: 200ms;">
             <div
-              class="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-light/20 to-indigo-light/5 text-indigo-light flex items-center justify-center mx-auto mb-6 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)] group-hover:scale-110 transition-transform duration-500">
+              class="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-light/20 to-indigo-light/5 text-indigo-light flex items-center justify-center mx-auto mb-6 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)] group-hover:scale-110 transition-transform duration-300">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
               </svg>
@@ -367,10 +374,10 @@
 
           <!-- Carte 4 -->
           <div
-            class="gsap-reveal group p-8 rounded-3xl bg-snow/[0.02] backdrop-blur-md border border-snow/5 hover:bg-snow/[0.04] hover:border-green-eco-light/30 transition-all duration-500 hover:-translate-y-2 opacity-0"
+            class="gsap-reveal card-facette group p-8 rounded-3xl bg-snow/[0.02] backdrop-blur-md border border-snow/5 hover:bg-snow/[0.04] hover:border-green-eco-light/30 transition-all duration-300 hover:-translate-y-2 opacity-0"
             style="transition-delay: 300ms;">
             <div
-              class="w-14 h-14 rounded-2xl bg-gradient-to-br from-green-eco-light/20 to-green-eco-light/5 text-green-eco-light flex items-center justify-center mx-auto mb-6 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)] group-hover:scale-110 transition-transform duration-500">
+              class="w-14 h-14 rounded-2xl bg-gradient-to-br from-green-eco-light/20 to-green-eco-light/5 text-green-eco-light flex items-center justify-center mx-auto mb-6 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)] group-hover:scale-110 transition-transform duration-300">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
                 <path d="M22 12A10 10 0 0 0 12 2v10z"></path>

@@ -24,8 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* ─── BURGER — mobile menu ─── */
-  const burger      = document.getElementById('burger');
-  const mobileMenu  = document.getElementById('mobile-menu');
+  const burger = document.getElementById('burger');
+  const mobileMenu = document.getElementById('mobile-menu');
   const burgerLines = burger ? burger.querySelectorAll('.burger-line') : [];
   let menuOpen = false;
   let lastFocusedElement = null;
@@ -43,9 +43,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Animate burger → X
     if (burgerLines.length === 3) {
       burgerLines[0].style.transform = 'translateY(6.5px) rotate(45deg)';
-      burgerLines[1].style.opacity   = '0';
+      burgerLines[1].style.opacity = '0';
       burgerLines[2].style.transform = 'translateY(-6.5px) rotate(-45deg)';
-      burgerLines[2].style.width     = '24px';
+      burgerLines[2].style.width = '24px';
     }
 
     // ✨ Focus trap — gérer la navigation clavier
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
     };
-    
+
     mobileMenu.addEventListener('keydown', trapFocus);
     mobileMenu._trapFocusHandler = trapFocus; // Sauvegarder pour cleanup
   };
@@ -86,9 +86,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Reset burger
     if (burgerLines.length === 3) {
       burgerLines[0].style.transform = '';
-      burgerLines[1].style.opacity   = '1';
+      burgerLines[1].style.opacity = '1';
       burgerLines[2].style.transform = '';
-      burgerLines[2].style.width     = '16px';
+      burgerLines[2].style.width = '16px';
     }
 
     // Nettoyer le focus trap
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (cursor && window.matchMedia('(pointer: fine)').matches) {
     document.addEventListener('mousemove', (e) => {
       cursor.style.left = e.clientX + 'px';
-      cursor.style.top  = e.clientY + 'px';
+      cursor.style.top = e.clientY + 'px';
     }, { passive: true });
 
     // Hover effect sur éléments interactifs
@@ -230,70 +230,68 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ═══════════════════════════════════════════════════════
    HERO CAROUSEL — Auto-play crossfade + dots
-   À AJOUTER à la fin de main.js (dans le DOMContentLoaded)
 ════════════════════════════════════════════════════════ */
 
-(function initHeroCarousel() {
-  const slides = document.querySelectorAll('.hero-slide');
-  const dots   = document.querySelectorAll('.hero-dot');
-  const hero   = document.getElementById('hero');
+  (function initHeroCarousel() {
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.hero-dot');
+    const hero = document.getElementById('hero');
 
-  if (!slides.length || !dots.length) return;
+    if (!slides.length || !dots.length) return;
 
-  let current     = 0;
-  let timer       = null;
-  const INTERVAL  = 4800; // ms entre chaque slide
+    let current = 0;
+    let timer = null;
+    const INTERVAL = 10000;
 
-  function goTo(idx) {
-    slides[current].classList.remove('active');
-    dots[current].classList.remove('active');
-    dots[current].setAttribute('aria-selected', 'false');
+    function goTo(idx) {
+      slides[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      dots[current].setAttribute('aria-selected', 'false');
 
-    current = (idx + slides.length) % slides.length;
+      current = (idx + slides.length) % slides.length;
 
-    slides[current].classList.add('active');
-    dots[current].classList.add('active');
-    dots[current].setAttribute('aria-selected', 'true');
-  }
+      slides[current].classList.add('active');
+      dots[current].classList.add('active');
+      dots[current].setAttribute('aria-selected', 'true');
+    }
 
-  function next() { goTo(current + 1); }
+    function next() { goTo(current + 1); }
 
-  function start() { timer = setInterval(next, INTERVAL); }
-  function stop()  { clearInterval(timer); }
+    function start() { timer = setInterval(next, INTERVAL); }
+    function stop() { clearInterval(timer); }
 
-  /* Pause au survol */
-  if (hero) {
-    hero.addEventListener('mouseenter', stop);
-    hero.addEventListener('mouseleave', start);
-  }
+    /* Pause au survol */
+    if (hero) {
+      hero.addEventListener('mouseenter', stop);
+      hero.addEventListener('mouseleave', start);
+    }
 
-  /* Clic sur les dots */
-  dots.forEach((dot, i) => {
-    dot.addEventListener('click', () => {
-      stop();
-      goTo(i);
-      start();
-    });
-  });
-
-  /* Swipe tactile (mobile) */
-  let touchStartX = 0;
-  if (hero) {
-    hero.addEventListener('touchstart', (e) => {
-      touchStartX = e.changedTouches[0].clientX;
-    }, { passive: true });
-
-    hero.addEventListener('touchend', (e) => {
-      const dx = e.changedTouches[0].clientX - touchStartX;
-      if (Math.abs(dx) > 50) {
+    /* Clic sur les dots */
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
         stop();
-        goTo(dx < 0 ? current + 1 : current - 1);
+        goTo(i);
         start();
-      }
-    }, { passive: true });
-  }
+      });
+    });
 
-  start();
-})();
+    /* Swipe tactile (mobile) */
+    let touchStartX = 0;
+    if (hero) {
+      hero.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].clientX;
+      }, { passive: true });
+
+      hero.addEventListener('touchend', (e) => {
+        const dx = e.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(dx) > 50) {
+          stop();
+          goTo(dx < 0 ? current + 1 : current - 1);
+          start();
+        }
+      }, { passive: true });
+    }
+
+    start();
+  })();
 });
-
