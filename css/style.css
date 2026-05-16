@@ -179,6 +179,37 @@ body::after {
 /* ── GSAP will-change hints ── */
 .gsap-reveal { will-change: transform, opacity; }
 
+/* ── Portfolio — carousel multi-lignes ── */
+.portfolio-carousel {
+  grid-auto-flow: column;
+  grid-auto-columns: clamp(220px, 28vw, 360px);
+  grid-template-rows: repeat(2, auto);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x proximity;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+}
+
+.portfolio-carousel.is-autoplaying {
+  scroll-snap-type: none;
+}
+
+.portfolio-carousel::-webkit-scrollbar {
+  height: 0;
+}
+
+.portfolio-carousel > .portfolio-item {
+  scroll-snap-align: start;
+}
+
+@media (min-width: 1024px) {
+  .portfolio-carousel {
+    grid-template-rows: repeat(3, auto);
+  }
+}
+
 /* ── Glow effect pour les compteurs ── */
 @keyframes statGlow {
   0% { text-shadow: 0 0 0px rgba(194, 24, 91, 0); }
@@ -291,3 +322,146 @@ button[type="submit"]:active {
   }
 }
 .gsap-reveal { will-change: transform, opacity; }
+
+
+/* ═══════════════════════════════════════════════════════
+   HERO — Carousel + Filigrane + Particles + CTA réservation
+   À AJOUTER à la fin de style.css
+════════════════════════════════════════════════════════ */
+
+/* ── Carousel slides (crossfade + Ken Burns) ── */
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center top;
+  opacity: 0;
+  transform: scale(1.06);
+  transition: opacity 1.4s cubic-bezier(.4, 0, .2, 1),
+              transform 7s ease;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ── Filigrane ── */
+.hero-filigrane {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(5rem, 22vw, 18rem);
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  color: rgba(255, 255, 255, 0.045);
+  pointer-events: none;
+  z-index: 2;
+  user-select: none;
+  white-space: nowrap;
+  animation: filigraneBreath 8s ease-in-out infinite;
+}
+
+@keyframes filigraneBreath {
+  0%, 100% { opacity: 0.045; letter-spacing: 0.35em; }
+  50%       { opacity: 0.065; letter-spacing: 0.38em; }
+}
+
+/* ── Particules / orbs flottants ── */
+.hero-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  animation: particleDrift ease-in-out infinite alternate;
+}
+
+.p1 {
+  width: 450px; height: 450px;
+  background: radial-gradient(circle, rgba(194, 24, 91, 0.10), transparent 70%);
+  top: -120px; left: -80px;
+  animation-duration: 14s;
+  animation-delay: 0s;
+}
+.p2 {
+  width: 320px; height: 320px;
+  background: radial-gradient(circle, rgba(249, 168, 37, 0.08), transparent 70%);
+  bottom: -60px; right: -60px;
+  animation-duration: 18s;
+  animation-delay: -5s;
+}
+.p3 {
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(194, 24, 91, 0.06), transparent 70%);
+  top: 35%; right: 18%;
+  animation-duration: 12s;
+  animation-delay: -9s;
+}
+.p4 {
+  width: 260px; height: 260px;
+  background: radial-gradient(circle, rgba(249, 168, 37, 0.06), transparent 70%);
+  top: 15%; left: 35%;
+  animation-duration: 16s;
+  animation-delay: -2s;
+}
+
+@keyframes particleDrift {
+  0%   { transform: translate(0, 0) scale(1); }
+  33%  { transform: translate(28px, -18px) scale(1.06); }
+  66%  { transform: translate(-15px, 25px) scale(0.96); }
+  100% { transform: translate(20px, 12px) scale(1.02); }
+}
+
+/* ── Carousel dots ── */
+.hero-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.28);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: width .35s ease, border-radius .35s ease, background .35s ease;
+}
+.hero-dot.active {
+  width: 28px;
+  border-radius: 3px;
+  background: #C2185B;
+}
+.hero-dot:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.55);
+}
+
+/* ── CTA Réservation — bordure gold animée ── */
+.btn-reserve {
+  position: relative;
+  border: 1.5px solid rgba(249, 168, 37, 0.45);
+  color: #F9A825;
+  background: transparent;
+  overflow: hidden;
+}
+.btn-reserve::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(249, 168, 37, 0.12), transparent);
+  opacity: 0;
+  transition: opacity .4s ease;
+}
+.btn-reserve:hover {
+  border-color: rgba(249, 168, 37, 0.85);
+  box-shadow: 0 0 24px rgba(249, 168, 37, 0.18);
+}
+.btn-reserve:hover::before {
+  opacity: 1;
+}

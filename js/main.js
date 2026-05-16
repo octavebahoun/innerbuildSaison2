@@ -228,5 +228,72 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  /* ═══════════════════════════════════════════════════════
+   HERO CAROUSEL — Auto-play crossfade + dots
+   À AJOUTER à la fin de main.js (dans le DOMContentLoaded)
+════════════════════════════════════════════════════════ */
+
+(function initHeroCarousel() {
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots   = document.querySelectorAll('.hero-dot');
+  const hero   = document.getElementById('hero');
+
+  if (!slides.length || !dots.length) return;
+
+  let current     = 0;
+  let timer       = null;
+  const INTERVAL  = 4800; // ms entre chaque slide
+
+  function goTo(idx) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    dots[current].setAttribute('aria-selected', 'false');
+
+    current = (idx + slides.length) % slides.length;
+
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+    dots[current].setAttribute('aria-selected', 'true');
+  }
+
+  function next() { goTo(current + 1); }
+
+  function start() { timer = setInterval(next, INTERVAL); }
+  function stop()  { clearInterval(timer); }
+
+  /* Pause au survol */
+  if (hero) {
+    hero.addEventListener('mouseenter', stop);
+    hero.addEventListener('mouseleave', start);
+  }
+
+  /* Clic sur les dots */
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      stop();
+      goTo(i);
+      start();
+    });
+  });
+
+  /* Swipe tactile (mobile) */
+  let touchStartX = 0;
+  if (hero) {
+    hero.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].clientX;
+    }, { passive: true });
+
+    hero.addEventListener('touchend', (e) => {
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(dx) > 50) {
+        stop();
+        goTo(dx < 0 ? current + 1 : current - 1);
+        start();
+      }
+    }, { passive: true });
+  }
+
+  start();
+})();
 });
 

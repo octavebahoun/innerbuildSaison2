@@ -195,8 +195,8 @@
           </button>
         </div>
 
-        <!-- Grille Portfolio -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
+        <!-- Carousel Portfolio (multi-lignes responsive) -->
+        <div class="grid gap-8 portfolio-carousel" id="portfolio-grid">
           
           <!-- Item 1 -->
           <div class="portfolio-item evenements group relative aspect-[4/5] overflow-hidden rounded-3xl cursor-none-on-hover" data-category="evenements">
@@ -437,6 +437,110 @@
         });
       });
     });
+  </script>
+
+  <script>
+    (function () {
+      const init = () => {
+        const carousel = document.querySelector('#portfolio-grid');
+        if (!carousel) return;
+
+        const reduceMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+        const pxPerSecond = 26;
+        const startDelayMs = 700;
+        const resumeDelayMs = 1400;
+
+        let intervalId = null;
+        let lastTime = null;
+        let paused = reduceMotionQuery.matches;
+        let resumeTimer = null;
+
+        const canScroll = () => carousel.scrollWidth > carousel.clientWidth + 2;
+
+        const stop = () => {
+          paused = true;
+          lastTime = null;
+          carousel.classList.remove('is-autoplaying');
+          if (intervalId) {
+            clearInterval(intervalId);
+            intervalId = null;
+          }
+        };
+
+        const step = () => {
+          if (paused || reduceMotionQuery.matches) return;
+          if (!canScroll()) return;
+
+          const now = performance.now();
+          if (lastTime === null) lastTime = now;
+          const dt = (now - lastTime) / 1000;
+          lastTime = now;
+
+          carousel.scrollLeft += pxPerSecond * dt;
+
+          const endThreshold = carousel.scrollWidth - carousel.clientWidth - 1;
+          if (carousel.scrollLeft >= endThreshold) {
+            carousel.scrollLeft = 0;
+          }
+        };
+
+        const start = () => {
+          if (reduceMotionQuery.matches) return;
+          if (!canScroll()) return;
+          if (!paused && intervalId) return;
+          paused = false;
+          carousel.classList.add('is-autoplaying');
+          if (!intervalId) {
+            lastTime = null;
+            intervalId = setInterval(step, 16);
+          }
+        };
+
+        const scheduleResume = (delayMs = resumeDelayMs) => {
+          if (reduceMotionQuery.matches) return;
+          clearTimeout(resumeTimer);
+          resumeTimer = setTimeout(() => start(), delayMs);
+        };
+
+        setTimeout(() => start(), startDelayMs);
+
+        carousel.addEventListener('mouseenter', stop);
+        carousel.addEventListener('mouseleave', () => scheduleResume(250));
+        carousel.addEventListener('focusin', stop);
+        carousel.addEventListener('focusout', () => scheduleResume(250));
+
+        carousel.addEventListener('wheel', () => {
+          stop();
+          scheduleResume();
+        }, { passive: true });
+
+        carousel.addEventListener('touchstart', stop, { passive: true });
+        carousel.addEventListener('touchend', () => scheduleResume(), { passive: true });
+
+        document.addEventListener('visibilitychange', () => {
+          if (document.hidden) stop();
+          else scheduleResume(300);
+        });
+
+        window.addEventListener('resize', () => {
+          stop();
+          scheduleResume(300);
+        }, { passive: true });
+
+        if (typeof reduceMotionQuery.addEventListener === 'function') {
+          reduceMotionQuery.addEventListener('change', (e) => {
+            if (e.matches) stop();
+            else scheduleResume(300);
+          });
+        }
+      };
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
   </script>
 </body>
 </html>
