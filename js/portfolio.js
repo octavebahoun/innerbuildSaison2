@@ -21,30 +21,11 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.killTweensOf(items);
     
     // Reset positions and clear transform properties on ALL items so they flow naturally in CSS Grid first
-    gsap.set(items, { x: 0, xPercent: 0, scale: 1, opacity: 1, clearProps: "all" });
-
-    const gridEl = document.querySelector('#portfolio-grid');
-    const wrapper = document.querySelector('.portfolio-carousel-wrapper');
-    const visibleItems = items.filter(item => getComputedStyle(item).display !== 'none');
-
-    // UX : Si nous avons peu d'éléments (moins de 5), la boucle infinie semble vide.
-    // Nous passons en grille statique responsive centrée pour une esthétique éditoriale impeccable.
-    if (visibleItems.length < 5) {
-      if (gridEl) gridEl.classList.add('is-static');
-      if (wrapper) {
-        wrapper.classList.remove('cursor-grab');
-        wrapper.style.cursor = 'default';
-      }
-      return; // Fin précoce, pas de défilement infini requis
-    } else {
-      if (gridEl) gridEl.classList.remove('is-static');
-      if (wrapper) {
-        wrapper.classList.add('cursor-grab');
-        wrapper.style.cursor = '';
-      }
-    }
+    gsap.set(items, { x: 0, xPercent: 0, clearProps: "transform,x,xPercent" });
 
     if (prefersReducedMotion) return; // Ne pas activer de défilement si mouvement réduit activé
+    
+    const visibleItems = items.filter(item => getComputedStyle(item).display !== 'none');
     if (visibleItems.length < 3) return;
 
     loop = horizontalLoop(visibleItems, {
@@ -159,7 +140,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (wrapper) {
     wrapper.addEventListener('mousedown', (e) => {
       if (prefersReducedMotion) return;
-      if (grid && grid.classList.contains('is-static')) return; // Disable drag on static layout
       isDragging = true;
       wrapper.classList.remove('cursor-grab');
       wrapper.classList.add('cursor-grabbing');
@@ -217,7 +197,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Événements tactiles (mobile)
     wrapper.addEventListener('touchstart', (e) => {
       if (prefersReducedMotion) return;
-      if (grid && grid.classList.contains('is-static')) return; // Disable drag on static layout
       isDragging = true;
       startX = e.touches[0].clientX;
       lastX = e.touches[0].clientX;

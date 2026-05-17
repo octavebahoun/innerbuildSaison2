@@ -13,11 +13,13 @@
 
 /* ── Typography & Global Scale Base ── */
 html {
-  font-size: 108%; /* Increases global root scale (1rem = 17.28px instead of 16px) */
+  font-size: 108%;
+  /* Increases global root scale (1rem = 17.28px instead of 16px) */
 }
 
 body {
-  font-size: 1.025rem; /* Sleek global boost for normal copy text */
+  font-size: 1.025rem;
+  /* Sleek global boost for normal copy text */
   line-height: 1.62;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -247,7 +249,8 @@ body {
 
 /* ── GSAP will-change hints ── */
 .gsap-reveal {
-  will-change: opacity; /* Avoid will-change: transform on stationary text to keep font rendering ultra-sharp */
+  will-change: opacity;
+  /* Avoid will-change: transform on stationary text to keep font rendering ultra-sharp */
 }
 
 /* ── Filter Button Active Styles ── */
@@ -728,6 +731,7 @@ button[type="submit"]:active {
 
 /* ── Accessibilité : Mouvements réduits (prefers-reduced-motion) ── */
 @media (prefers-reduced-motion: reduce) {
+
   .particle,
   .hero-slide,
   .scroll-bounce,
@@ -738,10 +742,12 @@ button[type="submit"]:active {
     transform: none !important;
     transition: none !important;
   }
+
   .hero-slide.active {
     opacity: 1 !important;
     transform: none !important;
   }
+
   .r-bloom {
     animation: none !important;
     opacity: 1 !important;
@@ -780,7 +786,8 @@ footer a:not(.w-8):hover {
 }
 
 /* Paragraph Inline Copy Links (Editorial Style) */
-p a, .font-body a:not([class*="btn"]):not([class*="nav"]):not(.lightbox-close):not(.lightbox-prev):not(.lightbox-next) {
+p a,
+.font-body a:not([class*="btn"]):not([class*="nav"]):not(.lightbox-close):not(.lightbox-prev):not(.lightbox-next) {
   color: #C2185B;
   font-weight: 600;
   text-decoration: underline;
@@ -789,7 +796,8 @@ p a, .font-body a:not([class*="btn"]):not([class*="nav"]):not(.lightbox-close):n
   transition: color 0.3s ease, text-decoration-color 0.3s ease;
 }
 
-p a:hover, .font-body a:not([class*="btn"]):not([class*="nav"]):not(.lightbox-close):not(.lightbox-prev):not(.lightbox-next):hover {
+p a:hover,
+.font-body a:not([class*="btn"]):not([class*="nav"]):not(.lightbox-close):not(.lightbox-prev):not(.lightbox-next):hover {
   color: #F9A825;
   text-decoration-color: rgba(249, 168, 37, 0.8);
 }
