@@ -78,7 +78,7 @@
       <a href="index.html"
         class="font-display text-2xl font-bold tracking-wide text-snow hover:opacity-90 transition-opacity"
         aria-label="Synnova TOCLOE — Retour à l'accueil">
-        Syn<span class="text-rose">nova</span>
+        Syn<span class="logo-nova">nova</span>
       </a>
 
       <ul class="hidden md:flex items-center gap-8 list-none m-0 p-0" role="list">
@@ -164,6 +164,18 @@
       </div>
     </div>
   </header>
+
+  <!-- Bullet Navigation Latérale (Univers) -->
+  <ul class="univers-nav hidden md:flex" role="navigation" aria-label="Univers Navigation">
+    <li><button class="univers-bullet active" data-target="hero-univers" aria-label="Introduction"
+        title="Introduction"></button></li>
+    <li><button class="univers-bullet" data-target="animation" aria-label="Animation" title="Animation"></button></li>
+    <li><button class="univers-bullet" data-target="communication" aria-label="Communication"
+        title="Communication"></button></li>
+    <li><button class="univers-bullet" data-target="cinema" aria-label="Cinéma" title="Cinéma"></button></li>
+    <li><button class="univers-bullet" data-target="entrepreneuriat" aria-label="Entrepreneuriat"
+        title="Entrepreneuriat"></button></li>
+  </ul>
 
 
   <!-- MAIN CONTENT -->
@@ -378,9 +390,9 @@
               Soutenir cette initiative
             </a>
           </div>
-          <div class="w-full lg:w-1/2">
-            <img src="assets/images/synnova-garden-flower.webp" alt="Entrepreneuriat Social"
-              class="w-full h-[400px] object-cover rounded-2xl" loading="lazy" decoding="async" width="800"
+          <div class="w-full lg:w-1/2 ">
+            <img src="assets/images/synnova-outdoor-friends.webp" alt="Entrepreneuriat Social"
+              class="w-full h-[500px] object-cover rounded-2xl" loading="lazy" decoding="async" width="800"
               height="600" />
           </div>
         </div>
@@ -457,12 +469,20 @@
     .border-green-eco {
       transition: color 0.8s ease, background-color 0.8s ease, border-color 0.8s ease;
     }
+
+    .logo-nova {
+      color: var(--page-accent) !important;
+      transition: color 0.8s ease;
+    }
   </style>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       if (typeof gsap === 'undefined') return;
       gsap.registerPlugin(ScrollTrigger);
+
+      // Accessibilité : désactiver les transitions de couleurs si prefers-reduced-motion est activé
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
       const sections = document.querySelectorAll('section[id]');
       const body = document.body;
@@ -477,62 +497,116 @@
         'entrepreneuriat': { bg: '#010D02', accent: '#2E7D32' } // Vert profond
       };
 
-      sections.forEach((section) => {
-        const id = section.id;
-        const config = colors[id];
+      // Bullet navigation interactive
+      const bullets = document.querySelectorAll('.univers-bullet');
+      bullets.forEach(bullet => {
+        bullet.addEventListener('click', () => {
+          const targetId = bullet.getAttribute('data-target');
+          const targetSection = document.getElementById(targetId);
+          if (targetSection) {
+            // 💡 Astuce UX premium : Désactiver temporairement le snap-scroll natif pour éviter
+            // que le navigateur n'annule ou n'interrompe l'animation de défilement vers la cible.
+            document.documentElement.classList.remove('snap-y', 'snap-mandatory');
 
-        if (config) {
-          ScrollTrigger.create({
-            trigger: section,
-            start: 'top 50%',
-            end: 'bottom 50%',
-            onEnter: () => updateColors(config),
-            onEnterBack: () => updateColors(config)
-          });
-        }
+            targetSection.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth' });
 
-        // Animation du contenu (existante)
-        const content = section.querySelector('.max-w-6xl, .max-w-3xl');
-        if (content) {
-          gsap.fromTo(content,
-            { opacity: 0, y: 60, scale: 0.98 },
-            {
-              opacity: 1, y: 0, scale: 1, duration: 1.4, ease: 'power4.out',
-              scrollTrigger: {
-                trigger: section,
-                start: id === 'hero-univers' ? 'top 100%' : 'top 60%',
-                toggleActions: 'play none none none'
-              }
-            }
-          );
-        }
-
-        // Animation du glow en fond (existante)
-        const glow = section.querySelector('.absolute.blur-[150px], .absolute.blur-[120px]');
-        if (glow) {
-          gsap.fromTo(glow,
-            { opacity: 0, scale: 0.8 },
-            {
-              opacity: 1, scale: 1, duration: 2, ease: 'power2.out',
-              scrollTrigger: {
-                trigger: section,
-                start: 'top 50%',
-                toggleActions: 'play reverse play reverse'
-              }
-            }
-          );
-        }
+            // Réactiver le snap-scroll une fois la transition douce terminée
+            setTimeout(() => {
+              document.documentElement.classList.add('snap-y', 'snap-mandatory');
+            }, 850);
+          }
+        });
       });
 
-      function updateColors(config) {
-        gsap.to(':root', {
-          '--page-bg': config.bg,
-          '--page-accent': config.accent,
-          duration: 0.8,
-          ease: 'power2.out'
+      function updateActiveBullet(activeId) {
+        bullets.forEach(bullet => {
+          if (bullet.getAttribute('data-target') === activeId) {
+            bullet.classList.add('active');
+          } else {
+            bullet.classList.remove('active');
+          }
         });
-
       }
+
+      function updateColors(config) {
+        if (prefersReducedMotion) {
+          document.documentElement.style.setProperty('--page-bg', config.bg);
+          document.documentElement.style.setProperty('--page-accent', config.accent);
+        } else {
+          gsap.to(':root', {
+            '--page-bg': config.bg,
+            '--page-accent': config.accent,
+            duration: 0.8,
+            ease: 'power2.out'
+          });
+        }
+      }
+
+      // 🎯 IntersectionObserver (100% fiable avec le Snap Scroll et le tactile)
+      // Décide quel point est actif et met à jour la couleur d'accentuation en temps réel.
+      const observerOptions = {
+        root: null,
+        rootMargin: '-30% 0px -30% 0px', // Analyse la partie centrale (30% du haut et du bas ignorés)
+        threshold: 0.2 // Déclenche dès que 20% d'une section est dans cette zone centrale
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            const config = colors[id];
+            if (config) {
+              updateColors(config);
+              updateActiveBullet(id);
+            }
+          }
+        });
+      }, observerOptions);
+
+      sections.forEach(section => observer.observe(section));
+
+      // Animations du contenu et du glow au scroll (existantes)
+      sections.forEach((section) => {
+        const id = section.id;
+
+        const content = section.querySelector('.max-w-6xl, .max-w-3xl');
+        if (content) {
+          if (prefersReducedMotion) {
+            gsap.set(content, { opacity: 1, y: 0, scale: 1 });
+          } else {
+            gsap.fromTo(content,
+              { opacity: 0, y: 60, scale: 0.98 },
+              {
+                opacity: 1, y: 0, scale: 1, duration: 1.4, ease: 'power4.out',
+                scrollTrigger: {
+                  trigger: section,
+                  start: id === 'hero-univers' ? 'top 100%' : 'top 60%',
+                  toggleActions: 'play none none none'
+                }
+              }
+            );
+          }
+        }
+
+        const glow = section.querySelector('.absolute.blur-[150px], .absolute.blur-[120px]');
+        if (glow) {
+          if (prefersReducedMotion) {
+            gsap.set(glow, { opacity: 1, scale: 1 });
+          } else {
+            gsap.fromTo(glow,
+              { opacity: 0, scale: 0.8 },
+              {
+                opacity: 1, scale: 1, duration: 2, ease: 'power2.out',
+                scrollTrigger: {
+                  trigger: section,
+                  start: 'top 50%',
+                  toggleActions: 'play reverse play reverse'
+                }
+              }
+            );
+          }
+        }
+      });
     });
   </script>
 

@@ -37,6 +37,9 @@
   <!-- ═══ Tailwind CSS ═══ -->
   <link rel="stylesheet" href="css/output.css" />
 
+  <!-- Flatpickr (Datepicker Premium) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+
   <!-- ═══ Favicon ═══ -->
   <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
 </head>
@@ -249,6 +252,43 @@
                 </div>
               </div>
 
+              <!-- Champs Additionnels pour la Réservation (Divulgation Progressive) -->
+              <div id="booking-fields" class="hidden space-y-8 animate-formSlideIn">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  <div class="form-group mb-0 animate-none!">
+                    <label for="date_event" class="block text-[0.65rem] font-bold tracking-[.2em] uppercase text-snow/70 mb-3">Date de l'événement</label>
+                    <input type="text" id="date_event" name="date_event"
+                           class="w-full bg-dark/50 border border-snow/10 rounded-xl px-4 py-3 text-snow text-sm focus:outline-none focus:border-rose focus:ring-1 focus:ring-rose transition-all placeholder:text-snow/20"
+                           placeholder="Sélectionnez une date" />
+                  </div>
+                  <div class="form-group mb-0 animate-none!">
+                    <label for="lieu_event" class="block text-[0.65rem] font-bold tracking-[.2em] uppercase text-snow/70 mb-3">Lieu de l'événement</label>
+                    <input type="text" id="lieu_event" name="lieu_event"
+                           class="w-full bg-dark/50 border border-snow/10 rounded-xl px-4 py-3 text-snow text-sm focus:outline-none focus:border-rose focus:ring-1 focus:ring-rose transition-all placeholder:text-snow/20"
+                           placeholder="Ex: Grand-Popo, Cotonou..." />
+                  </div>
+                  <div class="form-group mb-0 animate-none!">
+                    <label for="type_event" class="block text-[0.65rem] font-bold tracking-[.2em] uppercase text-snow/70 mb-3">Format d'événement</label>
+                    <div class="relative">
+                      <select id="type_event" name="type_event"
+                              class="w-full bg-dark/50 border border-snow/10 rounded-xl px-4 py-3 pr-10 text-snow text-sm focus:outline-none focus:border-rose focus:ring-1 focus:ring-rose transition-all appearance-none cursor-pointer">
+                        <option value="" disabled selected class="bg-dark text-snow/50">Choisissez le format</option>
+                        <option value="mariage" class="bg-dark text-snow">Mariage / Soirée privée</option>
+                        <option value="gala" class="bg-dark text-snow">Gala / Dîner corporatif</option>
+                        <option value="conference" class="bg-dark text-snow">Conférence / Panel</option>
+                        <option value="festival" class="bg-dark text-snow">Festival / Concert live</option>
+                        <option value="autre" class="bg-dark text-snow">Autre format</option>
+                      </select>
+                      <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none text-snow/50">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               <div class="form-group">
                 <label for="message" class="block text-[0.65rem] font-bold tracking-[.2em] uppercase text-snow/70 mb-3">Message</label>
                 <textarea id="message" name="message" rows="5" required
@@ -309,6 +349,8 @@
   
   <script src="js/dist/main.js" defer></script>
   <script src="js/dist/animations.js" defer></script>
+  <!-- Flatpickr (Datepicker Premium) -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr" defer></script>
   <script src="js/dist/contact.js" defer></script>
 </body>
 </html>

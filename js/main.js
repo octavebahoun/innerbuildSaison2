@@ -123,9 +123,16 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ─── CUSTOM CURSOR (desktop only) ─── */
   const cursor = document.getElementById('cursor');
   if (cursor && window.matchMedia('(pointer: fine)').matches) {
+    // Position initiale centrée avec GSAP pour éviter le décalage
+    gsap.set(cursor, { xPercent: -50, yPercent: -50 });
+
+    // Utilisation de gsap.quickTo pour une performance maximale et une inertie premium
+    const xTo = gsap.quickTo(cursor, "x", { duration: 0.22, ease: "power3.out" });
+    const yTo = gsap.quickTo(cursor, "y", { duration: 0.22, ease: "power3.out" });
+
     document.addEventListener('mousemove', (e) => {
-      cursor.style.left = e.clientX + 'px';
-      cursor.style.top = e.clientY + 'px';
+      xTo(e.clientX);
+      yTo(e.clientY);
     }, { passive: true });
 
     // Hover effect sur éléments interactifs

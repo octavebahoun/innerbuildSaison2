@@ -474,10 +474,12 @@
       const items = gsap.utils.toArray('.portfolio-item');
       const filterBtns = document.querySelectorAll('.filter-btn');
       let loop;
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
       // 1. Fonction Marquee Infini (Adaptée Multi-Row)
       function setupMarquee() {
         if (loop) loop.kill();
+        if (prefersReducedMotion) return; // Ne pas activer de défilement si mouvement réduit activé
         
         const visibleItems = items.filter(item => getComputedStyle(item).display !== 'none');
         if (visibleItems.length < 3) return;
@@ -577,23 +579,142 @@
         });
       });
 
-      // 3. Interactions Hover
-      grid.addEventListener('mouseenter', () => loop && loop.pause());
-      grid.addEventListener('mouseleave', () => loop && loop.play());
-
-      // Parallaxe de survol
-      items.forEach(item => {
-        const img = item.querySelector('.portfolio-img');
-        item.addEventListener('mousemove', (e) => {
-          const rect = item.getBoundingClientRect();
-          const xPos = (e.clientX - rect.left) / rect.width - 0.5;
-          const yPos = (e.clientY - rect.top) / rect.height - 0.5;
-          gsap.to(img, { x: xPos * 20, y: yPos * 20, duration: 0.6, ease: 'power2.out' });
-        });
-        item.addEventListener('mouseleave', () => {
-          gsap.to(img, { x: 0, y: 0, duration: 1, ease: 'power2.out' });
-        });
+      // 3. Interactions Hover (Désactivées si drag actif)
+      grid.addEventListener('mouseenter', () => {
+        if (!isDragging && loop) loop.pause();
       });
+      grid.addEventListener('mouseleave', () => {
+        if (!isDragging && loop) loop.play();
+      });
+
+      // 4. Glissement / Dragging tactile et souris (Résolution de la friction UX)
+      const wrapper = document.querySelector('.portfolio-carousel-wrapper');
+      let isDragging = false;
+      let startX, currentX;
+      let dragVelocity = 0;
+      let lastTime, lastX;
+
+      wrapper.addEventListener('mousedown', (e) => {
+        if (prefersReducedMotion) return;
+        isDragging = true;
+        wrapper.classList.remove('cursor-grab');
+        wrapper.classList.add('cursor-grabbing');
+        startX = e.clientX;
+        lastX = e.clientX;
+        lastTime = performance.now();
+        dragVelocity = 0;
+        if (loop) loop.pause();
+      });
+
+      window.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        const dx = e.clientX - lastX;
+        lastX = e.clientX;
+        const now = performance.now();
+        const dt = now - lastTime;
+        lastTime = now;
+
+        if (dt > 0) {
+          dragVelocity = dx / dt; // pixels par milliseconde
+        }
+
+        // Déplacer manuellement la progress de la timeline
+        if (loop) {
+          const progression = loop.totalTime() - (dx * 0.005);
+          loop.totalTime(progression);
+        }
+      });
+
+      window.addEventListener('mouseup', () => {
+        if (!isDragging) return;
+        isDragging = false;
+        wrapper.classList.remove('cursor-grabbing');
+        wrapper.classList.add('cursor-grab');
+
+        // Inertie de décélération douce après le lancer
+        if (Math.abs(dragVelocity) > 0.1 && loop) {
+          const inertia = { speed: dragVelocity * 8 };
+          gsap.to(inertia, {
+            speed: 0,
+            duration: 0.8,
+            ease: 'power3.out',
+            onUpdate: () => {
+              loop.totalTime(loop.totalTime() - inertia.speed * 0.015);
+            },
+            onComplete: () => {
+              loop.play();
+            }
+          });
+        } else {
+          if (loop) loop.play();
+        }
+      });
+
+      // Événements tactiles (mobile)
+      wrapper.addEventListener('touchstart', (e) => {
+        if (prefersReducedMotion) return;
+        isDragging = true;
+        startX = e.touches[0].clientX;
+        lastX = e.touches[0].clientX;
+        lastTime = performance.now();
+        dragVelocity = 0;
+        if (loop) loop.pause();
+      }, { passive: true });
+
+      wrapper.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        const dx = e.touches[0].clientX - lastX;
+        lastX = e.touches[0].clientX;
+        const now = performance.now();
+        const dt = now - lastTime;
+        lastTime = now;
+
+        if (dt > 0) {
+          dragVelocity = dx / dt;
+        }
+
+        if (loop) {
+          const progression = loop.totalTime() - (dx * 0.005);
+          loop.totalTime(progression);
+        }
+      }, { passive: true });
+
+      wrapper.addEventListener('touchend', () => {
+        if (!isDragging) return;
+        isDragging = false;
+        if (Math.abs(dragVelocity) > 0.1 && loop) {
+          const inertia = { speed: dragVelocity * 8 };
+          gsap.to(inertia, {
+            speed: 0,
+            duration: 0.8,
+            ease: 'power3.out',
+            onUpdate: () => {
+              loop.totalTime(loop.totalTime() - inertia.speed * 0.015);
+            },
+            onComplete: () => {
+              loop.play();
+            }
+          });
+        } else {
+          if (loop) loop.play();
+        }
+      });
+
+      // Parallaxe de survol (désactivé si mouvement réduit)
+      if (!prefersReducedMotion) {
+        items.forEach(item => {
+          const img = item.querySelector('.portfolio-img');
+          item.addEventListener('mousemove', (e) => {
+            const rect = item.getBoundingClientRect();
+            const xPos = (e.clientX - rect.left) / rect.width - 0.5;
+            const yPos = (e.clientY - rect.top) / rect.height - 0.5;
+            gsap.to(img, { x: xPos * 20, y: yPos * 20, duration: 0.6, ease: 'power2.out' });
+          });
+          item.addEventListener('mouseleave', () => {
+            gsap.to(img, { x: 0, y: 0, duration: 1, ease: 'power2.out' });
+          });
+        });
+      }
 
       // Init au chargement
       window.addEventListener('load', setupMarquee);

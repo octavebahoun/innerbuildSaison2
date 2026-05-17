@@ -10,6 +10,18 @@ window.addEventListener('load', () => {
   /* Sécurité : vérifier que GSAP est chargé */
   if (typeof gsap === 'undefined') return;
 
+  // ♿ Accessibilité : désactiver les animations si prefers-reduced-motion est activé
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReducedMotion) {
+    gsap.set('.gsap-reveal', { opacity: 1, y: 0, x: 0, scale: 1, clearProps: "all" });
+    const counters = document.querySelectorAll('.counter[data-target]');
+    counters.forEach(counter => {
+      counter.textContent = counter.getAttribute('data-target');
+      counter.classList.add('stat-glow');
+    });
+    return;
+  }
+
   /* ─── Enregistrement plugin ─── */
   if (typeof ScrollTrigger !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger);

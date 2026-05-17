@@ -484,6 +484,9 @@ button[type="submit"]:active {
   border-radius: 50%;
   filter: blur(70px);
   animation: particleDrift ease-in-out infinite alternate;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
 }
 
 .p1 {
@@ -591,4 +594,82 @@ button[type="submit"]:active {
 
 .btn-reserve:hover::before {
   opacity: 1;
+}
+
+/* ── Univers side bullet navigation ── */
+.univers-nav {
+  position: fixed;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.univers-bullet {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid rgba(250, 250, 250, 0.4);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+}
+
+.univers-bullet:hover {
+  transform: scale(1.3);
+  border-color: var(--page-accent, #C2185B);
+}
+
+.univers-bullet.active {
+  transform: scale(1.4);
+  background: var(--page-accent, #C2185B);
+  border-color: var(--page-accent, #C2185B);
+  box-shadow: 0 0 10px var(--page-accent, #C2185B);
+}
+
+/* ── Datepicker styles (Flatpickr override) ── */
+.flatpickr-calendar {
+  background: #0D0D0D !important;
+  border: 1px solid rgba(250, 250, 250, 0.1) !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6) !important;
+  font-family: 'Outfit', sans-serif !important;
+}
+
+.flatpickr-day.selected {
+  background: #C2185B !important;
+  border-color: #C2185B !important;
+}
+
+.flatpickr-day:hover {
+  background: rgba(194, 24, 91, 0.15) !important;
+}
+
+/* ── Accessibilité : Mouvements réduits (prefers-reduced-motion) ── */
+@media (prefers-reduced-motion: reduce) {
+  .particle,
+  .hero-slide,
+  .scroll-bounce,
+  .hero-filigrane,
+  .btn-shimmer::before,
+  .galerie-item img {
+    animation: none !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .hero-slide.active {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .r-bloom {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
