@@ -11,14 +11,7 @@
     --color-red-500: oklch(63.7% 0.237 25.331);
     --color-green-500: oklch(72.3% 0.219 149.579);
     --spacing: 0.25rem;
-    --breakpoint-sm: 40rem;
-    --breakpoint-md: 48rem;
-    --breakpoint-lg: 64rem;
-    --breakpoint-xl: 80rem;
-    --breakpoint-2xl: 96rem;
-    --container-xs: 20rem;
     --container-sm: 24rem;
-    --container-md: 28rem;
     --container-lg: 32rem;
     --container-xl: 36rem;
     --container-2xl: 42rem;
@@ -55,7 +48,6 @@
     --tracking-widest: 0.1em;
     --leading-tight: 1.25;
     --leading-snug: 1.375;
-    --leading-normal: 1.5;
     --leading-relaxed: 1.625;
     --radius-lg: 0.5rem;
     --radius-xl: 0.75rem;
@@ -226,17 +218,6 @@
   }
 }
 @layer utilities {
-  .\@container\/main {
-    container-type: inline-size;
-    container-name: main;
-  }
-  .\@container\/sidebar {
-    container-type: inline-size;
-    container-name: sidebar;
-  }
-  .\@container {
-    container-type: inline-size;
-  }
   .pointer-events-auto {
     pointer-events: auto;
   }
@@ -298,9 +279,6 @@
   }
   .top-40 {
     top: calc(var(--spacing) * 40);
-  }
-  .top-full {
-    top: 100%;
   }
   .-right-10 {
     right: calc(var(--spacing) * -10);
@@ -467,26 +445,14 @@
   .hidden {
     display: none;
   }
-  .inline {
-    display: inline;
-  }
   .inline-block {
     display: inline-block;
   }
   .inline-flex {
     display: inline-flex;
   }
-  .table {
-    display: table;
-  }
   .aspect-\[4\/5\] {
     aspect-ratio: 4/5;
-  }
-  .aspect-square {
-    aspect-ratio: 1 / 1;
-  }
-  .aspect-video {
-    aspect-ratio: var(--aspect-video);
   }
   .h-0\.5 {
     height: calc(var(--spacing) * 0.5);
@@ -680,17 +646,11 @@
   .max-w-xl {
     max-width: var(--container-xl);
   }
-  .min-w-\[600px\] {
-    min-width: 600px;
-  }
   .flex-1 {
     flex: 1;
   }
   .shrink-0 {
     flex-shrink: 0;
-  }
-  .flex-grow {
-    flex-grow: 1;
   }
   .origin-bottom-right {
     transform-origin: 100% 100%;
@@ -945,9 +905,6 @@
   }
   .overflow-hidden {
     overflow: hidden;
-  }
-  .overflow-x-auto {
-    overflow-x: auto;
   }
   .overflow-x-hidden {
     overflow-x: hidden;
@@ -1454,10 +1411,6 @@
   .text-base {
     font-size: var(--text-base);
     line-height: var(--tw-leading, var(--text-base--line-height));
-  }
-  .text-lg {
-    font-size: var(--text-lg);
-    line-height: var(--tw-leading, var(--text-lg--line-height));
   }
   .text-sm {
     font-size: var(--text-sm);
@@ -2577,11 +2530,6 @@
       display: inline-flex;
     }
   }
-  .md\:table {
-    @media (width >= 48rem) {
-      display: table;
-    }
-  }
   .md\:h-52 {
     @media (width >= 48rem) {
       height: calc(var(--spacing) * 52);
@@ -2778,11 +2726,6 @@
       font-size: 1.8rem;
     }
   }
-  .lg\:static {
-    @media (width >= 64rem) {
-      position: static;
-    }
-  }
   .lg\:col-span-5 {
     @media (width >= 64rem) {
       grid-column: span 5 / span 5;
@@ -2791,16 +2734,6 @@
   .lg\:col-span-7 {
     @media (width >= 64rem) {
       grid-column: span 7 / span 7;
-    }
-  }
-  .lg\:flex {
-    @media (width >= 64rem) {
-      display: flex;
-    }
-  }
-  .lg\:hidden {
-    @media (width >= 64rem) {
-      display: none;
     }
   }
   .lg\:w-1\/2 {
@@ -2816,11 +2749,6 @@
   .lg\:w-7\/12 {
     @media (width >= 64rem) {
       width: calc(7 / 12 * 100%);
-    }
-  }
-  .lg\:grid-cols-3 {
-    @media (width >= 64rem) {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
   .lg\:grid-cols-4 {
@@ -2858,112 +2786,6 @@
       gap: calc(var(--spacing) * 16);
     }
   }
-  .lg\:border-0 {
-    @media (width >= 64rem) {
-      border-style: var(--tw-border-style);
-      border-width: 0px;
-    }
-  }
-  .lg\:bg-transparent {
-    @media (width >= 64rem) {
-      background-color: transparent;
-    }
-  }
-  .lg\:px-3 {
-    @media (width >= 64rem) {
-      padding-inline: calc(var(--spacing) * 3);
-    }
-  }
-  .lg\:py-2 {
-    @media (width >= 64rem) {
-      padding-block: calc(var(--spacing) * 2);
-    }
-  }
-  .lg\:hover\:bg-transparent {
-    @media (width >= 64rem) {
-      &:hover {
-        @media (hover: hover) {
-          background-color: transparent;
-        }
-      }
-    }
-  }
-  .xl\:grid-cols-4 {
-    @media (width >= 80rem) {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-  }
-  .\@md\:line-clamp-3 {
-    @container (width >= 28rem) {
-      overflow: hidden;
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 3;
-    }
-  }
-  .\@md\:aspect-square {
-    @container (width >= 28rem) {
-      aspect-ratio: 1 / 1;
-    }
-  }
-  .\@md\:w-48 {
-    @container (width >= 28rem) {
-      width: calc(var(--spacing) * 48);
-    }
-  }
-  .\@md\:flex-row {
-    @container (width >= 28rem) {
-      flex-direction: row;
-    }
-  }
-  .\@md\:gap-4 {
-    @container (width >= 28rem) {
-      gap: calc(var(--spacing) * 4);
-    }
-  }
-  .\@md\:p-0 {
-    @container (width >= 28rem) {
-      padding: calc(var(--spacing) * 0);
-    }
-  }
-  .\@md\:text-xl {
-    @container (width >= 28rem) {
-      font-size: var(--text-xl);
-      line-height: var(--tw-leading, var(--text-xl--line-height));
-    }
-  }
-  .\@lg\/main\:grid {
-    @container main (width >= 32rem) {
-      display: grid;
-    }
-  }
-  .\@lg\:w-64 {
-    @container (width >= 32rem) {
-      width: calc(var(--spacing) * 64);
-    }
-  }
-  .\@lg\/main\:grid-cols-2 {
-    @container main (width >= 32rem) {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
-  .\@lg\/sidebar\:flex-row {
-    @container sidebar (width >= 32rem) {
-      flex-direction: row;
-    }
-  }
-  .\@lg\:text-2xl {
-    @container (width >= 32rem) {
-      font-size: var(--text-2xl);
-      line-height: var(--tw-leading, var(--text-2xl--line-height));
-    }
-  }
-  .\@lg\:text-lg {
-    @container (width >= 32rem) {
-      font-size: var(--text-lg);
-      line-height: var(--tw-leading, var(--text-lg--line-height));
-    }
-  }
 }
 :root {
   --rose: #C2185B;
@@ -2996,7 +2818,8 @@ body {
   inset: 0;
   background-color: #0D0D0D;
   z-index: 10000;
-  display: flex;
+  display: none;
+  opacity: 0;
   align-items: center;
   justify-content: center;
   pointer-events: none;
@@ -3411,6 +3234,18 @@ button[type="submit"]:active {
   }
   100% {
     transform: translate(20px, 12px) scale(1.02);
+  }
+}
+@media (max-width: 767px), (pointer: coarse) {
+  .hero-particles {
+    position: absolute !important;
+    opacity: 0.55;
+  }
+  .particle {
+    filter: blur(42px);
+  }
+  #hero::before {
+    background: linear-gradient(to bottom, rgba(13, 13, 13, .02) 0%, rgba(13, 13, 13, .16) 35%, rgba(13, 13, 13, .58) 72%, rgba(13, 13, 13, .92) 100%);
   }
 }
 .hero-dot {
