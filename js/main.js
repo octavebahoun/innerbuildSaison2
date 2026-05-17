@@ -184,6 +184,12 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ─── PAGE TRANSITIONS & PRELOADER ─── */
   const preloader = document.getElementById('preloader');
   const overlay = document.getElementById('page-transition-overlay');
+  const hidePreloader = () => {
+    if (!preloader) return;
+    preloader.style.opacity = '0';
+    preloader.style.display = 'none';
+    sessionStorage.setItem('synnova-loaded', 'true');
+  };
 
   if (typeof gsap !== 'undefined') {
     // 1. Gestion du Preloader (Première visite sur l'accueil)
@@ -196,13 +202,10 @@ document.addEventListener('DOMContentLoaded', () => {
           duration: 1.2,
           delay: 2.5,
           ease: 'power2.inOut',
-          onComplete: () => {
-            preloader.style.display = 'none';
-            sessionStorage.setItem('synnova-loaded', 'true');
-          }
+          onComplete: hidePreloader
         });
       } else {
-        preloader.style.display = 'none';
+        hidePreloader();
       }
     }
 
@@ -232,6 +235,12 @@ document.addEventListener('DOMContentLoaded', () => {
           });
         });
       });
+    }
+  } else if (preloader) {
+    if (!sessionStorage.getItem('synnova-loaded')) {
+      window.setTimeout(hidePreloader, 1200);
+    } else {
+      hidePreloader();
     }
   }
 

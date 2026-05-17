@@ -6,3 +6,7 @@
 **/venv/
 .vercel
 .env*.local
+!js/vendor/
+!js/vendor/**
+!css/vendor/
+!css/vendor/**
