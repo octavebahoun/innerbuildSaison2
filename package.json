@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "buildcss:watch": "npx @tailwindcss/cli -i ./css/style.css -o ./css/output.css --watch",
     "buildcss": "npx @tailwindcss/cli -i ./css/style.css -o ./css/output.css",
-    "buildjs": "npx esbuild js/main.js js/animations.js js/contact.js js/univers.js js/portfolio.js --bundle --minify --outdir=js/dist",
+    "buildjs": "npx esbuild js/main.js js/animations.js js/contact.js js/univers.js js/portfolio.js js/chatbot.js --bundle --minify --outdir=js/dist",
     "build": "npm run buildcss && npm run buildjs"
   },
   "keywords": [],

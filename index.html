@@ -255,12 +255,14 @@
 
       <!-- ── Carousel images (crossfade + Ken Burns) ── -->
       <div id="hero-carousel" class="absolute inset-0 z-0" aria-hidden="true">
-        <div class="hero-slide active" style="background-image:url('assets/images/synnova-portrait-leaf-blouse.webp')">
+        <div class="hero-slide active"
+          style="background-image:url('assets/images/synnova-portrait-traditional-full.webp')">
         </div>
-        <div class="hero-slide" style="background-image:url('assets/images/synnova-portrait-traditional-full.webp')">
+        <div class="hero-slide" style="background-image:url('assets/images/synnova-portrait-traditional-full1.webp')">
         </div>
-        <div class="hero-slide" style="background-image:url('assets/images/synnova-gratitude-1.webp')"></div>
-        <div class="hero-slide" style="background-image:url('assets/images/synnova-gratitude-2.webp')"></div>
+        <div class="hero-slide" style="background-image:url('assets/images/synnova-portrait-traditional-paint.webp')">
+        </div>
+        <div class="hero-slide" style="background-image:url('assets/images/synnova-old-galerie-4.webp')"></div>
         <div class="hero-slide" style="background-image:url('assets/images/synnova-miss-photogenique.webp')"></div>
       </div>
 
@@ -371,6 +373,84 @@
             <cite class="font-signature text-rose text-2xl not-italic">— Synnova</cite>
           </footer>
         </blockquote>
+      </div>
+    </section>
+
+
+    <!-- ────────────────────────────────────
+         SECTION 2.5 — BRIEF À PROPOS
+    ──────────────────────────────────── -->
+    <section class="px-6 py-20 md:py-28 md:px-16 bg-dark relative overflow-hidden" aria-labelledby="brief-about-title">
+      <!-- Glow background decoration -->
+      <div class="absolute top-1/2 -left-32 w-80 h-80 rounded-full bg-rose/[0.03] blur-3xl pointer-events-none"
+        aria-hidden="true"></div>
+
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+
+          <!-- Column 1: Text Brief (on the left) with fade up reveal and reveal-left -->
+          <div class="lg:col-span-7 gsap-reveal reveal-left opacity-0 text-left">
+            <div class="flex items-center gap-4 mb-6">
+              <span class="block w-10 h-px bg-rose" aria-hidden="true"></span>
+              <p class="text-[0.62rem] tracking-[.22em] uppercase text-rose font-medium">À Propos de moi</p>
+            </div>
+
+            <h2 id="brief-about-title" class="font-display font-bold text-snow leading-tight mb-8"
+              style="font-size: clamp(2rem, 5vw, 3.5rem);">
+              Donner du sens, <br />
+              <em class="text-rose">inspirer le changement</em>
+            </h2>
+
+            <p class="text-xs md:text-sm text-snow/70 leading-relaxed mb-6 font-body">
+              Titulaire d'une licence professionnelle en journalisme, animatrice d'événements prestigieux au Bénin,
+              communicatrice digitale, actrice engagée et entrepreneuse sociale. Mon parcours est guidé par une passion
+              inébranlable : créer de l'impact, transmettre de l'émotion et connecter les humains.
+            </p>
+
+            <p class="text-xs md:text-sm text-snow/50 leading-relaxed mb-10 font-body">
+              Que ce soit sur scène devant des milliers de personnes (comme au Festival International des Arts du
+              Bénin), en concevant des stratégies de communication digitale percutantes ou en soutenant des initiatives
+              vertes locales à Grand-Popo, je m'investis pleinement pour donner de la résonance à vos visions.
+            </p>
+
+            <a href="a-propos.html"
+              class="btn-shimmer relative overflow-hidden inline-flex items-center gap-2.5 bg-rose text-snow text-[0.7rem] font-bold tracking-[.18em] uppercase px-8 py-4 rounded-full transition-transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-rose shadow-[0_10px_20px_-10px_rgba(194,24,91,0.5)]">
+              En connaître plus sur moi
+              <img src="assets/icons/arrow-right.svg" alt="" width="11" height="11" aria-hidden="true" />
+            </a>
+          </div>
+
+          <!-- Column 2: Image (on the right) with double offset frames -->
+          <div class="lg:col-span-5 gsap-reveal reveal-right opacity-0 flex justify-center lg:justify-end">
+            <div class="relative w-full max-w-[360px] group">
+              <!-- Layer 1: Rose/Orange background offset frame -->
+              <div
+                class="absolute inset-0 rounded-[2rem] border border-rose/30 translate-x-3.5 translate-y-3.5 rotate-[2deg] pointer-events-none transition-transform duration-700 group-hover:translate-x-5 group-hover:translate-y-5"
+                aria-hidden="true"></div>
+
+              <!-- Layer 2: Gold/Bronze background offset frame -->
+              <div
+                class="absolute inset-0 rounded-[2rem] border border-gold/30 -translate-x-3.5 -translate-y-3.5 -rotate-[2deg] pointer-events-none transition-transform duration-700 group-hover:-translate-x-5 group-hover:-translate-y-5"
+                aria-hidden="true"></div>
+
+              <!-- Layer 3: Glow effect behind -->
+              <div
+                class="absolute -inset-2 bg-gradient-to-r from-rose/15 to-gold/15 rounded-[2rem] blur-xl opacity-40 pointer-events-none"
+                aria-hidden="true"></div>
+
+              <!-- Main Image container -->
+              <div
+                class="relative overflow-hidden rounded-[2rem] border border-snow/10 bg-dark shadow-2xl z-10 aspect-[4/5]">
+                <img src="assets/images/synnova-portrait-traditional-paint.webp"
+                  alt="Portrait artistique de Synnova TOCLOE"
+                  class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-102"
+                  loading="lazy" decoding="async" width="800" height="1000" />
+                <div class="absolute inset-0 bg-gradient-to-t from-dark/70 via-transparent to-transparent opacity-60">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -620,6 +700,174 @@
     </section>
 
 
+
+
+    <!-- ────────────────────────────────────
+         SECTION 7 — FAQ (QUESTIONS FRÉQUENTES)
+    ──────────────────────────────────── -->
+    <section id="faq" class="px-6 py-20 md:py-28 md:px-16 bg-dark border-t border-snow/5 relative overflow-hidden"
+      aria-labelledby="faq-title">
+      <!-- Glow decoration -->
+      <div class="absolute top-1/2 -right-32 w-80 h-80 rounded-full bg-rose/[0.03] blur-3xl pointer-events-none"
+        aria-hidden="true"></div>
+
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
+
+          <!-- Column 1: Titles & Mini CTA -->
+          <div class="lg:col-span-5 flex flex-col justify-between gsap-reveal">
+            <div>
+              <!-- Label -->
+              <div class="flex items-center gap-4 mb-6">
+                <span class="block w-10 h-px bg-rose" aria-hidden="true"></span>
+                <p class="text-[0.62rem] tracking-[.22em] uppercase text-rose font-medium">FAQ</p>
+              </div>
+
+              <h2 id="faq-title" class="font-display font-bold text-snow leading-tight mb-6"
+                style="font-size: clamp(1.8rem, 5vw, 3.2rem);">
+                Des questions ?<br />
+                <em class="text-rose">Quelques réponses</em>
+              </h2>
+
+              <p class="text-xs text-snow/50 leading-relaxed max-w-sm mb-8 font-body">
+                Retrouvez les réponses aux interrogations les plus fréquentes concernant mon parcours, mes prestations
+                d'animation et mes différents engagements au Bénin.
+              </p>
+            </div>
+
+            <!-- Mini CTA -->
+            <div class="p-6 rounded-2xl bg-snow/[0.015] border border-snow/5 backdrop-blur-sm">
+              <p class="text-xs font-semibold text-snow mb-2">Une demande spécifique ?</p>
+              <p class="text-[0.68rem] text-snow/40 leading-relaxed mb-4">
+                Vous préparez un projet unique ou avez besoin de précisions sur-mesure ? N'hésitez pas à m'écrire
+                directement.
+              </p>
+              <a href="contact.html"
+                class="inline-flex items-center gap-2 text-[0.62rem] tracking-[0.15em] uppercase text-rose hover:text-gold transition-colors font-semibold">
+                Me contacter
+                <img src="assets/icons/arrow-right.svg" alt="" width="10" height="10" aria-hidden="true" />
+              </a>
+            </div>
+          </div>
+
+          <!-- Column 2: Accordion items -->
+          <div class="lg:col-span-7 space-y-4">
+
+            <!-- Accordion Item 1 -->
+            <div
+              class="faq-item border border-snow/10 rounded-2xl bg-snow/[0.01] hover:bg-snow/[0.025] transition-all duration-300 gsap-reveal">
+              <button
+                class="faq-trigger w-full flex items-center justify-between text-left p-5 md:p-6 focus:outline-none cursor-pointer group"
+                aria-expanded="false" aria-controls="faq-answer-1">
+                <span
+                  class="font-display font-medium text-snow text-base md:text-lg group-hover:text-rose transition-colors duration-300 pr-4">
+                  Quels types d'événements animez-vous ?
+                </span>
+                <svg
+                  class="faq-icon w-5 h-5 text-snow/40 group-hover:text-rose transition-transform duration-300 shrink-0"
+                  fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                </svg>
+              </button>
+              <div id="faq-answer-1" class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
+                role="region" aria-labelledby="faq-trigger-1">
+                <div class="px-5 pb-6 md:px-6 text-xs md:text-sm text-snow/60 leading-relaxed font-body">
+                  J'anime une grande variété d'événements : des cérémonies officielles et corporatives aux festivals
+                  artistiques et culturels (comme le Festival International des Arts du Bénin), en passant par des
+                  lancements de produits, défilés de mode et conférences. Mon approche est toujours sur mesure,
+                  dynamique et chaleureuse.
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion Item 2 -->
+            <div
+              class="faq-item border border-snow/10 rounded-2xl bg-snow/[0.01] hover:bg-snow/[0.025] transition-all duration-300 gsap-reveal">
+              <button
+                class="faq-trigger w-full flex items-center justify-between text-left p-5 md:p-6 focus:outline-none cursor-pointer group"
+                aria-expanded="false" aria-controls="faq-answer-2">
+                <span
+                  class="font-display font-medium text-snow text-base md:text-lg group-hover:text-rose transition-colors duration-300 pr-4">
+                  Comment se déroule la collaboration pour une prestation d'animation ou de communication ?
+                </span>
+                <svg
+                  class="faq-icon w-5 h-5 text-snow/40 group-hover:text-rose transition-transform duration-300 shrink-0"
+                  fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                </svg>
+              </button>
+              <div id="faq-answer-2" class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
+                role="region" aria-labelledby="faq-trigger-2">
+                <div class="px-5 pb-6 md:px-6 text-xs md:text-sm text-snow/60 leading-relaxed font-body">
+                  Nous commençons par un premier échange pour cerner vos objectifs, votre cible et le ton souhaité.
+                  Ensuite, je prépare une trame d'animation ou une stratégie de communication digitale adaptée. Le jour
+                  J, je gère le déroulement avec rigueur et enthousiasme pour garantir le succès de votre projet.
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion Item 3 -->
+            <div
+              class="faq-item border border-snow/10 rounded-2xl bg-snow/[0.01] hover:bg-snow/[0.025] transition-all duration-300 gsap-reveal">
+              <button
+                class="faq-trigger w-full flex items-center justify-between text-left p-5 md:p-6 focus:outline-none cursor-pointer group"
+                aria-expanded="false" aria-controls="faq-answer-3">
+                <span
+                  class="font-display font-medium text-snow text-base md:text-lg group-hover:text-rose transition-colors duration-300 pr-4">
+                  Dans quelles régions êtes-vous disponible pour vos prestations ?
+                </span>
+                <svg
+                  class="faq-icon w-5 h-5 text-snow/40 group-hover:text-rose transition-transform duration-300 shrink-0"
+                  fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                </svg>
+              </button>
+              <div id="faq-answer-3" class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
+                role="region" aria-labelledby="faq-trigger-3">
+                <div class="px-5 pb-6 md:px-6 text-xs md:text-sm text-snow/60 leading-relaxed font-body">
+                  Basée principalement entre Grand-Popo et Cotonou au Bénin, je me déplace sur tout le territoire
+                  national pour des prestations live. Pour des projets d'envergure internationale ou de la communication
+                  digitale à distance, je suis également disponible et ouverte aux opportunités de mobilité dans la
+                  sous-région et au-delà.
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion Item 4 -->
+            <div
+              class="faq-item border border-snow/10 rounded-2xl bg-snow/[0.01] hover:bg-snow/[0.025] transition-all duration-300 gsap-reveal">
+              <button
+                class="faq-trigger w-full flex items-center justify-between text-left p-5 md:p-6 focus:outline-none cursor-pointer group"
+                aria-expanded="false" aria-controls="faq-answer-4">
+                <span
+                  class="font-display font-medium text-snow text-base md:text-lg group-hover:text-rose transition-colors duration-300 pr-4">
+                  Qu'est-ce que l'initiative d'emballages biodégradables que vous portez ?
+                </span>
+                <svg
+                  class="faq-icon w-5 h-5 text-snow/40 group-hover:text-rose transition-transform duration-300 shrink-0"
+                  fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                </svg>
+              </button>
+              <div id="faq-answer-4" class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
+                role="region" aria-labelledby="faq-trigger-4">
+                <div class="px-5 pb-6 md:px-6 text-xs md:text-sm text-snow/60 leading-relaxed font-body">
+                  C'est mon engagement pour l'entrepreneuriat social et l'environnement. Je promeus l'utilisation
+                  d'emballages biodégradables au Bénin pour réduire l'impact écologique du plastique à usage unique et
+                  encourager une consommation éco-responsable locale au sein de nos communautés.
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ────────────────────────────────────
+         SECTION 8 — CTA (APPEL À L'ACTION)
+    ──────────────────────────────────── -->
     <!-- ────────────────────────────────────
          SECTION 6 — RÉSEAUX SOCIAUX
     ──────────────────────────────────── -->
@@ -699,38 +947,161 @@
   <!-- ══════════════════════════════════════
        FOOTER
   ══════════════════════════════════════ -->
-  <footer class="px-6 py-8 md:px-16 border-t border-snow/5 bg-dark" role="contentinfo">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-      <p class="font-display text-xl font-bold text-snow/35">
-        Syn<span class="text-rose/50">nova</span>
-      </p>
-      <p class="text-[0.62rem] text-snow/30 tracking-widest uppercase text-center">
-        © <time datetime="2026">2026</time> Synnova Belvine Kybarance TOCLOE — Tous droits réservés
-      </p>
-      <nav aria-label="Liens légaux">
-        <ul class="flex gap-4 list-none m-0 p-0">
-          <li>
-            <a href="mentions-legales.html" class="text-[0.62rem] text-snow/30 hover:text-snow/60 tracking-widest uppercase
-                      transition-colors focus:outline-none focus:underline">
-              Mentions légales
+  <footer class="px-6 pt-20 pb-10 md:px-16 border-t border-snow/5 bg-dark relative overflow-hidden" role="contentinfo">
+    <!-- Subtle glow orb in footer -->
+    <div class="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-rose/[0.03] blur-3xl pointer-events-none"
+      aria-hidden="true"></div>
+
+    <div class="max-w-6xl mx-auto">
+      <!-- Top footer columns -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 pb-16 border-b border-snow/5">
+
+        <!-- Brand & Description -->
+        <div class="md:col-span-5 flex flex-col justify-between">
+          <div>
+            <p class="font-display text-2xl font-bold tracking-wide text-snow mb-5">
+              Syn<span class="text-rose">nova</span>
+            </p>
+            <p class="text-xs text-snow/50 leading-relaxed max-w-sm mb-6">
+              Belvine Kybarance TOCLOE — Animatrice d'événements prestigieux, communicatrice digitale inspirante,
+              actrice engagée et entrepreneuse sociale basée au Bénin.
+            </p>
+          </div>
+          <!-- Tiny social links -->
+          <div class="flex items-center gap-4 mt-2" aria-label="Réseaux sociaux de Synnova">
+            <a href="https://facebook.com/synnovalumiere" target="_blank" rel="noopener noreferrer"
+              aria-label="Facebook"
+              class="w-8 h-8 rounded-full border border-snow/10 flex items-center justify-center hover:bg-rose/10 hover:border-rose/30 transition-all duration-300">
+              <img src="assets/icons/facebook.svg" alt="" width="14" height="14" aria-hidden="true"
+                class="opacity-50 hover:opacity-100 transition-opacity" />
             </a>
-          </li>
-        </ul>
-      </nav>
+            <a href="https://tiktok.com/@_synnova" target="_blank" rel="noopener noreferrer" aria-label="TikTok"
+              class="w-8 h-8 rounded-full border border-snow/10 flex items-center justify-center hover:bg-rose/10 hover:border-rose/30 transition-all duration-300">
+              <img src="assets/icons/tiktok.svg" alt="" width="14" height="14" aria-hidden="true"
+                class="opacity-50 hover:opacity-100 transition-opacity" />
+            </a>
+            <a href="https://instagram.com/_synnova" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+              class="w-8 h-8 rounded-full border border-snow/10 flex items-center justify-center hover:bg-rose/10 hover:border-rose/30 transition-all duration-300">
+              <img src="assets/icons/instagram.svg" alt="" width="14" height="14" aria-hidden="true"
+                class="opacity-50 hover:opacity-100 transition-opacity" />
+            </a>
+            <a href="https://bj.linkedin.com/in/synnova-belvine-kybarance-tocloe-3882a9232" target="_blank"
+              rel="noopener noreferrer" aria-label="LinkedIn"
+              class="w-8 h-8 rounded-full border border-snow/10 flex items-center justify-center hover:bg-rose/10 hover:border-rose/30 transition-all duration-300">
+              <img src="assets/icons/linkedin.svg" alt="" width="14" height="14" aria-hidden="true"
+                class="opacity-50 hover:opacity-100 transition-opacity" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="md:col-span-2 md:col-start-7">
+          <h4 class="text-[0.62rem] font-semibold tracking-[0.25em] uppercase text-rose mb-5">Plan du site</h4>
+          <ul class="space-y-3.5 list-none m-0 p-0" role="list">
+            <li>
+              <a href="index.html"
+                class="text-xs text-snow/50 hover:text-snow transition-colors focus:outline-none">Accueil</a>
+            </li>
+            <li>
+              <a href="a-propos.html"
+                class="text-xs text-snow/50 hover:text-snow transition-colors focus:outline-none">À Propos</a>
+            </li>
+            <li>
+              <a href="portfolio.html"
+                class="text-xs text-snow/50 hover:text-snow transition-colors focus:outline-none">Portfolio</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Ses Univers Details -->
+        <div class="md:col-span-2">
+          <h4 class="text-[0.62rem] font-semibold tracking-[0.25em] uppercase text-rose mb-5">Ses Univers</h4>
+          <ul class="space-y-3.5 list-none m-0 p-0" role="list">
+            <li>
+              <a href="univers.html#animation"
+                class="text-xs text-snow/50 hover:text-rose transition-colors focus:outline-none">Animation Live</a>
+            </li>
+            <li>
+              <a href="univers.html#communication"
+                class="text-xs text-snow/50 hover:text-gold transition-colors focus:outline-none">Digital & Réseaux</a>
+            </li>
+            <li>
+              <a href="univers.html#cinema"
+                class="text-xs text-snow/50 hover:text-indigo/70 transition-colors focus:outline-none">Cinéma &
+                Régie</a>
+            </li>
+            <li>
+              <a href="univers.html#entrepreneuriat"
+                class="text-xs text-snow/50 hover:text-green-eco transition-colors focus:outline-none">Social & Éco</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact & Localisation -->
+        <div class="md:col-span-2">
+          <h4 class="text-[0.62rem] font-semibold tracking-[0.25em] uppercase text-rose mb-5">Contact</h4>
+          <ul class="space-y-3.5 list-none m-0 p-0" role="list">
+            <li class="text-xs text-snow/50 flex flex-col gap-1">
+              <span class="text-snow/30 uppercase text-[0.55rem] tracking-wider">Localisation</span>
+              <span>Grand-Popo & Cotonou, Bénin</span>
+            </li>
+            <li class="text-xs text-snow/50 flex flex-col gap-1">
+              <span class="text-snow/30 uppercase text-[0.55rem] tracking-wider">Email professionnel</span>
+              <a href="mailto:contact@synnovatocloe.com"
+                class="hover:text-rose transition-colors focus:outline-none">contact@synnovatocloe.com</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom footer bar -->
+      <div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-[0.62rem] text-snow/30 tracking-widest uppercase text-center md:text-left">
+          © <time datetime="2026">2026</time> Synnova Belvine Kybarance TOCLOE — Tous droits réservés
+        </p>
+        <nav aria-label="Liens secondaires et accessibilité">
+          <ul class="flex flex-wrap justify-center gap-6 list-none m-0 p-0">
+            <li>
+              <a href="mentions-legales.html"
+                class="text-[0.62rem] text-snow/30 hover:text-snow/60 tracking-widest uppercase transition-colors focus:outline-none">
+                Mentions légales
+              </a>
+            </li>
+            <li>
+              <a href="accessibilite.html"
+                class="text-[0.62rem] text-snow/30 hover:text-snow/60 tracking-widest uppercase transition-colors focus:outline-none">
+                Accessibilité
+              </a>
+            </li>
+            <li>
+              <a href="#main-content"
+                class="text-[0.62rem] text-rose/50 hover:text-rose tracking-widest uppercase transition-colors focus:outline-none flex items-center gap-1.5 font-medium">
+                Retour en haut
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="19" x2="12" y2="5"></line>
+                  <polyline points="5 12 12 5 19 12"></polyline>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </div>
-  </footer>
 
 
-  <!-- ══════════════════════════════════════
+    <!-- ══════════════════════════════════════
        SCRIPTS
   ══════════════════════════════════════ -->
-  <script src="js/vendor/gsap.min.js" defer></script>
-  <script src="js/vendor/ScrollTrigger.min.js" defer></script>
-  <script src="js/vendor/anime.min.js" defer></script>
-  <script src="js/dist/main.js" defer></script>
-  <script src="js/dist/animations.js" defer></script>
-  <script src="js/vendor/flatpickr.min.js" defer></script>
-  <script src="js/dist/contact.js" defer></script>
+    <script src="js/vendor/gsap.min.js" defer></script>
+    <script src="js/vendor/ScrollTrigger.min.js" defer></script>
+    <script src="js/vendor/anime.min.js" defer></script>
+    <script src="js/dist/main.js" defer></script>
+    <script src="js/dist/animations.js" defer></script>
+    <script src="js/vendor/flatpickr.min.js" defer></script>
+    <script src="js/dist/contact.js" defer></script>
+    <script src="js/dist/chatbot.js" defer></script>
 
 </body>
 

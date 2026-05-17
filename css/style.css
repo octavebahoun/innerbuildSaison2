@@ -11,6 +11,19 @@
   --snow: #FAFAFA;
 }
 
+/* ── Typography & Global Scale Base ── */
+html {
+  font-size: 108%; /* Increases global root scale (1rem = 17.28px instead of 16px) */
+}
+
+body {
+  font-size: 1.025rem; /* Sleek global boost for normal copy text */
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
 /* ── Scrollbar ── */
 ::-webkit-scrollbar {
   width: 3px;
@@ -234,7 +247,50 @@
 
 /* ── GSAP will-change hints ── */
 .gsap-reveal {
-  will-change: transform, opacity;
+  will-change: opacity; /* Avoid will-change: transform on stationary text to keep font rendering ultra-sharp */
+}
+
+/* ── Filter Button Active Styles ── */
+.filter-btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.filter-btn .absolute.inset-0 {
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* When a button is active, make its background overlay fully scale in and opaque */
+.filter-btn.active .absolute.inset-0 {
+  transform: scaleX(1) !important;
+  opacity: 1 !important;
+}
+
+/* Text of active button */
+.filter-btn.active span {
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+}
+
+/* Border of inactive buttons */
+.filter-btn:not(.active) {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Border of active button */
+.filter-btn.active {
+  border-color: #C2185B !important;
+}
+
+/* For "Tout voir" specifically, when it is NOT active, make its background overlay scale-x-0 */
+.filter-btn:not(.active)[data-filter="all"] .absolute.inset-0 {
+  transform: scaleX(0) !important;
+}
+
+.filter-btn:not(.active)[data-filter="all"] span {
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-weight: 500 !important;
 }
 
 /* ── Portfolio — carousel multi-lignes ── */
@@ -249,6 +305,23 @@
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   /* Firefox */
+}
+
+/* Responsive static layout when filters have few items */
+.portfolio-carousel.is-static {
+  grid-auto-flow: row !important;
+  grid-template-rows: none !important;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 360px)) !important;
+  justify-content: center !important;
+  overflow-x: visible !important;
+  scroll-snap-type: none !important;
+  width: 100% !important;
+}
+
+@media (min-width: 1024px) {
+  .portfolio-carousel:not(.is-static) {
+    grid-template-rows: repeat(3, auto);
+  }
 }
 
 .portfolio-carousel.is-autoplaying {
@@ -410,9 +483,6 @@ button[type="submit"]:active {
   }
 }
 
-.gsap-reveal {
-  will-change: transform, opacity;
-}
 
 
 /* ═══════════════════════════════════════════════════════
@@ -651,6 +721,11 @@ button[type="submit"]:active {
   background: rgba(194, 24, 91, 0.15) !important;
 }
 
+/* ── FAQ Accordion Transition ── */
+.faq-content {
+  transition: max-height 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
 /* ── Accessibilité : Mouvements réduits (prefers-reduced-motion) ── */
 @media (prefers-reduced-motion: reduce) {
   .particle,
@@ -672,4 +747,49 @@ button[type="submit"]:active {
     opacity: 1 !important;
     transform: none !important;
   }
+}
+
+/* ── CENTRALIZED NAVIGATION & INLINE LINK ACCENTUATION ── */
+
+/* Header Navigation Links baseline & hover boost */
+#navbar .nav-link {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-weight: 500 !important;
+  opacity: 1 !important;
+}
+
+#navbar .nav-link:hover {
+  color: #C2185B !important;
+}
+
+#navbar .nav-link.text-rose {
+  color: #C2185B !important;
+}
+
+/* Footer Navigation Links visibility boost */
+footer a:not(.w-8) {
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-weight: 500 !important;
+  transition: color 0.3s ease, text-decoration-color 0.3s ease;
+}
+
+footer a:not(.w-8):hover {
+  color: #C2185B !important;
+  text-decoration: underline !important;
+  text-underline-offset: 4px;
+}
+
+/* Paragraph Inline Copy Links (Editorial Style) */
+p a, .font-body a:not([class*="btn"]):not([class*="nav"]):not(.lightbox-close):not(.lightbox-prev):not(.lightbox-next) {
+  color: #C2185B;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(194, 24, 91, 0.4);
+  transition: color 0.3s ease, text-decoration-color 0.3s ease;
+}
+
+p a:hover, .font-body a:not([class*="btn"]):not([class*="nav"]):not(.lightbox-close):not(.lightbox-prev):not(.lightbox-next):hover {
+  color: #F9A825;
+  text-decoration-color: rgba(249, 168, 37, 0.8);
 }

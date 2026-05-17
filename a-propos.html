@@ -217,31 +217,76 @@
   <main id="main-content">
 
     <!-- HERO NARRATIF -->
-    <section
-      class="relative pt-32 pb-20 px-6 md:pt-48 md:pb-28 md:px-16 overflow-hidden flex flex-col items-center text-center">
+    <section class="relative pt-32 pb-20 px-6 md:pt-48 md:pb-28 md:px-16 overflow-hidden bg-dark">
+      <!-- Subtle background accent blobs -->
       <div class="absolute inset-0 z-0 opacity-20 pointer-events-none" aria-hidden="true">
         <div class="absolute top-0 right-0 w-96 h-96 rounded-full bg-rose blur-3xl opacity-30"></div>
         <div class="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-indigo blur-3xl opacity-30"></div>
       </div>
 
-      <div class="relative z-10 max-w-3xl mx-auto">
-        <div class="gsap-reveal flex items-center justify-center gap-4 mb-6 opacity-0">
-          <span class="block w-12 h-px bg-rose" aria-hidden="true"></span>
-          <p class="text-[0.62rem] tracking-[.22em] uppercase text-rose font-medium">Mon Histoire</p>
-          <span class="block w-12 h-px bg-rose" aria-hidden="true"></span>
+      <div class="relative z-10 max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+
+          <!-- Column 1: Text Content (on the left) -->
+          <div class="lg:col-span-7 text-left">
+            <div class="gsap-reveal reveal-left flex items-center gap-4 mb-6 opacity-0">
+              <span class="block w-10 h-px bg-rose" aria-hidden="true"></span>
+              <p class="text-[0.62rem] tracking-[.22em] uppercase text-rose font-medium">Mon Histoire</p>
+            </div>
+
+            <h1 class="gsap-reveal reveal-left font-display font-bold text-snow leading-tight mb-8 opacity-0"
+              style="font-size: clamp(2rem, 5vw, 3.8rem);">
+              Un chemin forgé par <br /><em class="text-rose">la création et l'engagement</em>
+            </h1>
+
+            <p
+              class="gsap-reveal reveal-left text-snow/80 text-sm md:text-base leading-relaxed mb-8 opacity-0 font-light font-body">
+              <span class="float-left text-5xl font-display text-rose leading-[0.8] mr-3 mt-1 font-semibold">D</span>e
+              la scène aux
+              studios, de la communication digitale à l'action sociale, mon parcours est guidé par une volonté constante
+              d'impacter positivement mon environnement et de donner de la voix à ceux qui en ont besoin.
+            </p>
+
+            <p
+              class="gsap-reveal reveal-left text-snow/50 text-xs md:text-sm leading-relaxed mb-6 opacity-0 font-light font-body">
+              Titulaire d'une licence professionnelle en journalisme, animatrice d'événements d'envergure nationale,
+              actrice et entrepreneuse éco-sociale. Découvrez ci-dessous les moments clés qui façonnent sa vision du
+              partage et de l'engagement au Bénin et à l'international.
+            </p>
+          </div>
+
+          <!-- Column 2: Large Premium Image (on the right) -->
+          <div class="lg:col-span-5 gsap-reveal reveal-right opacity-0 flex justify-center">
+            <div class="relative w-full max-w-[380px] group">
+
+              <!-- Layer 1: Rose/Orange background offset frame (rotated clockwise) -->
+              <div
+                class="absolute inset-0 rounded-[2rem] border border-rose/30 translate-x-3.5 translate-y-3.5 rotate-[2deg] pointer-events-none transition-transform duration-700 group-hover:translate-x-5 group-hover:translate-y-5"
+                aria-hidden="true"></div>
+
+              <!-- Layer 2: Gold/Bronze background offset frame (rotated counter-clockwise) -->
+              <div
+                class="absolute inset-0 rounded-[2rem] border border-gold/30 -translate-x-3.5 -translate-y-3.5 -rotate-[2deg] pointer-events-none transition-transform duration-700 group-hover:-translate-x-5 group-hover:-translate-y-5"
+                aria-hidden="true"></div>
+
+              <!-- Layer 3: Glow effect behind -->
+              <div
+                class="absolute -inset-2 bg-gradient-to-r from-rose/15 to-gold/15 rounded-[2rem] blur-xl opacity-40 pointer-events-none"
+                aria-hidden="true"></div>
+
+              <!-- Main Image container -->
+              <div
+                class="relative overflow-hidden rounded-[2rem] border border-snow/10 bg-dark shadow-2xl z-10 aspect-[4/5]">
+                <img src="assets/images/synnova-portrait-blue-dress.webp" alt="Portrait officiel de Synnova TOCLOE"
+                  class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-102"
+                  decoding="async" width="800" height="1000" />
+                <div class="absolute inset-0 bg-gradient-to-t from-dark/60 via-transparent to-transparent opacity-65">
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
-
-        <h1 class="gsap-reveal font-display font-bold text-snow leading-tight mb-8 opacity-0"
-          style="font-size: clamp(2.5rem, 6vw, 4.5rem);">
-          Un chemin forgé par <br /><em class="text-rose">la création et l'engagement</em>
-        </h1>
-
-        <p
-          class="gsap-reveal text-snow/80 text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-10 opacity-0 font-light">
-          <span class="float-left text-5xl font-display text-rose leading-[0.8] mr-2 mt-1">D</span>e la scène aux
-          studios, de la communication digitale à l'action sociale, mon parcours est guidé par une volonté constante
-          d'impacter positivement mon environnement et de donner de la voix à ceux qui en ont besoin.
-        </p>
       </div>
     </section>
 
@@ -455,25 +500,150 @@
 
   </main>
 
-  <!-- FOOTER -->
-  <footer class="px-6 py-8 md:px-16 border-t border-snow/5 bg-dark" role="contentinfo">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-      <p class="font-display text-xl font-bold text-snow/35">
-        Syn<span class="text-rose/50">nova</span>
-      </p>
-      <p class="text-[0.62rem] text-snow/30 tracking-widest uppercase text-center">
-        © <time datetime="2026">2026</time> Synnova Belvine Kybarance TOCLOE — Tous droits réservés
-      </p>
-      <nav aria-label="Liens légaux">
-        <ul class="flex gap-4 list-none m-0 p-0">
-          <li>
-            <a href="mentions-legales.html" class="text-[0.62rem] text-snow/30 hover:text-snow/60 tracking-widest uppercase
-                      transition-colors focus:outline-none focus:underline">
-              Mentions légales
+  <!-- ══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
+  <footer class="px-6 pt-20 pb-10 md:px-16 border-t border-snow/5 bg-dark relative overflow-hidden" role="contentinfo">
+    <!-- Subtle glow orb in footer -->
+    <div class="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-rose/[0.03] blur-3xl pointer-events-none"
+      aria-hidden="true"></div>
+
+    <div class="max-w-6xl mx-auto">
+      <!-- Top footer columns -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 pb-16 border-b border-snow/5">
+
+        <!-- Brand & Description -->
+        <div class="md:col-span-5 flex flex-col justify-between">
+          <div>
+            <p class="font-display text-2xl font-bold tracking-wide text-snow mb-5">
+              Syn<span class="text-rose">nova</span>
+            </p>
+            <p class="text-xs text-snow/50 leading-relaxed max-w-sm mb-6">
+              Belvine Kybarance TOCLOE — Animatrice d'événements prestigieux, communicatrice digitale inspirante,
+              actrice engagée et entrepreneuse sociale basée au Bénin.
+            </p>
+          </div>
+          <!-- Tiny social links -->
+          <div class="flex items-center gap-4 mt-2" aria-label="Réseaux sociaux de Synnova">
+            <a href="https://facebook.com/synnovalumiere" target="_blank" rel="noopener noreferrer"
+              aria-label="Facebook"
+              class="w-8 h-8 rounded-full border border-snow/10 flex items-center justify-center hover:bg-rose/10 hover:border-rose/30 transition-all duration-300">
+              <img src="assets/icons/facebook.svg" alt="" width="14" height="14" aria-hidden="true"
+                class="opacity-50 hover:opacity-100 transition-opacity" />
             </a>
-          </li>
-        </ul>
-      </nav>
+            <a href="https://tiktok.com/@_synnova" target="_blank" rel="noopener noreferrer" aria-label="TikTok"
+              class="w-8 h-8 rounded-full border border-snow/10 flex items-center justify-center hover:bg-rose/10 hover:border-rose/30 transition-all duration-300">
+              <img src="assets/icons/tiktok.svg" alt="" width="14" height="14" aria-hidden="true"
+                class="opacity-50 hover:opacity-100 transition-opacity" />
+            </a>
+            <a href="https://instagram.com/_synnova" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+              class="w-8 h-8 rounded-full border border-snow/10 flex items-center justify-center hover:bg-rose/10 hover:border-rose/30 transition-all duration-300">
+              <img src="assets/icons/instagram.svg" alt="" width="14" height="14" aria-hidden="true"
+                class="opacity-50 hover:opacity-100 transition-opacity" />
+            </a>
+            <a href="https://bj.linkedin.com/in/synnova-belvine-kybarance-tocloe-3882a9232" target="_blank"
+              rel="noopener noreferrer" aria-label="LinkedIn"
+              class="w-8 h-8 rounded-full border border-snow/10 flex items-center justify-center hover:bg-rose/10 hover:border-rose/30 transition-all duration-300">
+              <img src="assets/icons/linkedin.svg" alt="" width="14" height="14" aria-hidden="true"
+                class="opacity-50 hover:opacity-100 transition-opacity" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="md:col-span-2 md:col-start-7">
+          <h4 class="text-[0.62rem] font-semibold tracking-[0.25em] uppercase text-rose mb-5">Plan du site</h4>
+          <ul class="space-y-3.5 list-none m-0 p-0" role="list">
+            <li>
+              <a href="index.html"
+                class="text-xs text-snow/50 hover:text-snow transition-colors focus:outline-none">Accueil</a>
+            </li>
+            <li>
+              <a href="a-propos.html"
+                class="text-xs text-snow/50 hover:text-snow transition-colors focus:outline-none">À Propos</a>
+            </li>
+            <li>
+              <a href="portfolio.html"
+                class="text-xs text-snow/50 hover:text-snow transition-colors focus:outline-none">Portfolio</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Ses Univers Details -->
+        <div class="md:col-span-2">
+          <h4 class="text-[0.62rem] font-semibold tracking-[0.25em] uppercase text-rose mb-5">Ses Univers</h4>
+          <ul class="space-y-3.5 list-none m-0 p-0" role="list">
+            <li>
+              <a href="univers.html#animation"
+                class="text-xs text-snow/50 hover:text-rose transition-colors focus:outline-none">Animation Live</a>
+            </li>
+            <li>
+              <a href="univers.html#communication"
+                class="text-xs text-snow/50 hover:text-gold transition-colors focus:outline-none">Digital & Réseaux</a>
+            </li>
+            <li>
+              <a href="univers.html#cinema"
+                class="text-xs text-snow/50 hover:text-indigo/70 transition-colors focus:outline-none">Cinéma &
+                Régie</a>
+            </li>
+            <li>
+              <a href="univers.html#entrepreneuriat"
+                class="text-xs text-snow/50 hover:text-green-eco transition-colors focus:outline-none">Social & Éco</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact & Localisation -->
+        <div class="md:col-span-2">
+          <h4 class="text-[0.62rem] font-semibold tracking-[0.25em] uppercase text-rose mb-5">Contact</h4>
+          <ul class="space-y-3.5 list-none m-0 p-0" role="list">
+            <li class="text-xs text-snow/50 flex flex-col gap-1">
+              <span class="text-snow/30 uppercase text-[0.55rem] tracking-wider">Localisation</span>
+              <span>Grand-Popo & Cotonou, Bénin</span>
+            </li>
+            <li class="text-xs text-snow/50 flex flex-col gap-1">
+              <span class="text-snow/30 uppercase text-[0.55rem] tracking-wider">Email professionnel</span>
+              <a href="mailto:contact@synnovatocloe.com"
+                class="hover:text-rose transition-colors focus:outline-none">contact@synnovatocloe.com</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom footer bar -->
+      <div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-[0.62rem] text-snow/30 tracking-widest uppercase text-center md:text-left">
+          © <time datetime="2026">2026</time> Synnova Belvine Kybarance TOCLOE — Tous droits réservés
+        </p>
+        <nav aria-label="Liens secondaires et accessibilité">
+          <ul class="flex flex-wrap justify-center gap-6 list-none m-0 p-0">
+            <li>
+              <a href="mentions-legales.html"
+                class="text-[0.62rem] text-snow/30 hover:text-snow/60 tracking-widest uppercase transition-colors focus:outline-none">
+                Mentions légales
+              </a>
+            </li>
+            <li>
+              <a href="accessibilite.html"
+                class="text-[0.62rem] text-snow/30 hover:text-snow/60 tracking-widest uppercase transition-colors focus:outline-none">
+                Accessibilité
+              </a>
+            </li>
+            <li>
+              <a href="#main-content"
+                class="text-[0.62rem] text-rose/50 hover:text-rose tracking-widest uppercase transition-colors focus:outline-none flex items-center gap-1.5 font-medium">
+                Retour en haut
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="19" x2="12" y2="5"></line>
+                  <polyline points="5 12 12 5 19 12"></polyline>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </div>
   </footer>
 
@@ -483,6 +653,7 @@
   <script src="js/vendor/anime.min.js" defer></script>
   <script src="js/dist/main.js" defer></script>
   <script src="js/dist/animations.js" defer></script>
+  <script src="js/dist/chatbot.js" defer></script>
 
 </body>
 
