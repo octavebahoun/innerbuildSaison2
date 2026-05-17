@@ -8,11 +8,64 @@
   <!-- ═══ SEO ═══ -->
   <title>Synnova TOCLOE | Contact — Travaillons ensemble</title>
   <meta name="description" content="Contactez Synnova TOCLOE pour l'animation de vos événements, vos projets de cinéma, votre stratégie digitale ou pour des emballages biodégradables." />
-  <meta name="keywords" content="Contact Synnova TOCLOE, collaborer, animation événementielle, stratégie digitale, actrice, entrepreneuse Bénin" />
   <meta name="author" content="Synnova TOCLOE" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://synnovatocloe.vercel.app/contact.html" />
   <meta name="google-site-verification" content="1pCR1J0h90PalkK47lcEO3ldlTIA5AJFiFep0LiUuZk" />
+
+  <!-- ═══ Schema.org JSON-LD ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://synnovatocloe.vercel.app/#person",
+        "name": "Synnova TOCLOE",
+        "alternateName": "Belvine Kybarance TOCLOE",
+        "jobTitle": ["Animatrice", "Communicatrice", "Actrice", "Entrepreneuse sociale"],
+        "description": "Animatrice d'événements, communicatrice digitale, actrice et entrepreneuse sociale basée à Grand-Popo, Bénin.",
+        "url": "https://synnovatocloe.vercel.app/",
+        "image": "https://synnovatocloe.vercel.app/assets/images/synnova-og.webp",
+        "sameAs": [
+          "https://facebook.com/synnovalumiere",
+          "https://tiktok.com/@_synnova",
+          "https://instagram.com/_synnova",
+          "https://bj.linkedin.com/in/synnova-belvine-kybarance-tocloe-3882a9232"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Grand-Popo",
+          "addressCountry": "BJ"
+        },
+        "knowsAbout": ["Animation d'événements", "Communication digitale", "Cinéma", "Entrepreneuriat social"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://synnovatocloe.vercel.app/#website",
+        "url": "https://synnovatocloe.vercel.app/",
+        "name": "Synnova TOCLOE",
+        "description": "Site officiel de Synnova TOCLOE, professionnelle de la communication, de l'animation d'événements et entrepreneuse au Bénin.",
+        "publisher": {
+          "@id": "https://synnovatocloe.vercel.app/#organization"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://synnovatocloe.vercel.app/#organization",
+        "name": "Synnova TOCLOE",
+        "url": "https://synnovatocloe.vercel.app/",
+        "logo": "https://synnovatocloe.vercel.app/assets/images/synnova-og.webp",
+        "sameAs": [
+          "https://facebook.com/synnovalumiere",
+          "https://tiktok.com/@_synnova",
+          "https://instagram.com/_synnova",
+          "https://bj.linkedin.com/in/synnova-belvine-kybarance-tocloe-3882a9232"
+        ]
+      }
+    ]
+  }
+  </script>
 
   <!-- ═══ Open Graph ═══ -->
   <meta property="og:type"        content="website" />
@@ -38,7 +91,7 @@
   <link rel="stylesheet" href="css/output.css" />
 
   <!-- Flatpickr (Datepicker Premium) -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+  <link rel="stylesheet" href="css/vendor/flatpickr.min.css" />
 
   <!-- ═══ Favicon ═══ -->
   <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
@@ -342,15 +395,15 @@
   </footer>
 
   <!-- SCRIPTS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" defer></script>
+  <script src="js/vendor/gsap.min.js" defer></script>
+  <script src="js/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="js/vendor/anime.min.js" defer></script>
   <!-- FontAwesome for Social Icons -->
   
   <script src="js/dist/main.js" defer></script>
   <script src="js/dist/animations.js" defer></script>
   <!-- Flatpickr (Datepicker Premium) -->
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr" defer></script>
+  <script src="js/vendor/flatpickr.min.js" defer></script>
   <script src="js/dist/contact.js" defer></script>
 </body>
 </html>

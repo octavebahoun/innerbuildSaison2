@@ -8,9 +8,62 @@
   <!-- ═══ SEO ═══ -->
   <title>404 — Page non trouvée | Synnova TOCLOE</title>
   <meta name="description" content="Page non trouvée. Retournez à l'accueil de Synnova TOCLOE." />
-  <meta name="keywords" content="404, erreur, page non trouvée, Synnova" />
   <meta name="author" content="Synnova Belvine Kybarance TOCLOE" />
   <meta name="robots" content="noindex, follow" />
+
+  <!-- ═══ Schema.org JSON-LD ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://synnovatocloe.vercel.app/#person",
+        "name": "Synnova TOCLOE",
+        "alternateName": "Belvine Kybarance TOCLOE",
+        "jobTitle": ["Animatrice", "Communicatrice", "Actrice", "Entrepreneuse sociale"],
+        "description": "Animatrice d'événements, communicatrice digitale, actrice et entrepreneuse sociale basée à Grand-Popo, Bénin.",
+        "url": "https://synnovatocloe.vercel.app/",
+        "image": "https://synnovatocloe.vercel.app/assets/images/synnova-og.webp",
+        "sameAs": [
+          "https://facebook.com/synnovalumiere",
+          "https://tiktok.com/@_synnova",
+          "https://instagram.com/_synnova",
+          "https://bj.linkedin.com/in/synnova-belvine-kybarance-tocloe-3882a9232"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Grand-Popo",
+          "addressCountry": "BJ"
+        },
+        "knowsAbout": ["Animation d'événements", "Communication digitale", "Cinéma", "Entrepreneuriat social"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://synnovatocloe.vercel.app/#website",
+        "url": "https://synnovatocloe.vercel.app/",
+        "name": "Synnova TOCLOE",
+        "description": "Site officiel de Synnova TOCLOE, professionnelle de la communication, de l'animation d'événements and entrepreneuse au Bénin.",
+        "publisher": {
+          "@id": "https://synnovatocloe.vercel.app/#organization"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://synnovatocloe.vercel.app/#organization",
+        "name": "Synnova TOCLOE",
+        "url": "https://synnovatocloe.vercel.app/",
+        "logo": "https://synnovatocloe.vercel.app/assets/images/synnova-og.webp",
+        "sameAs": [
+          "https://facebook.com/synnovalumiere",
+          "https://tiktok.com/@_synnova",
+          "https://instagram.com/_synnova",
+          "https://bj.linkedin.com/in/synnova-belvine-kybarance-tocloe-3882a9232"
+        ]
+      }
+    ]
+  }
+  </script>
 
   <!-- ═══ Fonts ═══ -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -230,21 +283,8 @@
   </footer>
 
   <!-- SCRIPTS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-  
+  <script src="js/vendor/gsap.min.js" defer></script>
+  <script src="js/vendor/ScrollTrigger.min.js" defer></script>
   <script src="js/dist/main.js" defer></script>
-  <script defer>
-    // 404 specific animation
-    if (window.gsap) {
-      gsap.to('.float-404', {
-        y: 20,
-        duration: 2,
-        repeat: -1,
-        yoyo: true,
-        ease: 'sine.inOut'
-      });
-    }
-  </script>
 </body>
 </html>

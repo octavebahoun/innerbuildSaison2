@@ -1,0 +1,402 @@
+{
+  "exportedAt": "2026-05-17T19:35:25.031Z",
+  "report": {
+    "globalScore": 69,
+    "globalSummary": "Base saine mais encore trop \"vitrine\" côté robustesse: le site est propre (HTML ~36.6 KB, 26 images avec alt, 5 scripts defer) et correctement sécurisé en surface. En revanche, plusieurs points structurels limitent la scalabilité et la résilience (CSP permissive avec unsafe-inline, architecture front sans garde-fous qualité/observabilité, SEO technique incomplet). Le potentiel est élevé si vous industrialisez la couche technique et durcissez les standards de production.",
+    "url": "https://synnovatocloe.vercel.app/",
+    "modules": {
+      "design": {
+        "score": 72,
+        "level": "Bon",
+        "summary": "Direction visuelle cohérente et branding lisible, mais l'UX reste perfectible sur les parcours de conversion. La présence de 29 liens pour une seule page peut diluer l'attention. Les sections sont bien découpées (H1/H2/H3), mais certains libellés génériques dégradent la clarté.",
+        "issues": [
+          {
+            "title": "Absence de composant de contact direct (forms=0)",
+            "impact": "Friction élevée: dépendance aux réseaux sociaux et perte de leads.",
+            "priority": "critique",
+            "solution": "Ajouter un formulaire court avec validation client/serveur et retour d'état UX.",
+            "codeSnippet": "<form id=\"contact\" method=\"POST\" action=\"/api/contact\">\n  <label>Nom<input name=\"name\" required minlength=\"2\"></label>\n  <label>Email<input type=\"email\" name=\"email\" required></label>\n  <label>Message<textarea name=\"message\" required minlength=\"20\"></textarea></label>\n  <button type=\"submit\">Envoyer</button>\n</form>",
+            "scoreGain": 5
+          },
+          {
+            "title": "Données chiffrées non crédibles (\"0+\" visibles)",
+            "impact": "Perte de confiance immédiate et baisse de conversion commerciale.",
+            "priority": "critique",
+            "solution": "Masquer les KPIs non renseignés et afficher seulement des métriques validées.",
+            "codeSnippet": "<section id=\"kpis\">\n  <div data-kpi=\"events\" hidden></div>\n</section>\n<script>\nconst kpis={years:6,events:120,films:8};\nfor(const [k,v] of Object.entries(kpis)){\n  const el=document.querySelector(`[data-kpi=\"${k}\"]`);\n  if(el){el.hidden=false;el.textContent=`${v}+`;}\n}\n</script>",
+            "scoreGain": 4
+          },
+          {
+            "title": "CTA trop génériques (\"Voir plus\", \"Voir tout\")",
+            "impact": "Baisse du taux de clic utile et ambiguïté pour l'utilisateur, surtout sur mobile.",
+            "priority": "importante",
+            "solution": "Remplacer les CTA génériques par des libellés orientés intention et résultat.",
+            "codeSnippet": "<a href=\"#univers-animatrice\" class=\"btn\">Voir les prestations d'animation</a>\n<a href=\"#portfolio\" class=\"btn btn-secondary\">Explorer le portfolio complet</a>",
+            "scoreGain": 3
+          },
+          {
+            "title": "Navigation potentiellement dupliquée (menus répétés dans l'extrait)",
+            "impact": "Surcharge cognitive et parcours plus long vers les sections clés.",
+            "priority": "importante",
+            "solution": "Garder un seul menu principal sticky + un menu mobile contextuel, éviter les doublons.",
+            "codeSnippet": "<header>\n  <nav aria-label=\"Navigation principale\">\n    <ul>\n      <li><a href=\"#accueil\">Accueil</a></li>\n      <li><a href=\"#a-propos\">À propos</a></li>\n      <li><a href=\"#portfolio\">Portfolio</a></li>\n      <li><a href=\"#contact\" class=\"btn\">Me contacter</a></li>\n    </ul>\n  </nav>\n</header>",
+            "scoreGain": 2
+          },
+          {
+            "title": "Hiérarchie visuelle des sections sociales trop proche du contenu principal",
+            "impact": "Distraction prématurée vers plateformes externes avant conversion.",
+            "priority": "mineure",
+            "solution": "Déplacer les liens sociaux en fin de parcours et prioriser une action business.",
+            "codeSnippet": "<section id=\"cta-final\">\n  <h2>Discutons de votre événement</h2>\n  <a class=\"btn\" href=\"#contact\">Demander un devis</a>\n</section>\n<footer>\n  <nav aria-label=\"Réseaux sociaux\">...</nav>\n</footer>",
+            "scoreGain": 2
+          }
+        ],
+        "strengths": [
+          "Structure éditoriale claire avec 1 H1 et des H2/H3 cohérents.",
+          "Présence d'un branding stable et d'une proposition de valeur explicite dès le hero."
+        ]
+      },
+      "seo": {
+        "score": 68,
+        "level": "Moyen",
+        "summary": "Les fondamentaux existent (title, description, canonical, OG/Twitter, robots index/follow, JSON-LD Person). Cependant, la stratégie SEO technique est incomplète pour une montée en visibilité durable. Le positionnement local Bénin est amorcé mais pas pleinement exploité.",
+        "issues": [
+          {
+            "title": "Maillage interne peu profond (site one-page, 21 liens internes principalement ancres)",
+            "impact": "Faible couverture de requêtes longues traînes et indexation limitée.",
+            "priority": "critique",
+            "solution": "Créer des pages dédiées par intention: animation mariage, communication digitale, portfolio, contact.",
+            "codeSnippet": "<a href=\"/services/animation-evenementielle-benin/\">Animation événementielle au Bénin</a>\n<a href=\"/services/communication-digitale-cotonou/\">Communication digitale à Cotonou</a>\n<a href=\"/portfolio/\">Portfolio complet</a>",
+            "scoreGain": 6
+          },
+          {
+            "title": "Canonical sur domaine de preview (vercel.app) au lieu d'un domaine marque",
+            "impact": "Autorité SEO dispersée et difficulté de construction d'une marque forte en SERP.",
+            "priority": "importante",
+            "solution": "Migrer vers un domaine propriétaire et forcer la canonical unique.",
+            "codeSnippet": "<link rel=\"canonical\" href=\"https://www.synnovatocloe.com/\" />\n<meta property=\"og:url\" content=\"https://www.synnovatocloe.com/\" />",
+            "scoreGain": 4
+          },
+          {
+            "title": "Données structurées limitées à Person",
+            "impact": "Rich results limités (pas de signaux Organization/WebSite/Breadcrumb).",
+            "priority": "importante",
+            "solution": "Ajouter des blocs JSON-LD complémentaires cohérents entre eux.",
+            "codeSnippet": "{\n  \"@context\":\"https://schema.org\",\n  \"@type\":\"WebSite\",\n  \"name\":\"Synnova TOCLOE\",\n  \"url\":\"https://www.synnovatocloe.com/\",\n  \"inLanguage\":\"fr-BJ\"\n}",
+            "scoreGain": 3
+          },
+          {
+            "title": "Absence de balise hreflang explicite",
+            "impact": "Interprétation linguistique moins robuste pour trafic international francophone.",
+            "priority": "mineure",
+            "solution": "Déclarer fr-BJ (et fr par défaut si nécessaire).",
+            "codeSnippet": "<link rel=\"alternate\" hreflang=\"fr-BJ\" href=\"https://www.synnovatocloe.com/\" />\n<link rel=\"alternate\" hreflang=\"fr\" href=\"https://www.synnovatocloe.com/\" />\n<link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.synnovatocloe.com/\" />",
+            "scoreGain": 2
+          },
+          {
+            "title": "Meta keywords présentes (signal obsolète)",
+            "impact": "Aucun gain SEO moderne, entretient une dette de balisage inutile.",
+            "priority": "mineure",
+            "solution": "Supprimer meta keywords et concentrer l'effort sur contenu, maillage et entités.",
+            "codeSnippet": "<!-- Supprimer -->\n<!-- <meta name=\"keywords\" content=\"...\" /> -->",
+            "scoreGain": 1
+          }
+        ],
+        "strengths": [
+          "Métadonnées sociales solides: 7 OG tags et 4 Twitter tags.",
+          "Présence d'un JSON-LD de type Person cohérent avec le contenu de page."
+        ]
+      },
+      "performance": {
+        "score": 64,
+        "level": "Moyen",
+        "summary": "Le volume HTML est raisonnable (36,630 octets) et les scripts sont majoritairement defer (5/6). Le principal risque vient des 26 images et de la chaîne de rendu (fonts + CSS bloquants potentiels). Les optimisations réseau/caching peuvent améliorer fortement LCP et INP.",
+        "issues": [
+          {
+            "title": "Images nombreuses sans stratégie responsive explicite (26 images)",
+            "impact": "Poids inutile sur mobile, LCP dégradé et consommation data élevée.",
+            "priority": "critique",
+            "solution": "Utiliser srcset/sizes + formats AVIF/WebP et dimensions explicites.",
+            "codeSnippet": "<img\n  src=\"/assets/images/hero-960.avif\"\n  srcset=\"/assets/images/hero-480.avif 480w, /assets/images/hero-960.avif 960w, /assets/images/hero-1440.avif 1440w\"\n  sizes=\"(max-width: 768px) 100vw, 60vw\"\n  width=\"960\" height=\"1280\"\n  loading=\"eager\" decoding=\"async\" alt=\"Synnova TOCLOE\" />",
+            "scoreGain": 7
+          },
+          {
+            "title": "Politique de cache statique non explicitée pour assets",
+            "impact": "Re-téléchargements inutiles et TTFB perçu plus élevé sur visites répétées.",
+            "priority": "importante",
+            "solution": "Ajouter des headers cache agressifs pour fichiers fingerprintés.",
+            "codeSnippet": "{\n  \"headers\": [\n    {\n      \"source\": \"/assets/(.*)\",\n      \"headers\": [\n        {\"key\": \"Cache-Control\", \"value\": \"public, max-age=31536000, immutable\"}\n      ]\n    }\n  ]\n}",
+            "scoreGain": 5
+          },
+          {
+            "title": "Absence d'indice d'optimisation lazy-load pour images non critiques",
+            "impact": "Temps de rendu initial plus lent et réseau saturé au premier chargement.",
+            "priority": "importante",
+            "solution": "Activer loading=lazy pour toutes les images sous la ligne de flottaison.",
+            "codeSnippet": "<img src=\"/assets/images/gallery-01.webp\" loading=\"lazy\" decoding=\"async\" width=\"640\" height=\"480\" alt=\"Coulisses événement\" />",
+            "scoreGain": 4
+          },
+          {
+            "title": "Pas de preload ciblé pour ressource LCP (image hero + police principale)",
+            "impact": "Retard d'affichage du contenu principal.",
+            "priority": "importante",
+            "solution": "Précharger uniquement les ressources critiques mesurées en production.",
+            "codeSnippet": "<link rel=\"preload\" as=\"image\" href=\"/assets/images/hero-960.avif\" imagesrcset=\"/assets/images/hero-480.avif 480w, /assets/images/hero-960.avif 960w\" imagesizes=\"100vw\">\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>",
+            "scoreGain": 3
+          },
+          {
+            "title": "Scripts tiers (cdnjs) sans stratégie de réduction/auto-hébergement",
+            "impact": "Dépendance externe, latence variable, risque de blocage régional.",
+            "priority": "importante",
+            "solution": "Auto-héberger les librairies stables et charger conditionnellement.",
+            "codeSnippet": "<script defer src=\"/assets/vendor/aos.min.js\"></script>\n<script>\nif (matchMedia('(prefers-reduced-motion: no-preference)').matches) {\n  window.requestIdleCallback(()=>window.AOS&&AOS.init());\n}\n</script>",
+            "scoreGain": 3
+          }
+        ],
+        "strengths": [
+          "HTML initial léger pour une landing page riche (≈36.6 KB).",
+          "Bonne base d'exécution différée avec 5 scripts defer sur 6."
+        ]
+      },
+      "security": {
+        "score": 78,
+        "level": "Bon",
+        "summary": "Le socle sécurité HTTP est déjà au-dessus de la moyenne (HSTS preload, X-Frame-Options DENY, nosniff, Referrer-Policy stricte, Permissions-Policy restrictive). Le point faible principal est la CSP encore permissive via unsafe-inline et une dépendance tierce script. Le hardening avancé peut rapprocher le site d'un niveau enterprise.",
+        "issues": [
+          {
+            "title": "CSP autorise 'unsafe-inline' pour script-src",
+            "impact": "Surface XSS élargie, surtout en cas d'injection HTML/JS.",
+            "priority": "critique",
+            "solution": "Passer à nonce/hash et supprimer unsafe-inline.",
+            "codeSnippet": "Content-Security-Policy: default-src 'self'; script-src 'self' 'nonce-r4nd0m'; style-src 'self' https://fonts.googleapis.com; img-src 'self' data: https:; object-src 'none'; base-uri 'self'; frame-ancestors 'none';",
+            "scoreGain": 7
+          },
+          {
+            "title": "Pas de SRI visible sur scripts externes",
+            "impact": "Risque supply-chain si ressource CDN compromise.",
+            "priority": "critique",
+            "solution": "Ajouter integrity + crossorigin sur chaque asset tiers.",
+            "codeSnippet": "<script defer src=\"https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.min.js\" integrity=\"sha384-REMPLACER_HASH\" crossorigin=\"anonymous\"></script>",
+            "scoreGain": 5
+          },
+          {
+            "title": "CSP autorise 'unsafe-inline' pour style-src",
+            "impact": "Risque d'injection CSS malveillante et contournements UI.",
+            "priority": "importante",
+            "solution": "Externaliser les styles inline et autoriser via hash/nonce.",
+            "codeSnippet": "<style nonce=\"r4nd0m\">/* critical css minimal */</style>\nContent-Security-Policy: style-src 'self' 'nonce-r4nd0m' https://fonts.googleapis.com;",
+            "scoreGain": 4
+          },
+          {
+            "title": "Absence de reporting CSP",
+            "impact": "Impossible de détecter les violations et tentatives d'exploitation en continu.",
+            "priority": "importante",
+            "solution": "Activer report-to / report-uri avec endpoint de monitoring.",
+            "codeSnippet": "Content-Security-Policy: ...; report-to csp-endpoint;\nReport-To: {\"group\":\"csp-endpoint\",\"max_age\":10886400,\"endpoints\":[{\"url\":\"https://report.example.com/csp\"}]}",
+            "scoreGain": 3
+          },
+          {
+            "title": "Headers d'isolation contexte absents (COOP/COEP/CORP)",
+            "impact": "Isolation navigateur incomplète, protection réduite contre certaines classes d'attaques cross-origin.",
+            "priority": "mineure",
+            "solution": "Activer l'isolation si compatible avec vos dépendances.",
+            "codeSnippet": "Cross-Origin-Opener-Policy: same-origin\nCross-Origin-Embedder-Policy: require-corp\nCross-Origin-Resource-Policy: same-origin",
+            "scoreGain": 2
+          }
+        ],
+        "strengths": [
+          "HSTS fort: max-age 63072000 + includeSubDomains + preload.",
+          "X-Frame-Options DENY, X-Content-Type-Options nosniff et Permissions-Policy restrictive déjà en place."
+        ]
+      },
+      "accessibility": {
+        "score": 70,
+        "level": "Bon",
+        "summary": "Base globalement correcte (lang=fr, structure titres propre, 0 image sans alt). Les écarts viennent surtout de l'UX clavier/screen-reader et de la sémantique des liens d'action. Une passe WCAG 2.2 AA ciblée produira un gain immédiat.",
+        "issues": [
+          {
+            "title": "Pas de formulaire de contact accessible (forms=0)",
+            "impact": "Parcours utilisateur incomplet et dépendance à des canaux externes moins inclusifs.",
+            "priority": "critique",
+            "solution": "Créer un formulaire accessible avec labels, erreurs annoncées et status ARIA live.",
+            "codeSnippet": "<form aria-describedby=\"form-help\" novalidate>\n  <p id=\"form-help\">Tous les champs sont obligatoires.</p>\n  <label for=\"email\">Email</label>\n  <input id=\"email\" name=\"email\" type=\"email\" required aria-invalid=\"false\" />\n  <p id=\"email-error\" role=\"alert\" hidden>Veuillez saisir un email valide.</p>\n</form>",
+            "scoreGain": 5
+          },
+          {
+            "title": "Gestion du focus clavier non démontrée pour navigation sticky/mobile",
+            "impact": "Risque de perte de focus et parcours inaccessible au clavier.",
+            "priority": "importante",
+            "solution": "Implémenter focus visible robuste et piège de focus sur menu ouvert.",
+            "codeSnippet": ":focus-visible { outline: 3px solid #0ea5e9; outline-offset: 2px; }\n\nconst menu=document.querySelector('#menu');\nmenu.addEventListener('keydown',e=>{ if(e.key==='Escape') closeMenu(); });",
+            "scoreGain": 4
+          },
+          {
+            "title": "Libellés de liens non contextuels (\"Voir plus\", \"Voir tout\")",
+            "impact": "Navigation lecteur d'écran confuse (liste de liens peu interprétable).",
+            "priority": "importante",
+            "solution": "Rendre chaque lien auto-explicatif avec contexte métier.",
+            "codeSnippet": "<a href=\"#actrice\" aria-label=\"Voir les réalisations de Synnova en tant qu'actrice\">Voir les réalisations d'actrice</a>",
+            "scoreGain": 3
+          },
+          {
+            "title": "Absence de preuve de contraste AA sur blocs visuels",
+            "impact": "Lisibilité potentiellement insuffisante pour utilisateurs malvoyants.",
+            "priority": "importante",
+            "solution": "Verrouiller des variables design token avec ratio >= 4.5:1 pour texte normal.",
+            "codeSnippet": ":root {\n  --text-primary: #111827;\n  --bg-primary: #ffffff;\n  --text-on-accent: #ffffff;\n  --accent: #0f766e;\n}\n.body { color: var(--text-primary); background: var(--bg-primary); }",
+            "scoreGain": 3
+          },
+          {
+            "title": "Absence de balisage ARIA current dans la navigation",
+            "impact": "Repère faible pour utilisateurs de technologies d'assistance.",
+            "priority": "mineure",
+            "solution": "Ajouter aria-current=\"page\" ou \"location\" sur item actif.",
+            "codeSnippet": "<a href=\"#accueil\" aria-current=\"location\">Accueil</a>",
+            "scoreGain": 1
+          }
+        ],
+        "strengths": [
+          "Aucune image sans attribut alt (26/26).",
+          "Langue principale définie en français et hiérarchie de titres globalement cohérente."
+        ]
+      },
+      "technical": {
+        "score": 62,
+        "level": "Moyen",
+        "summary": "Le site ressemble à une landing statique propre mais peu industrialisée. Les signaux de robustesse logicielle (tests, observabilité, gestion d'erreurs, stratégie de versioning) ne sont pas visibles. C'est acceptable pour un MVP, insuffisant pour une exploitation professionnelle continue.",
+        "issues": [
+          {
+            "title": "Absence de pipeline qualité visible (lint, tests, audit CI)",
+            "impact": "Risque de régressions fonctionnelles et SEO/perf à chaque release.",
+            "priority": "critique",
+            "solution": "Mettre en place CI avec lint, tests unitaires, Lighthouse CI et vérification headers.",
+            "codeSnippet": "name: ci\non: [push]\njobs:\n  quality:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - run: npm ci\n      - run: npm run lint && npm run test\n      - run: npm run lighthouse:ci",
+            "scoreGain": 7
+          },
+          {
+            "title": "Pas de couche d'observabilité front visible",
+            "impact": "Incidents silencieux (JS errors, régressions web vitals) non détectés.",
+            "priority": "critique",
+            "solution": "Instrumenter erreurs runtime + Core Web Vitals avec un outil de monitoring.",
+            "codeSnippet": "import * as Sentry from '@sentry/browser';\nSentry.init({ dsn: 'https://xxx.ingest.sentry.io/yyy', tracesSampleRate: 0.2 });\nwindow.addEventListener('error', (e)=>Sentry.captureException(e.error));",
+            "scoreGain": 6
+          },
+          {
+            "title": "Absence d'API de contact interne (forms=0) et fallback transactionnel",
+            "impact": "Aucune résilience pour captation de leads (panne réseau social = perte business).",
+            "priority": "importante",
+            "solution": "Ajouter endpoint serverless avec validation schéma et anti-spam.",
+            "codeSnippet": "export default async function handler(req,res){\n  if(req.method!=='POST') return res.status(405).end();\n  const {name,email,message}=req.body||{};\n  if(!name||!/^\\S+@\\S+\\.\\S+$/.test(email)||!message) return res.status(400).json({error:'invalid'});\n  return res.status(200).json({ok:true});\n}",
+            "scoreGain": 5
+          },
+          {
+            "title": "Absence de stratégie explicite de versionnement des assets",
+            "impact": "Cache incohérent, risques de stale assets après déploiement.",
+            "priority": "importante",
+            "solution": "Adopter des fichiers fingerprintés et invalider via hash de build.",
+            "codeSnippet": "<link rel=\"stylesheet\" href=\"/assets/app.3f9c2a1.css\" />\n<script defer src=\"/assets/app.8ab41de.js\"></script>",
+            "scoreGain": 4
+          },
+          {
+            "title": "Inline script présent (1) et couplage markup/comportement",
+            "impact": "Maintenabilité réduite, testabilité plus faible, CSP durcie plus difficile.",
+            "priority": "importante",
+            "solution": "Externaliser tout JS dans modules versionnés.",
+            "codeSnippet": "<script defer type=\"module\" src=\"/assets/js/main.js\"></script>\n<!-- Supprimer tout <script> inline -->",
+            "scoreGain": 3
+          }
+        ],
+        "strengths": [
+          "Stack de déploiement stable sur Vercel avec HTTPS actif.",
+          "Structure de page simple favorisant des temps de build courts et un risque backend faible."
+        ]
+      }
+    },
+    "actionPlan": [
+      {
+        "rank": 1,
+        "action": "Supprimer unsafe-inline CSP (script/style), externaliser l'inline script et passer en nonce/hash + SRI",
+        "module": "security",
+        "gain": 12,
+        "effort": "Moyen"
+      },
+      {
+        "rank": 2,
+        "action": "Refondre la stratégie images (AVIF/WebP, srcset, lazy-load, dimensions fixes) pour les 26 images",
+        "module": "performance",
+        "gain": 11,
+        "effort": "Moyen"
+      },
+      {
+        "rank": 3,
+        "action": "Créer un vrai tunnel de conversion avec formulaire contact accessible + endpoint serverless validé",
+        "module": "design",
+        "gain": 10,
+        "effort": "Moyen"
+      },
+      {
+        "rank": 4,
+        "action": "Industrialiser la qualité: CI (lint/tests/Lighthouse CI) + monitoring erreurs + web vitals",
+        "module": "technical",
+        "gain": 10,
+        "effort": "Élevé"
+      },
+      {
+        "rank": 5,
+        "action": "Migrer vers domaine de marque, corriger canonical/og:url et structurer des pages SEO par intention",
+        "module": "seo",
+        "gain": 9,
+        "effort": "Moyen"
+      },
+      {
+        "rank": 6,
+        "action": "Activer cache immutable pour assets fingerprintés et preload mesuré des ressources LCP",
+        "module": "performance",
+        "gain": 8,
+        "effort": "Faible"
+      },
+      {
+        "rank": 7,
+        "action": "Durcir l'accessibilité: libellés de liens explicites, focus visible, aria-current, validation WCAG AA",
+        "module": "accessibility",
+        "gain": 7,
+        "effort": "Faible"
+      }
+    ],
+    "strengths": [
+      "Socle sécurité HTTP déjà solide (HSTS preload, XFO DENY, nosniff, referrer policy stricte).",
+      "Méta SEO de base bien posée (title, description, canonical, OG/Twitter, robots).",
+      "Aucune image sans alt, structure de titres claire (H1/H2/H3).",
+      "Poids HTML modéré (~36.6 KB) et scripts majoritairement defer (5/6).",
+      "JSON-LD Person présent et cohérent avec la proposition de valeur.",
+      "Structure éditoriale claire avec 1 H1 et des H2/H3 cohérents."
+    ],
+    "weaknesses": [
+      "Architecture trop \"landing\" sans industrialisation qualité (tests/CI/monitoring non visibles).",
+      "CSP permissive à cause de unsafe-inline et dépendance script tierce.",
+      "Parcours business incomplet: aucun formulaire natif (forms=0).",
+      "SEO limité par l'usage du domaine vercel.app et un maillage one-page peu profond.",
+      "Performance perfectible surtout sur la chaîne images et la stratégie cache/preload.",
+      "Absence de composant de contact direct (forms=0): Friction élevée: dépendance aux réseaux sociaux et perte de leads."
+    ],
+    "scoreAfterFix": 90
+  },
+  "meta": {
+    "httpStatus": 200,
+    "isHttps": true,
+    "securityHeaders": {
+      "hsts": "max-age=63072000; includeSubDomains; preload",
+      "csp": "default-src 'self'; img-src 'self' data: https:; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none';",
+      "xfo": "DENY",
+      "xcto": "nosniff",
+      "referrer": "strict-origin-when-cross-origin",
+      "permissions": "camera=(), microphone=(), geolocation=(), payment=()",
+      "server": "Vercel"
+    },
+    "favicon": "https://synnovatocloe.vercel.app/assets/icons/favicon.svg",
+    "webSearch": true,
+    "requestedUrl": "https://synnovatocloe.vercel.app/",
+    "finalUrl": "https://synnovatocloe.vercel.app/",
+    "fetchedAt": "2026-05-17T19:35:04.681Z"
+  }
+}

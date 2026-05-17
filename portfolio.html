@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,32 +8,90 @@
 
   <!-- ═══ SEO ═══ -->
   <title>Synnova TOCLOE | Portfolio & Galerie de Réalisations</title>
-  <meta name="description" content="Explorez le portfolio et les réalisations de Synnova TOCLOE : photos d'événements, projets cinéma, actions sociales et témoignages." />
-  <meta name="keywords" content="Portfolio Synnova TOCLOE, réalisations, événements Bénin, Festival des Arts du Bénin, témoignages" />
+  <meta name="description"
+    content="Explorez le portfolio et les réalisations de Synnova TOCLOE : photos d'événements, projets cinéma, actions sociales et témoignages." />
+  <meta name="keywords"
+    content="Portfolio Synnova TOCLOE, réalisations, événements Bénin, Festival des Arts du Bénin, témoignages" />
   <meta name="author" content="Synnova TOCLOE" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://synnovatocloe.vercel.app/portfolio.html" />
   <meta name="google-site-verification" content="1pCR1J0h90PalkK47lcEO3ldlTIA5AJFiFep0LiUuZk" />
 
+  <!-- ═══ Schema.org JSON-LD ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://synnovatocloe.vercel.app/#person",
+        "name": "Synnova TOCLOE",
+        "alternateName": "Belvine Kybarance TOCLOE",
+        "jobTitle": ["Animatrice", "Communicatrice", "Actrice", "Entrepreneuse sociale"],
+        "description": "Animatrice d'événements, communicatrice digitale, actrice et entrepreneuse sociale basée à Grand-Popo, Bénin.",
+        "url": "https://synnovatocloe.vercel.app/",
+        "image": "https://synnovatocloe.vercel.app/assets/images/synnova-og.webp",
+        "sameAs": [
+          "https://facebook.com/synnovalumiere",
+          "https://tiktok.com/@_synnova",
+          "https://instagram.com/_synnova",
+          "https://bj.linkedin.com/in/synnova-belvine-kybarance-tocloe-3882a9232"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Grand-Popo",
+          "addressCountry": "BJ"
+        },
+        "knowsAbout": ["Animation d'événements", "Communication digitale", "Cinéma", "Entrepreneuriat social"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://synnovatocloe.vercel.app/#website",
+        "url": "https://synnovatocloe.vercel.app/",
+        "name": "Synnova TOCLOE",
+        "description": "Site officiel de Synnova TOCLOE, professionnelle de la communication, de l'animation d'événements et entrepreneuse au Bénin.",
+        "publisher": {
+          "@id": "https://synnovatocloe.vercel.app/#organization"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://synnovatocloe.vercel.app/#organization",
+        "name": "Synnova TOCLOE",
+        "url": "https://synnovatocloe.vercel.app/",
+        "logo": "https://synnovatocloe.vercel.app/assets/images/synnova-og.webp",
+        "sameAs": [
+          "https://facebook.com/synnovalumiere",
+          "https://tiktok.com/@_synnova",
+          "https://instagram.com/_synnova",
+          "https://bj.linkedin.com/in/synnova-belvine-kybarance-tocloe-3882a9232"
+        ]
+      }
+    ]
+  }
+  </script>
+
   <!-- ═══ Open Graph ═══ -->
-  <meta property="og:type"        content="website" />
-  <meta property="og:url"         content="https://synnovatocloe.vercel.app/portfolio.html" />
-  <meta property="og:title"       content="Synnova TOCLOE | Portfolio" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://synnovatocloe.vercel.app/portfolio.html" />
+  <meta property="og:title" content="Synnova TOCLOE | Portfolio" />
   <meta property="og:description" content="Découvrez les réalisations et projets de Synnova TOCLOE." />
-  <meta property="og:image"       content="https://synnovatocloe.vercel.app/assets/images/synnova-og.webp" />
-  <meta property="og:locale"      content="fr_BJ" />
-  <meta property="og:site_name"   content="Synnova TOCLOE" />
+  <meta property="og:image" content="https://synnovatocloe.vercel.app/assets/images/synnova-og.webp" />
+  <meta property="og:locale" content="fr_BJ" />
+  <meta property="og:site_name" content="Synnova TOCLOE" />
 
   <!-- ═══ Twitter Card ═══ -->
-  <meta name="twitter:card"        content="summary_large_image" />
-  <meta name="twitter:title"       content="Synnova TOCLOE | Portfolio" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Synnova TOCLOE | Portfolio" />
   <meta name="twitter:description" content="Découvrez les réalisations de Synnova TOCLOE." />
-  <meta name="twitter:image"       content="https://synnovatocloe.vercel.app/assets/images/synnova-og.webp" />
+  <meta name="twitter:image" content="https://synnovatocloe.vercel.app/assets/images/synnova-og.webp" />
 
   <!-- ═══ Fonts ═══ -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600&family=Kaushan+Script&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600&family=Kaushan+Script&display=swap"
+    rel="stylesheet" />
 
   <!-- ═══ Tailwind CSS ═══ -->
   <link rel="stylesheet" href="css/output.css" />
@@ -47,8 +106,7 @@
   <div id="cursor" aria-hidden="true"></div>
 
   <!-- SKIP LINK -->
-  <a href="#main-content"
-     class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999]
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999]
             focus:bg-rose focus:text-snow focus:px-5 focus:py-2.5 focus:rounded-full
             focus:text-sm focus:font-semibold focus:shadow-lg">
     Aller au contenu principal
@@ -64,50 +122,42 @@
 
   <!-- NAVIGATION -->
   <header role="banner">
-    <nav id="navbar"
-         class="fixed top-0 left-0 right-0 z-[1000] flex items-center justify-between
-                px-6 py-5 md:px-12 transition-all duration-300"
-         aria-label="Navigation principale">
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-[1000] flex items-center justify-between
+                px-6 py-5 md:px-12 transition-all duration-300" aria-label="Navigation principale">
 
       <a href="index.html"
-         class="font-display text-2xl font-bold tracking-wide text-snow hover:opacity-90 transition-opacity"
-         aria-label="Synnova TOCLOE — Retour à l'accueil">
+        class="font-display text-2xl font-bold tracking-wide text-snow hover:opacity-90 transition-opacity"
+        aria-label="Synnova TOCLOE — Retour à l'accueil">
         Syn<span class="text-rose">nova</span>
       </a>
 
       <ul class="hidden md:flex items-center gap-8 list-none m-0 p-0" role="list">
         <li>
-          <a href="index.html"
-             class="nav-link relative text-[0.7rem] tracking-[.18em] uppercase text-snow/70
+          <a href="index.html" class="nav-link relative text-[0.7rem] tracking-[.18em] uppercase text-snow/70
                     hover:text-snow transition-colors focus:outline-none focus:text-snow">
             Accueil
           </a>
         </li>
         <li>
-          <a href="a-propos.html"
-             class="nav-link relative text-[0.7rem] tracking-[.18em] uppercase text-snow/70
+          <a href="a-propos.html" class="nav-link relative text-[0.7rem] tracking-[.18em] uppercase text-snow/70
                     hover:text-snow transition-colors focus:outline-none focus:text-snow">
             À Propos
           </a>
         </li>
         <li>
-          <a href="univers.html"
-             class="nav-link relative text-[0.7rem] tracking-[.18em] uppercase text-snow/70
+          <a href="univers.html" class="nav-link relative text-[0.7rem] tracking-[.18em] uppercase text-snow/70
                     hover:text-snow transition-colors focus:outline-none focus:text-snow">
             Univers
           </a>
         </li>
         <li>
-          <a href="portfolio.html"
-             class="nav-link relative text-[0.7rem] tracking-[.18em] uppercase text-rose
-                    transition-colors focus:outline-none focus:text-rose"
-             aria-current="page">
+          <a href="portfolio.html" class="nav-link relative text-[0.7rem] tracking-[.18em] uppercase text-rose
+                    transition-colors focus:outline-none focus:text-rose" aria-current="page">
             Portfolio
           </a>
         </li>
         <li>
-          <a href="contact.html"
-             class="btn-shimmer relative overflow-hidden inline-flex items-center gap-2
+          <a href="contact.html" class="btn-shimmer relative overflow-hidden inline-flex items-center gap-2
                     bg-rose text-snow text-[0.7rem] font-semibold tracking-[.15em] uppercase
                     px-6 py-3 rounded-full transition-transform hover:-translate-y-0.5
                     focus:outline-none focus:ring-2 focus:ring-rose focus:ring-offset-2
@@ -117,11 +167,8 @@
         </li>
       </ul>
 
-      <button id="burger"
-              class="md:hidden flex flex-col gap-[5px] bg-transparent border-none p-2 z-[1001]"
-              aria-expanded="false"
-              aria-controls="mobile-menu"
-              aria-label="Ouvrir le menu de navigation">
+      <button id="burger" class="md:hidden flex flex-col gap-[5px] bg-transparent border-none p-2 z-[1001]"
+        aria-expanded="false" aria-controls="mobile-menu" aria-label="Ouvrir le menu de navigation">
         <span class="burger-line block w-6 h-[1.5px] bg-snow transition-all duration-300" aria-hidden="true"></span>
         <span class="burger-line block w-6 h-[1.5px] bg-snow transition-all duration-300" aria-hidden="true"></span>
         <span class="burger-line block w-4 h-[1.5px] bg-snow transition-all duration-300" aria-hidden="true"></span>
@@ -129,34 +176,39 @@
     </nav>
 
     <!-- Mobile menu -->
-    <div id="mobile-menu"
-         class="fixed inset-0 z-[999] flex flex-col items-center justify-center gap-10
-                bg-dark/[.97] backdrop-blur-2xl translate-x-full transition-transform duration-500"
-         aria-hidden="true"
-         role="dialog"
-         aria-modal="true"
-         aria-label="Menu de navigation mobile">
+    <div id="mobile-menu" class="fixed inset-0 z-[999] flex flex-col items-center justify-center gap-10
+                bg-dark/[.97] backdrop-blur-2xl translate-x-full transition-transform duration-500" aria-hidden="true"
+      role="dialog" aria-modal="true" aria-label="Menu de navigation mobile">
       <nav aria-label="Menu mobile">
         <ul class="flex flex-col items-center gap-8 list-none m-0 p-0" role="list">
-          <li><a href="index.html" class="font-display text-4xl font-semibold text-snow hover:text-rose transition-colors">Accueil</a></li>
-          <li><a href="a-propos.html" class="font-display text-4xl font-semibold text-snow hover:text-rose transition-colors">À Propos</a></li>
-          <li><a href="univers.html" class="font-display text-4xl font-semibold text-snow hover:text-rose transition-colors">Univers</a></li>
-          <li><a href="portfolio.html" class="font-display text-4xl font-semibold text-rose transition-colors" aria-current="page">Portfolio</a></li>
-          <li><a href="contact.html" class="font-display text-4xl font-semibold text-snow hover:text-rose transition-colors">Contact</a></li>
+          <li><a href="index.html"
+              class="font-display text-4xl font-semibold text-snow hover:text-rose transition-colors">Accueil</a></li>
+          <li><a href="a-propos.html"
+              class="font-display text-4xl font-semibold text-snow hover:text-rose transition-colors">À Propos</a></li>
+          <li><a href="univers.html"
+              class="font-display text-4xl font-semibold text-snow hover:text-rose transition-colors">Univers</a></li>
+          <li><a href="portfolio.html" class="font-display text-4xl font-semibold text-rose transition-colors"
+              aria-current="page">Portfolio</a></li>
+          <li><a href="contact.html"
+              class="font-display text-4xl font-semibold text-snow hover:text-rose transition-colors">Contact</a></li>
         </ul>
       </nav>
       <!-- Réseaux -->
       <div class="flex items-center gap-6 mt-2" aria-label="Réseaux sociaux">
-        <a href="https://facebook.com/synnovalumiere" target="_blank" rel="noopener noreferrer" class="opacity-50 hover:opacity-100 transition-opacity">
+        <a href="https://facebook.com/synnovalumiere" target="_blank" rel="noopener noreferrer"
+          class="opacity-50 hover:opacity-100 transition-opacity">
           <img src="assets/icons/facebook.svg" alt="Facebook" width="22" height="22" />
         </a>
-        <a href="https://tiktok.com/@_synnova" target="_blank" rel="noopener noreferrer" class="opacity-50 hover:opacity-100 transition-opacity">
+        <a href="https://tiktok.com/@_synnova" target="_blank" rel="noopener noreferrer"
+          class="opacity-50 hover:opacity-100 transition-opacity">
           <img src="assets/icons/tiktok.svg" alt="TikTok" width="22" height="22" />
         </a>
-        <a href="https://instagram.com/_synnova" target="_blank" rel="noopener noreferrer" class="opacity-50 hover:opacity-100 transition-opacity">
+        <a href="https://instagram.com/_synnova" target="_blank" rel="noopener noreferrer"
+          class="opacity-50 hover:opacity-100 transition-opacity">
           <img src="assets/icons/instagram.svg" alt="Instagram" width="22" height="22" />
         </a>
-        <a href="https://bj.linkedin.com/in/synnova-belvine-kybarance-tocloe-3882a9232" target="_blank" rel="noopener noreferrer" class="opacity-50 hover:opacity-100 transition-opacity">
+        <a href="https://bj.linkedin.com/in/synnova-belvine-kybarance-tocloe-3882a9232" target="_blank"
+          rel="noopener noreferrer" class="opacity-50 hover:opacity-100 transition-opacity">
           <img src="assets/icons/linkedin.svg" alt="LinkedIn" width="22" height="22" />
         </a>
       </div>
@@ -167,10 +219,11 @@
   <main id="main-content">
 
     <!-- HERO PORTFOLIO -->
-    <section class="relative pt-32 pb-16 px-6 md:pt-48 md:pb-20 md:px-16 overflow-hidden flex flex-col items-center text-center">
+    <section
+      class="relative pt-32 pb-16 px-6 md:pt-48 md:pb-20 md:px-16 overflow-hidden flex flex-col items-center text-center">
       <div class="relative z-10 max-w-3xl mx-auto">
         <h1 class="gsap-reveal font-display font-bold text-snow leading-tight mb-6 opacity-0"
-            style="font-size: clamp(2.5rem, 6vw, 4.5rem);">
+          style="font-size: clamp(2.5rem, 6vw, 4.5rem);">
           Mes <em class="text-rose">Réalisations</em>
         </h1>
         <p class="gsap-reveal text-snow/70 text-sm md:text-base leading-relaxed max-w-2xl mx-auto mb-10 opacity-0">
@@ -182,181 +235,299 @@
     <!-- GALERIE FILTRABLE -->
     <section class="px-6 py-10 md:px-16 md:pb-24">
       <div class="max-w-6xl mx-auto">
-        
+
         <!-- Filtres Modernes -->
         <div class="flex flex-wrap justify-center gap-4 mb-16" id="portfolio-filters">
-          <button class="filter-btn active group relative px-8 py-3 rounded-full overflow-hidden transition-all duration-300" data-filter="all">
+          <button
+            class="filter-btn active group relative px-8 py-3 rounded-full overflow-hidden transition-all duration-300"
+            data-filter="all">
             <span class="relative z-10 text-[0.65rem] tracking-[.2em] uppercase font-semibold">Tout voir</span>
             <div class="absolute inset-0 bg-rose transition-transform duration-500 origin-left"></div>
           </button>
-          <button class="filter-btn group relative px-8 py-3 rounded-full border border-snow/10 overflow-hidden transition-all duration-300" data-filter="evenements">
-            <span class="relative z-10 text-[0.65rem] tracking-[.2em] uppercase text-snow/60 group-hover:text-snow transition-colors">Événements</span>
-            <div class="absolute inset-0 bg-rose scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left opacity-20"></div>
+          <button
+            class="filter-btn group relative px-8 py-3 rounded-full border border-snow/10 overflow-hidden transition-all duration-300"
+            data-filter="evenements">
+            <span
+              class="relative z-10 text-[0.65rem] tracking-[.2em] uppercase text-snow/60 group-hover:text-snow transition-colors">Événements</span>
+            <div
+              class="absolute inset-0 bg-rose scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left opacity-20">
+            </div>
           </button>
-          <button class="filter-btn group relative px-8 py-3 rounded-full border border-snow/10 overflow-hidden transition-all duration-300" data-filter="cinema">
-            <span class="relative z-10 text-[0.65rem] tracking-[.2em] uppercase text-snow/60 group-hover:text-snow transition-colors">Cinéma</span>
-            <div class="absolute inset-0 bg-indigo scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left opacity-20"></div>
+          <button
+            class="filter-btn group relative px-8 py-3 rounded-full border border-snow/10 overflow-hidden transition-all duration-300"
+            data-filter="cinema">
+            <span
+              class="relative z-10 text-[0.65rem] tracking-[.2em] uppercase text-snow/60 group-hover:text-snow transition-colors">Cinéma</span>
+            <div
+              class="absolute inset-0 bg-indigo scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left opacity-20">
+            </div>
           </button>
-          <button class="filter-btn group relative px-8 py-3 rounded-full border border-snow/10 overflow-hidden transition-all duration-300" data-filter="eco">
-            <span class="relative z-10 text-[0.65rem] tracking-[.2em] uppercase text-snow/60 group-hover:text-snow transition-colors">Eco/Social</span>
-            <div class="absolute inset-0 bg-green-eco scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left opacity-20"></div>
+          <button
+            class="filter-btn group relative px-8 py-3 rounded-full border border-snow/10 overflow-hidden transition-all duration-300"
+            data-filter="eco">
+            <span
+              class="relative z-10 text-[0.65rem] tracking-[.2em] uppercase text-snow/60 group-hover:text-snow transition-colors">Eco/Social</span>
+            <div
+              class="absolute inset-0 bg-green-eco scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left opacity-20">
+            </div>
           </button>
         </div>
 
         <!-- Carousel Portfolio (multi-lignes responsive) -->
         <div class="portfolio-carousel-wrapper">
           <div class="grid gap-8 portfolio-carousel" id="portfolio-grid">
-          
-          <!-- Item 1 -->
-          <div class="portfolio-item evenements group relative aspect-[4/5] overflow-hidden rounded-3xl cursor-none-on-hover" data-category="evenements">
-            <img src="assets/images/synnova-event-red-shirt.webp" alt="Synnova animation" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 portfolio-img" />
-            <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div class="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-              <span class="w-fit px-3 py-1 bg-rose/20 border border-rose/30 rounded-full text-rose text-[0.55rem] tracking-widest uppercase mb-3">Événements</span>
-              <h3 class="font-display text-2xl font-bold text-snow">Animation sur scène</h3>
-            </div>
-          </div>
 
-          <!-- Item 2 -->
-          <div class="portfolio-item cinema group relative aspect-[4/5] overflow-hidden rounded-3xl" data-category="cinema">
-            <img src="assets/images/synnova-osc-salon.webp" alt="Synnova Cinéma" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 portfolio-img" />
-            <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div class="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-              <span class="w-fit px-3 py-1 bg-indigo/20 border border-indigo/30 rounded-full text-indigo-light text-[0.55rem] tracking-widest uppercase mb-3">Cinéma</span>
-              <h3 class="font-display text-2xl font-bold text-snow">Festival des Arts</h3>
+            <!-- Item 1 -->
+            <div
+              class="portfolio-item evenements group relative aspect-[4/5] overflow-hidden rounded-3xl cursor-none-on-hover"
+              data-category="evenements">
+              <img src="assets/images/synnova-event-red-shirt.webp" alt="Synnova animation"
+                class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 portfolio-img"
+                width="400" height="500" loading="lazy" decoding="async" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+              </div>
+              <div
+                class="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                <span
+                  class="w-fit px-3 py-1 bg-rose/20 border border-rose/30 rounded-full text-rose text-[0.55rem] tracking-widest uppercase mb-3">Événements</span>
+                <h3 class="font-display text-2xl font-bold text-snow">Animation sur scène</h3>
+              </div>
             </div>
-          </div>
 
-          <!-- Item 3 -->
-          <div class="portfolio-item eco group relative aspect-[4/5] overflow-hidden rounded-3xl" data-category="eco">
-            <img src="assets/images/synnova-garden-flower.webp" alt="Synnova Entrepreneuriat" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 portfolio-img" />
-            <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div class="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-              <span class="w-fit px-3 py-1 bg-green-eco/20 border border-green-eco/30 rounded-full text-green-eco-light text-[0.55rem] tracking-widest uppercase mb-3">Éco/Social</span>
-              <h3 class="font-display text-2xl font-bold text-snow">Emballages Biodégradables</h3>
+            <!-- Item 2 -->
+            <div class="portfolio-item cinema group relative aspect-[4/5] overflow-hidden rounded-3xl"
+              data-category="cinema">
+              <img src="assets/images/synnova-osc-salon.webp" alt="Synnova Cinéma"
+                class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 portfolio-img"
+                width="400" height="500" loading="lazy" decoding="async" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+              </div>
+              <div
+                class="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                <span
+                  class="w-fit px-3 py-1 bg-indigo/20 border border-indigo/30 rounded-full text-indigo-light text-[0.55rem] tracking-widest uppercase mb-3">Cinéma</span>
+                <h3 class="font-display text-2xl font-bold text-snow">Festival des Arts</h3>
+              </div>
             </div>
-          </div>
 
-          <!-- Item 4 -->
-          <div class="portfolio-item evenements group relative aspect-[4/5] overflow-hidden rounded-3xl" data-category="evenements">
-            <img src="assets/images/synnova-meetup-change.webp" alt="Synnova Communication" class="w-full h-full object-cover object-top transition-transform duration-1000 group-hover:scale-110 portfolio-img" />
-            <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div class="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-              <span class="w-fit px-3 py-1 bg-gold/20 border border-gold/30 rounded-full text-gold text-[0.55rem] tracking-widest uppercase mb-3">Communication</span>
-              <h3 class="font-display text-2xl font-bold text-snow">Stratégie Digitale</h3>
+            <!-- Item 3 -->
+            <div class="portfolio-item eco group relative aspect-[4/5] overflow-hidden rounded-3xl" data-category="eco">
+              <img src="assets/images/synnova-garden-flower.webp" alt="Synnova Entrepreneuriat"
+                class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 portfolio-img"
+                width="400" height="500" loading="lazy" decoding="async" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+              </div>
+              <div
+                class="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                <span
+                  class="w-fit px-3 py-1 bg-green-eco/20 border border-green-eco/30 rounded-full text-green-eco-light text-[0.55rem] tracking-widest uppercase mb-3">Éco/Social</span>
+                <h3 class="font-display text-2xl font-bold text-snow">Emballages Biodégradables</h3>
+              </div>
             </div>
-          </div>
 
-          <!-- Item 5 -->
-          <div class="portfolio-item evenements group relative aspect-[4/5] overflow-hidden rounded-3xl" data-category="evenements">
-            <img src="assets/images/synnova-joyful-animator-1.webp" alt="Animation scène" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 portfolio-img" />
-            <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div class="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-              <span class="w-fit px-3 py-1 bg-rose/20 border border-rose/30 rounded-full text-rose text-[0.55rem] tracking-widest uppercase mb-3">Événements</span>
-              <h3 class="font-display text-2xl font-bold text-snow">Prise de parole</h3>
+            <!-- Item 4 -->
+            <div class="portfolio-item evenements group relative aspect-[4/5] overflow-hidden rounded-3xl"
+              data-category="evenements">
+              <img src="assets/images/synnova-meetup-change.webp" alt="Synnova Communication"
+                class="w-full h-full object-cover object-top transition-transform duration-1000 group-hover:scale-110 portfolio-img"
+                width="400" height="500" loading="lazy" decoding="async" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+              </div>
+              <div
+                class="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                <span
+                  class="w-fit px-3 py-1 bg-gold/20 border border-gold/30 rounded-full text-gold text-[0.55rem] tracking-widest uppercase mb-3">Communication</span>
+                <h3 class="font-display text-2xl font-bold text-snow">Stratégie Digitale</h3>
+              </div>
             </div>
-          </div>
 
-          <!-- Item 6 -->
-          <div class="portfolio-item eco group relative aspect-[4/5] overflow-hidden rounded-3xl" data-category="eco">
-            <img src="assets/images/synnova-ureport-clapping.webp" alt="Engagement social" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 portfolio-img" />
-            <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div class="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-              <span class="w-fit px-3 py-1 bg-green-eco/20 border border-green-eco/30 rounded-full text-green-eco-light text-[0.55rem] tracking-widest uppercase mb-3">Social</span>
-              <h3 class="font-display text-2xl font-bold text-snow">Ambassadrice U-Report</h3>
+            <!-- Item 5 -->
+            <div class="portfolio-item evenements group relative aspect-[4/5] overflow-hidden rounded-3xl"
+              data-category="evenements">
+              <img src="assets/images/synnova-joyful-animator-1.webp" alt="Animation scène"
+                class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 portfolio-img"
+                width="400" height="500" loading="lazy" decoding="async" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+              </div>
+              <div
+                class="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                <span
+                  class="w-fit px-3 py-1 bg-rose/20 border border-rose/30 rounded-full text-rose text-[0.55rem] tracking-widest uppercase mb-3">Événements</span>
+                <h3 class="font-display text-2xl font-bold text-snow">Prise de parole</h3>
+              </div>
             </div>
-          </div>
 
-          <!-- Item 7 -->
-          <div class="portfolio-item cinema group relative aspect-[4/5] overflow-hidden rounded-3xl" data-category="cinema">
-            <img src="assets/images/synnova-conference-listening-bw.webp" alt="Portrait Cinéma" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 portfolio-img" />
-            <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div class="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-              <span class="w-fit px-3 py-1 bg-indigo/20 border border-indigo/30 rounded-full text-indigo-light text-[0.55rem] tracking-widest uppercase mb-3">Cinéma</span>
-              <h3 class="font-display text-2xl font-bold text-snow">Projet Cinématographique</h3>
+            <!-- Item 6 -->
+            <div class="portfolio-item eco group relative aspect-[4/5] overflow-hidden rounded-3xl" data-category="eco">
+              <img src="assets/images/synnova-ureport-clapping.webp" alt="Engagement social"
+                class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 portfolio-img"
+                width="400" height="500" loading="lazy" decoding="async" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+              </div>
+              <div
+                class="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                <span
+                  class="w-fit px-3 py-1 bg-green-eco/20 border border-green-eco/30 rounded-full text-green-eco-light text-[0.55rem] tracking-widest uppercase mb-3">Social</span>
+                <h3 class="font-display text-2xl font-bold text-snow">Ambassadrice U-Report</h3>
+              </div>
             </div>
-          </div>
 
-          <!-- Item 8 -->
-          <div class="portfolio-item evenements group relative aspect-[4/5] overflow-hidden rounded-3xl" data-category="evenements">
-            <img src="assets/images/synnova-conference-headphones.webp" alt="Communication Radio" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 portfolio-img" />
-            <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div class="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-              <span class="w-fit px-3 py-1 bg-gold/20 border border-gold/30 rounded-full text-gold text-[0.55rem] tracking-widest uppercase mb-3">Communication</span>
-              <h3 class="font-display text-2xl font-bold text-snow">Animation Radio & Média</h3>
+            <!-- Item 7 -->
+            <div class="portfolio-item cinema group relative aspect-[4/5] overflow-hidden rounded-3xl"
+              data-category="cinema">
+              <img src="assets/images/synnova-conference-listening-bw.webp" alt="Portrait Cinéma"
+                class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 portfolio-img"
+                width="400" height="500" loading="lazy" decoding="async" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+              </div>
+              <div
+                class="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                <span
+                  class="w-fit px-3 py-1 bg-indigo/20 border border-indigo/30 rounded-full text-indigo-light text-[0.55rem] tracking-widest uppercase mb-3">Cinéma</span>
+                <h3 class="font-display text-2xl font-bold text-snow">Projet Cinématographique</h3>
+              </div>
             </div>
-          </div>
 
-          <!-- Item 9 -->
-          <div class="portfolio-item eco group relative aspect-[4/5] overflow-hidden rounded-3xl" data-category="eco">
-            <img src="assets/images/synnova-unicef-social.webp" alt="Unicef Social" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 portfolio-img" />
-            <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div class="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-              <span class="w-fit px-3 py-1 bg-green-eco/20 border border-green-eco/30 rounded-full text-green-eco-light text-[0.55rem] tracking-widest uppercase mb-3">Social</span>
-              <h3 class="font-display text-2xl font-bold text-snow">Action Humanitaire</h3>
+            <!-- Item 8 -->
+            <div class="portfolio-item evenements group relative aspect-[4/5] overflow-hidden rounded-3xl"
+              data-category="evenements">
+              <img src="assets/images/synnova-conference-headphones.webp" alt="Communication Radio"
+                class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 portfolio-img"
+                width="400" height="500" loading="lazy" decoding="async" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+              </div>
+              <div
+                class="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                <span
+                  class="w-fit px-3 py-1 bg-gold/20 border border-gold/30 rounded-full text-gold text-[0.55rem] tracking-widest uppercase mb-3">Communication</span>
+                <h3 class="font-display text-2xl font-bold text-snow">Animation Radio & Média</h3>
+              </div>
             </div>
-          </div>
 
-          <!-- Item 10 -->
-          <div class="portfolio-item eco group relative aspect-[4/5] overflow-hidden rounded-3xl" data-category="eco">
-            <img src="assets/images/synnova-kits-scolaires-1.webp" alt="Distribution kits scolaires" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 portfolio-img" />
-            <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div class="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-              <span class="w-fit px-3 py-1 bg-green-eco/20 border border-green-eco/30 rounded-full text-green-eco-light text-[0.55rem] tracking-widest uppercase mb-3">Social</span>
-              <h3 class="font-display text-2xl font-bold text-snow">Kits Scolaires 2024</h3>
+            <!-- Item 9 -->
+            <div class="portfolio-item eco group relative aspect-[4/5] overflow-hidden rounded-3xl" data-category="eco">
+              <img src="assets/images/synnova-unicef-social.webp" alt="Unicef Social"
+                class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 portfolio-img"
+                width="400" height="500" loading="lazy" decoding="async" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+              </div>
+              <div
+                class="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                <span
+                  class="w-fit px-3 py-1 bg-green-eco/20 border border-green-eco/30 rounded-full text-green-eco-light text-[0.55rem] tracking-widest uppercase mb-3">Social</span>
+                <h3 class="font-display text-2xl font-bold text-snow">Action Humanitaire</h3>
+              </div>
             </div>
-          </div>
 
-          <!-- Item 11 -->
-          <div class="portfolio-item eco group relative aspect-[4/5] overflow-hidden rounded-3xl" data-category="eco">
-            <img src="assets/images/synnova-unicef-airport-1.webp" alt="UNICEF Aéroport" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 portfolio-img" />
-            <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div class="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-              <span class="w-fit px-3 py-1 bg-indigo/20 border border-indigo/30 rounded-full text-indigo-light text-[0.55rem] tracking-widest uppercase mb-3">Social</span>
-              <h3 class="font-display text-2xl font-bold text-snow">Journée de l'Enfance</h3>
+            <!-- Item 10 -->
+            <div class="portfolio-item eco group relative aspect-[4/5] overflow-hidden rounded-3xl" data-category="eco">
+              <img src="assets/images/synnova-kits-scolaires-1.webp" alt="Distribution kits scolaires"
+                class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 portfolio-img"
+                width="400" height="500" loading="lazy" decoding="async" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+              </div>
+              <div
+                class="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                <span
+                  class="w-fit px-3 py-1 bg-green-eco/20 border border-green-eco/30 rounded-full text-green-eco-light text-[0.55rem] tracking-widest uppercase mb-3">Social</span>
+                <h3 class="font-display text-2xl font-bold text-snow">Kits Scolaires 2024</h3>
+              </div>
             </div>
-          </div>
 
-          <!-- Item 12 -->
-          <div class="portfolio-item cinema group relative aspect-[4/5] overflow-hidden rounded-3xl" data-category="cinema">
-            <img src="assets/images/synnova-miss-photogenique.webp" alt="Miss Photogénique" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 portfolio-img" />
-            <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div class="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-              <span class="w-fit px-3 py-1 bg-rose/20 border border-rose/30 rounded-full text-rose text-[0.55rem] tracking-widest uppercase mb-3">Cinéma</span>
-              <h3 class="font-display text-2xl font-bold text-snow">Miss Photogénique</h3>
+            <!-- Item 11 -->
+            <div class="portfolio-item eco group relative aspect-[4/5] overflow-hidden rounded-3xl" data-category="eco">
+              <img src="assets/images/synnova-unicef-airport-1.webp" alt="UNICEF Aéroport"
+                class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 portfolio-img"
+                width="400" height="500" loading="lazy" decoding="async" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+              </div>
+              <div
+                class="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                <span
+                  class="w-fit px-3 py-1 bg-indigo/20 border border-indigo/30 rounded-full text-indigo-light text-[0.55rem] tracking-widest uppercase mb-3">Social</span>
+                <h3 class="font-display text-2xl font-bold text-snow">Journée de l'Enfance</h3>
+              </div>
             </div>
-          </div>
 
-          <!-- Item 13 -->
-          <div class="portfolio-item evenements group relative aspect-[4/5] overflow-hidden rounded-3xl" data-category="evenements">
-            <img src="assets/images/synnova-meetup-launch-3.webp" alt="MeetUp for Change" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 portfolio-img" />
-            <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div class="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-              <span class="w-fit px-3 py-1 bg-rose/20 border border-rose/30 rounded-full text-rose text-[0.55rem] tracking-widest uppercase mb-3">Événements</span>
-              <h3 class="font-display text-2xl font-bold text-snow">MeetUp for Change</h3>
+            <!-- Item 12 -->
+            <div class="portfolio-item cinema group relative aspect-[4/5] overflow-hidden rounded-3xl"
+              data-category="cinema">
+              <img src="assets/images/synnova-miss-photogenique.webp" alt="Miss Photogénique"
+                class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 portfolio-img"
+                width="400" height="500" loading="lazy" decoding="async" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+              </div>
+              <div
+                class="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                <span
+                  class="w-fit px-3 py-1 bg-rose/20 border border-rose/30 rounded-full text-rose text-[0.55rem] tracking-widest uppercase mb-3">Cinéma</span>
+                <h3 class="font-display text-2xl font-bold text-snow">Miss Photogénique</h3>
+              </div>
             </div>
-          </div>
 
-          <!-- Item 14 -->
-          <div class="portfolio-item evenements group relative aspect-[4/5] overflow-hidden rounded-3xl" data-category="evenements">
-            <img src="assets/images/synnova-speech-culture.webp" alt="Prise de parole" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 portfolio-img" />
-            <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div class="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-              <span class="w-fit px-3 py-1 bg-gold/20 border border-gold/30 rounded-full text-gold text-[0.55rem] tracking-widest uppercase mb-3">Culture</span>
-              <h3 class="font-display text-2xl font-bold text-snow">Parole & Culture</h3>
+            <!-- Item 13 -->
+            <div class="portfolio-item evenements group relative aspect-[4/5] overflow-hidden rounded-3xl"
+              data-category="evenements">
+              <img src="assets/images/synnova-meetup-launch-3.webp" alt="MeetUp for Change"
+                class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 portfolio-img"
+                width="400" height="500" loading="lazy" decoding="async" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+              </div>
+              <div
+                class="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                <span
+                  class="w-fit px-3 py-1 bg-rose/20 border border-rose/30 rounded-full text-rose text-[0.55rem] tracking-widest uppercase mb-3">Événements</span>
+                <h3 class="font-display text-2xl font-bold text-snow">MeetUp for Change</h3>
+              </div>
             </div>
-          </div>
 
-          <!-- Item 15 -->
-          <div class="portfolio-item evenements group relative aspect-[4/5] overflow-hidden rounded-3xl" data-category="evenements">
-            <img src="assets/images/synnova-friendship-3.webp" alt="Amitié et partage" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 portfolio-img" />
-            <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div class="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-              <span class="w-fit px-3 py-1 bg-rose/20 border border-rose/30 rounded-full text-rose text-[0.55rem] tracking-widest uppercase mb-3">Événements</span>
-              <h3 class="font-display text-2xl font-bold text-snow">Rires & Amitiés</h3>
+            <!-- Item 14 -->
+            <div class="portfolio-item evenements group relative aspect-[4/5] overflow-hidden rounded-3xl"
+              data-category="evenements">
+              <img src="assets/images/synnova-speech-culture.webp" alt="Prise de parole"
+                class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 portfolio-img"
+                width="400" height="500" loading="lazy" decoding="async" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+              </div>
+              <div
+                class="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                <span
+                  class="w-fit px-3 py-1 bg-gold/20 border border-gold/30 rounded-full text-gold text-[0.55rem] tracking-widest uppercase mb-3">Culture</span>
+                <h3 class="font-display text-2xl font-bold text-snow">Parole & Culture</h3>
+              </div>
+            </div>
+
+            <!-- Item 15 -->
+            <div class="portfolio-item evenements group relative aspect-[4/5] overflow-hidden rounded-3xl"
+              data-category="evenements">
+              <img src="assets/images/synnova-friendship-3.webp" alt="Amitié et partage"
+                class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 portfolio-img"
+                width="400" height="500" loading="lazy" decoding="async" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+              </div>
+              <div
+                class="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                <span
+                  class="w-fit px-3 py-1 bg-rose/20 border border-rose/30 rounded-full text-rose text-[0.55rem] tracking-widest uppercase mb-3">Événements</span>
+                <h3 class="font-display text-2xl font-bold text-snow">Rires & Amitiés</h3>
+              </div>
             </div>
           </div>
-        </div>
         </div>
       </div>
     </section>
@@ -366,14 +537,17 @@
       <div class="max-w-4xl mx-auto text-center">
         <p class="font-signature text-rose text-3xl mb-4">Ils m'ont fait confiance</p>
         <h2 class="font-display text-3xl md:text-4xl font-bold text-snow mb-16">Témoignages</h2>
-        
+
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div class="bg-dark border border-snow/10 p-8 rounded-2xl text-left">
             <p class="text-sm text-snow/60 italic leading-relaxed mb-6">
-              "Synnova a su dynamiser notre événement avec un professionnalisme remarquable. Son énergie est contagieuse et elle sait s'adapter à tout type de public."
+              "Synnova a su dynamiser notre événement avec un professionnalisme remarquable. Son énergie est contagieuse
+              et elle sait s'adapter à tout type de public."
             </p>
             <div class="flex items-center gap-4">
-              <div class="w-10 h-10 rounded-full bg-rose/20 flex items-center justify-center font-display font-bold text-rose">O</div>
+              <div
+                class="w-10 h-10 rounded-full bg-rose/20 flex items-center justify-center font-display font-bold text-rose">
+                O</div>
               <div>
                 <p class="text-sm font-semibold text-snow">Organisateur</p>
                 <p class="text-[0.6rem] tracking-widest uppercase text-snow/40">Festival Local</p>
@@ -383,10 +557,13 @@
 
           <div class="bg-dark border border-snow/10 p-8 rounded-2xl text-left">
             <p class="text-sm text-snow/60 italic leading-relaxed mb-6">
-              "En tant que régisseuse plateau, Synnova a démontré une rigueur impressionnante. Une vraie valeur ajoutée pour notre production cinématographique au Bénin."
+              "En tant que régisseuse plateau, Synnova a démontré une rigueur impressionnante. Une vraie valeur ajoutée
+              pour notre production cinématographique au Bénin."
             </p>
             <div class="flex items-center gap-4">
-              <div class="w-10 h-10 rounded-full bg-indigo/20 flex items-center justify-center font-display font-bold text-indigo-light">P</div>
+              <div
+                class="w-10 h-10 rounded-full bg-indigo/20 flex items-center justify-center font-display font-bold text-indigo-light">
+                P</div>
               <div>
                 <p class="text-sm font-semibold text-snow">Producteur</p>
                 <p class="text-[0.6rem] tracking-widest uppercase text-snow/40">Cinéma Béninois</p>
@@ -411,8 +588,7 @@
       <nav aria-label="Liens légaux">
         <ul class="flex gap-4 list-none m-0 p-0">
           <li>
-            <a href="mentions-legales.html"
-               class="text-[0.62rem] text-snow/30 hover:text-snow/60 tracking-widest uppercase
+            <a href="mentions-legales.html" class="text-[0.62rem] text-snow/30 hover:text-snow/60 tracking-widest uppercase
                       transition-colors focus:outline-none focus:underline">
               Mentions légales
             </a>
@@ -423,9 +599,9 @@
   </footer>
 
   <!-- SCRIPTS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" defer></script>
+  <script src="js/vendor/gsap.min.js" defer></script>
+  <script src="js/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="js/vendor/anime.min.js" defer></script>
   <script src="js/dist/main.js" defer></script>
   <script src="js/dist/animations.js" defer></script>
   <style>
@@ -437,7 +613,10 @@
       padding: 2rem 0;
       cursor: grab;
     }
-    .portfolio-carousel-wrapper:active { cursor: grabbing; }
+
+    .portfolio-carousel-wrapper:active {
+      cursor: grabbing;
+    }
 
     #portfolio-grid {
       display: grid !important;
@@ -447,9 +626,11 @@
       width: max-content;
       will-change: transform;
     }
-    
+
     @media (min-width: 768px) {
-      #portfolio-grid { gap: 1.5rem !important; }
+      #portfolio-grid {
+        gap: 1.5rem !important;
+      }
     }
 
     @media (min-width: 1024px) {
@@ -459,271 +640,14 @@
     }
 
     .portfolio-item {
-      width: clamp(220px, 30vw, 350px); /* Plus petit sur mobile pour voir plus d'images */
+      width: clamp(220px, 30vw, 350px);
+      /* Plus petit sur mobile pour voir plus d'images */
       aspect-ratio: 4/5;
       position: relative;
     }
   </style>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      if (typeof gsap === 'undefined') return;
-      gsap.registerPlugin(ScrollTrigger);
-
-      const grid = document.querySelector('#portfolio-grid');
-      const items = gsap.utils.toArray('.portfolio-item');
-      const filterBtns = document.querySelectorAll('.filter-btn');
-      let loop;
-      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-      // 1. Fonction Marquee Infini (Adaptée Multi-Row)
-      function setupMarquee() {
-        if (loop) loop.kill();
-        if (prefersReducedMotion) return; // Ne pas activer de défilement si mouvement réduit activé
-        
-        const visibleItems = items.filter(item => getComputedStyle(item).display !== 'none');
-        if (visibleItems.length < 3) return;
-
-        // Reset positions avant de recalculer
-        gsap.set(visibleItems, { x: 0, xPercent: 0 });
-
-        loop = horizontalLoop(visibleItems, {
-          repeat: -1,
-          speed: 0.8,
-          paddingRight: 48,
-          paused: false
-        });
-      }
-
-      // Helper horizontalLoop (standard GSAP avec patch pour multi-row)
-      function horizontalLoop(items, config) {
-        items = gsap.utils.toArray(items);
-        config = config || {};
-        let tl = gsap.timeline({
-          repeat: config.repeat,
-          paused: config.paused,
-          defaults: {ease: "none"},
-          onReverseComplete: () => tl.totalTime(tl.rawTime() + tl.duration() * 100)
-        }),
-        length = items.length,
-        startX = items[0].offsetLeft,
-        times = [],
-        widths = [],
-        xPercents = [],
-        pixelsPerSecond = (config.speed || 1) * 100,
-        totalWidth, item, i;
-        
-        gsap.set(items, {
-          xPercent: (i, target) => {
-            let w = widths[i] = parseFloat(gsap.getProperty(target, "width", "px"));
-            xPercents[i] = gsap.utils.snap(0.01, parseFloat(gsap.getProperty(target, "x", "px")) / w * 100);
-            return xPercents[i];
-          }
-        });
-        gsap.set(items, {x: 0});
-
-        // PATCH MULTI-ROW : On cherche la fin réelle de la grille (max offsetLeft + width)
-        const maxX = Math.max(...items.map(el => el.offsetLeft + el.offsetWidth));
-        totalWidth = maxX - startX + (parseFloat(config.paddingRight) || 0);
-
-        for (i = 0; i < length; i++) {
-          item = items[i];
-          let curX = xPercents[i] / 100 * widths[i];
-          let distanceToStart = item.offsetLeft - startX;
-          let distanceToLoop = distanceToStart + widths[i] * gsap.getProperty(item, "scaleX");
-          
-          tl.to(item, {xPercent: gsap.utils.snap(0.01, (curX - distanceToLoop) / widths[i] * 100), duration: distanceToLoop / pixelsPerSecond}, 0)
-            .fromTo(item, {xPercent: gsap.utils.snap(0.01, (curX - distanceToLoop + totalWidth) / widths[i] * 100)}, {xPercent: xPercents[i], duration: (curX - distanceToLoop + totalWidth - curX) / pixelsPerSecond, immediateRender: false}, distanceToLoop / pixelsPerSecond)
-            .add("label" + i, distanceToStart / pixelsPerSecond);
-          times[i] = distanceToStart / pixelsPerSecond;
-        }
-        tl.progress(1, true).progress(0, true);
-        return tl;
-      }
-
-      // 2. Logique de Filtrage
-      filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          const filter = btn.getAttribute('data-filter');
-          
-          // UI Active
-          filterBtns.forEach(b => b.classList.remove('active', 'border-rose'));
-          btn.classList.add('active');
-
-          // Arrêt du loop pendant la transition
-          if (loop) loop.pause();
-
-          const itemsToHide = items.filter(item => filter !== 'all' && !item.classList.contains(filter));
-          const itemsToShow = items.filter(item => filter === 'all' || item.classList.contains(filter));
-
-          const tl = gsap.timeline({
-            onComplete: () => {
-              setupMarquee(); // Relance avec les nouveaux éléments
-            }
-          });
-
-          if (itemsToHide.length) {
-            tl.to(itemsToHide, {
-              opacity: 0, scale: 0.8, duration: 0.4, stagger: 0.05,
-              display: 'none', ease: 'power2.in'
-            });
-          }
-
-          tl.fromTo(itemsToShow, 
-            { opacity: 0, scale: 0.9, display: 'none' },
-            {
-              opacity: 1, scale: 1, duration: 0.5, stagger: 0.05,
-              display: 'block', ease: 'power3.out', clearProps: "transform"
-            }, "-=0.2"
-          );
-        });
-      });
-
-      // 3. Interactions Hover (Désactivées si drag actif)
-      grid.addEventListener('mouseenter', () => {
-        if (!isDragging && loop) loop.pause();
-      });
-      grid.addEventListener('mouseleave', () => {
-        if (!isDragging && loop) loop.play();
-      });
-
-      // 4. Glissement / Dragging tactile et souris (Résolution de la friction UX)
-      const wrapper = document.querySelector('.portfolio-carousel-wrapper');
-      let isDragging = false;
-      let startX, currentX;
-      let dragVelocity = 0;
-      let lastTime, lastX;
-
-      wrapper.addEventListener('mousedown', (e) => {
-        if (prefersReducedMotion) return;
-        isDragging = true;
-        wrapper.classList.remove('cursor-grab');
-        wrapper.classList.add('cursor-grabbing');
-        startX = e.clientX;
-        lastX = e.clientX;
-        lastTime = performance.now();
-        dragVelocity = 0;
-        if (loop) loop.pause();
-      });
-
-      window.addEventListener('mousemove', (e) => {
-        if (!isDragging) return;
-        const dx = e.clientX - lastX;
-        lastX = e.clientX;
-        const now = performance.now();
-        const dt = now - lastTime;
-        lastTime = now;
-
-        if (dt > 0) {
-          dragVelocity = dx / dt; // pixels par milliseconde
-        }
-
-        // Déplacer manuellement la progress de la timeline
-        if (loop) {
-          const progression = loop.totalTime() - (dx * 0.005);
-          loop.totalTime(progression);
-        }
-      });
-
-      window.addEventListener('mouseup', () => {
-        if (!isDragging) return;
-        isDragging = false;
-        wrapper.classList.remove('cursor-grabbing');
-        wrapper.classList.add('cursor-grab');
-
-        // Inertie de décélération douce après le lancer
-        if (Math.abs(dragVelocity) > 0.1 && loop) {
-          const inertia = { speed: dragVelocity * 8 };
-          gsap.to(inertia, {
-            speed: 0,
-            duration: 0.8,
-            ease: 'power3.out',
-            onUpdate: () => {
-              loop.totalTime(loop.totalTime() - inertia.speed * 0.015);
-            },
-            onComplete: () => {
-              loop.play();
-            }
-          });
-        } else {
-          if (loop) loop.play();
-        }
-      });
-
-      // Événements tactiles (mobile)
-      wrapper.addEventListener('touchstart', (e) => {
-        if (prefersReducedMotion) return;
-        isDragging = true;
-        startX = e.touches[0].clientX;
-        lastX = e.touches[0].clientX;
-        lastTime = performance.now();
-        dragVelocity = 0;
-        if (loop) loop.pause();
-      }, { passive: true });
-
-      wrapper.addEventListener('touchmove', (e) => {
-        if (!isDragging) return;
-        const dx = e.touches[0].clientX - lastX;
-        lastX = e.touches[0].clientX;
-        const now = performance.now();
-        const dt = now - lastTime;
-        lastTime = now;
-
-        if (dt > 0) {
-          dragVelocity = dx / dt;
-        }
-
-        if (loop) {
-          const progression = loop.totalTime() - (dx * 0.005);
-          loop.totalTime(progression);
-        }
-      }, { passive: true });
-
-      wrapper.addEventListener('touchend', () => {
-        if (!isDragging) return;
-        isDragging = false;
-        if (Math.abs(dragVelocity) > 0.1 && loop) {
-          const inertia = { speed: dragVelocity * 8 };
-          gsap.to(inertia, {
-            speed: 0,
-            duration: 0.8,
-            ease: 'power3.out',
-            onUpdate: () => {
-              loop.totalTime(loop.totalTime() - inertia.speed * 0.015);
-            },
-            onComplete: () => {
-              loop.play();
-            }
-          });
-        } else {
-          if (loop) loop.play();
-        }
-      });
-
-      // Parallaxe de survol (désactivé si mouvement réduit)
-      if (!prefersReducedMotion) {
-        items.forEach(item => {
-          const img = item.querySelector('.portfolio-img');
-          item.addEventListener('mousemove', (e) => {
-            const rect = item.getBoundingClientRect();
-            const xPos = (e.clientX - rect.left) / rect.width - 0.5;
-            const yPos = (e.clientY - rect.top) / rect.height - 0.5;
-            gsap.to(img, { x: xPos * 20, y: yPos * 20, duration: 0.6, ease: 'power2.out' });
-          });
-          item.addEventListener('mouseleave', () => {
-            gsap.to(img, { x: 0, y: 0, duration: 1, ease: 'power2.out' });
-          });
-        });
-      }
-
-      // Init au chargement
-      window.addEventListener('load', setupMarquee);
-      if (document.readyState === 'complete') setupMarquee();
-      
-      window.addEventListener('resize', () => {
-        setupMarquee();
-      });
-    });
-  </script>
+  <script src="js/dist/portfolio.js" defer></script>
 </body>
+
 </html>
