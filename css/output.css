@@ -582,6 +582,9 @@
   .cursor-pointer {
     cursor: pointer;
   }
+  .resize {
+    resize: both;
+  }
   .resize-none {
     resize: none;
   }
@@ -774,6 +777,9 @@
   }
   .border-red-500 {
     border-color: var(--color-red-500);
+  }
+  .border-rose {
+    border-color: #C2185B;
   }
   .border-rose\/10 {
     border-color: color-mix(in oklab, #C2185B 10%, transparent);
