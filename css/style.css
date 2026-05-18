@@ -511,6 +511,21 @@ button[type="submit"]:active {
   transform: scale(1);
 }
 
+.hero-slide-paint,
+.hero-slide-gallery {
+  background-position: center center;
+}
+
+@media (min-width: 1024px) {
+  .hero-slide-paint {
+    background-position: 50% 25%;
+  }
+
+  .hero-slide-gallery {
+    background-position: 58% 24%;
+  }
+}
+
 /* ── Filigrane ── */
 .hero-filigrane {
   position: absolute;
@@ -810,14 +825,12 @@ p a,
 .font-body a:not([class*="btn"]):not([class*="nav"]):not(.lightbox-close):not(.lightbox-prev):not(.lightbox-next) {
   color: #C2185B;
   font-weight: 600;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  text-decoration-color: rgba(194, 24, 91, 0.4);
-  transition: color 0.3s ease, text-decoration-color 0.3s ease;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 p a:hover,
 .font-body a:not([class*="btn"]):not([class*="nav"]):not(.lightbox-close):not(.lightbox-prev):not(.lightbox-next):hover {
   color: #F9A825;
-  text-decoration-color: rgba(249, 168, 37, 0.8);
+  text-decoration: none;
 }
