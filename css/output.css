@@ -776,9 +776,6 @@
   .snap-y {
     scroll-snap-type: y var(--tw-scroll-snap-strictness);
   }
-  .snap-mandatory {
-    --tw-scroll-snap-strictness: mandatory;
-  }
   .snap-start {
     scroll-snap-align: start;
   }

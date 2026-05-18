@@ -29,13 +29,13 @@ document.addEventListener('DOMContentLoaded', () => {
       if (targetSection) {
         // 💡 Astuce UX premium : Désactiver temporairement le snap-scroll natif pour éviter
         // que le navigateur n'annule ou n'interrompe l'animation de défilement vers la cible.
-        document.documentElement.classList.remove('snap-y', 'snap-mandatory');
+        document.documentElement.classList.remove('snap-y');
 
         targetSection.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth' });
 
         // Réactiver le snap-scroll une fois la transition douce terminée
         setTimeout(() => {
-          document.documentElement.classList.add('snap-y', 'snap-mandatory');
+          document.documentElement.classList.add('snap-y');
         }, 850);
       }
     });
@@ -129,5 +129,6 @@ document.addEventListener('DOMContentLoaded', () => {
         );
       }
     }
+
   });
 });
