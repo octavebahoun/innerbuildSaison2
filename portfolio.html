@@ -176,25 +176,26 @@
     </nav>
 
     <!-- Mobile menu -->
-    <div id="mobile-menu" class="fixed inset-0 z-[999] flex flex-col items-center justify-center gap-10
-                bg-dark/[.97] backdrop-blur-2xl translate-x-full transition-transform duration-500" aria-hidden="true"
-      role="dialog" aria-modal="true" aria-label="Menu de navigation mobile">
-      <nav aria-label="Menu mobile">
+    <div id="mobile-menu" class="mobile-menu-panel fixed inset-0 z-[999] flex flex-col items-center justify-center gap-10
+                bg-dark/[.94] backdrop-blur-2xl translate-x-full opacity-0 invisible pointer-events-none scale-95"
+      aria-hidden="true" role="dialog" aria-modal="true" aria-label="Menu de navigation mobile">
+      <div class="mobile-menu-watermark" aria-hidden="true">SYNNOVA</div>
+      <nav aria-label="Menu mobile" class="relative z-10">
         <ul class="flex flex-col items-center gap-8 list-none m-0 p-0" role="list">
           <li><a href="index.html"
-              class="font-display text-4xl font-semibold text-snow hover:text-rose transition-colors">Accueil</a></li>
+              class="mobile-nav-link font-display text-4xl font-semibold">Accueil</a></li>
           <li><a href="a-propos.html"
-              class="font-display text-4xl font-semibold text-snow hover:text-rose transition-colors">À Propos</a></li>
+              class="mobile-nav-link font-display text-4xl font-semibold">À Propos</a></li>
           <li><a href="univers.html"
-              class="font-display text-4xl font-semibold text-snow hover:text-rose transition-colors">Univers</a></li>
-          <li><a href="portfolio.html" class="font-display text-4xl font-semibold text-rose transition-colors"
+              class="mobile-nav-link font-display text-4xl font-semibold">Univers</a></li>
+          <li><a href="portfolio.html" class="mobile-nav-link is-active font-display text-4xl font-semibold"
               aria-current="page">Portfolio</a></li>
           <li><a href="contact.html"
-              class="font-display text-4xl font-semibold text-snow hover:text-rose transition-colors">Contact</a></li>
+              class="mobile-nav-link font-display text-4xl font-semibold">Contact</a></li>
         </ul>
       </nav>
       <!-- Réseaux -->
-      <div class="flex items-center gap-6 mt-2" aria-label="Réseaux sociaux">
+      <div class="relative z-10 flex items-center gap-6 mt-2" aria-label="Réseaux sociaux">
         <a href="https://facebook.com/synnovalumiere" target="_blank" rel="noopener noreferrer"
           class="opacity-50 hover:opacity-100 transition-opacity">
           <img src="assets/icons/facebook.svg" alt="Facebook" width="22" height="22" />

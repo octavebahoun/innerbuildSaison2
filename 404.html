@@ -157,7 +157,8 @@
       <button id="burger"
               class="md:hidden w-7 h-6 flex flex-col justify-between cursor-pointer focus:outline-none"
               aria-label="Ouvrir le menu de navigation"
-              aria-expanded="false">
+              aria-expanded="false"
+              aria-controls="mobile-menu">
         <span class="burger-line w-full h-0.5 bg-snow transition-all duration-300"></span>
         <span class="burger-line w-4 h-0.5 bg-snow transition-all duration-300"></span>
         <span class="burger-line w-full h-0.5 bg-snow transition-all duration-300"></span>
@@ -166,18 +167,21 @@
 
     <!-- MOBILE MENU -->
     <div id="mobile-menu"
-         class="fixed inset-0 bg-gradient-to-b from-dark/95 to-dark z-[999] transform translate-x-full
-                transition-transform duration-300 md:hidden overflow-y-auto"
+         class="mobile-menu-panel fixed inset-0 z-[999] flex flex-col items-center justify-center gap-10
+                bg-dark/[.94] backdrop-blur-2xl translate-x-full opacity-0 invisible pointer-events-none scale-95 md:hidden"
          aria-hidden="true"
-         role="dialog">
-      <nav class="pt-28 px-6" aria-label="Navigation mobile">
-        <ul class="space-y-6 list-none m-0 p-0" role="list">
-          <li><a href="index.html" class="font-display text-4xl font-semibold">Accueil</a></li>
-          <li><a href="a-propos.html" class="font-display text-4xl font-semibold">À Propos</a></li>
-          <li><a href="univers.html" class="font-display text-4xl font-semibold">Univers</a></li>
-          <li><a href="portfolio.html" class="font-display text-4xl font-semibold">Portfolio</a></li>
-          <li><a href="contact.html" class="font-display text-4xl font-semibold">Contact</a></li>
-          <li><a href="accessibilite.html" class="font-display text-4xl font-semibold">Accessibilité</a></li>
+         role="dialog"
+         aria-modal="true"
+         aria-label="Menu de navigation mobile">
+      <div class="mobile-menu-watermark" aria-hidden="true">SYNNOVA</div>
+      <nav class="relative z-10" aria-label="Navigation mobile">
+        <ul class="flex flex-col items-center gap-8 list-none m-0 p-0" role="list">
+          <li><a href="index.html" class="mobile-nav-link font-display text-4xl font-semibold">Accueil</a></li>
+          <li><a href="a-propos.html" class="mobile-nav-link font-display text-4xl font-semibold">À Propos</a></li>
+          <li><a href="univers.html" class="mobile-nav-link font-display text-4xl font-semibold">Univers</a></li>
+          <li><a href="portfolio.html" class="mobile-nav-link font-display text-4xl font-semibold">Portfolio</a></li>
+          <li><a href="contact.html" class="mobile-nav-link font-display text-4xl font-semibold">Contact</a></li>
+          <li><a href="accessibilite.html" class="mobile-nav-link font-display text-4xl font-semibold">Accessibilité</a></li>
         </ul>
       </nav>
     </div>

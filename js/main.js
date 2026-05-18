@@ -31,10 +31,12 @@ document.addEventListener('DOMContentLoaded', () => {
   let lastFocusedElement = null;
 
   const openMenu = () => {
+    if (!burger || !mobileMenu) return;
     menuOpen = true;
     lastFocusedElement = document.activeElement; // Stocker le focus avant menu
     mobileMenu.classList.add('open');
-    mobileMenu.classList.remove('translate-x-full');
+    mobileMenu.classList.remove('translate-x-full', 'opacity-0', 'invisible', 'pointer-events-none', 'scale-95');
+    mobileMenu.classList.add('opacity-100', 'visible', 'pointer-events-auto', 'scale-100');
     mobileMenu.setAttribute('aria-hidden', 'false');
     burger.setAttribute('aria-expanded', 'true');
     burger.setAttribute('aria-label', 'Fermer le menu de navigation');
@@ -75,9 +77,11 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const closeMenu = () => {
+    if (!burger || !mobileMenu) return;
     menuOpen = false;
     mobileMenu.classList.remove('open');
-    mobileMenu.classList.add('translate-x-full');
+    mobileMenu.classList.add('translate-x-full', 'opacity-0', 'invisible', 'pointer-events-none', 'scale-95');
+    mobileMenu.classList.remove('opacity-100', 'visible', 'pointer-events-auto', 'scale-100');
     mobileMenu.setAttribute('aria-hidden', 'true');
     burger.setAttribute('aria-expanded', 'false');
     burger.setAttribute('aria-label', 'Ouvrir le menu de navigation');
@@ -182,8 +186,96 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ─── PAGE TRANSITIONS & PRELOADER ─── */
+  // Désactivé: on veut une navigation normale (pas d'overlay "SYNNOVA" entre pages)
+  const ENABLE_PAGE_TRANSITIONS = false;
+
   const preloader = document.getElementById('preloader');
-  const overlay = document.getElementById('page-transition-overlay');
+  const getPageTransitionOverlay = () => {
+    let pageOverlay = document.getElementById('page-transition-overlay');
+    if (!pageOverlay) {
+      pageOverlay = document.createElement('div');
+      pageOverlay.id = 'page-transition-overlay';
+      document.body.appendChild(pageOverlay);
+    }
+
+    if (!pageOverlay.querySelector('.page-transition-wordmark')) {
+      pageOverlay.innerHTML = '<div class="page-transition-wordmark" aria-hidden="true">SYNN<span class="page-transition-dot">O</span>VA</div>';
+    }
+
+    return pageOverlay;
+  };
+
+  const overlay = ENABLE_PAGE_TRANSITIONS ? getPageTransitionOverlay() : null;
+  if (!ENABLE_PAGE_TRANSITIONS) {
+    const existingOverlay = document.getElementById('page-transition-overlay');
+    if (existingOverlay) {
+      existingOverlay.style.display = 'none';
+      existingOverlay.style.pointerEvents = 'none';
+    }
+  }
+  const isTransitionableLink = (link, href) => {
+    if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return false;
+    if (link.getAttribute('target') === '_blank' || link.hasAttribute('download')) return false;
+    return !(link.origin && link.origin !== window.location.origin);
+  };
+
+  const revealOverlay = (onComplete) => {
+    if (!overlay) {
+      onComplete?.();
+      return;
+    }
+    overlay.style.display = 'flex';
+    overlay.style.pointerEvents = 'auto';
+
+    if (typeof gsap !== 'undefined') {
+      gsap.set(overlay, { opacity: 0 });
+      gsap.set(overlay, { clipPath: 'circle(0% at 85% 15%)' });
+      gsap.set(overlay, { '--transition-sheen-x': '-120%' });
+      gsap.fromTo(overlay, {
+        opacity: 0,
+        clipPath: 'circle(0% at 85% 15%)'
+      }, {
+        opacity: 1,
+        clipPath: 'circle(150% at 50% 50%)',
+        duration: 0.7,
+        ease: 'power3.inOut',
+        onStart: () => {
+          const sheen = overlay;
+          gsap.fromTo(sheen, { '--transition-sheen-x': '-120%' }, { '--transition-sheen-x': '120%', duration: 0.8, ease: 'power2.out' });
+        },
+        onComplete
+      });
+    } else {
+      overlay.style.opacity = '1';
+      onComplete?.();
+    }
+  };
+
+  const hideOverlay = () => {
+    if (!overlay) return;
+    overlay.style.display = 'flex';
+    if (typeof gsap !== 'undefined') {
+      gsap.set(overlay, {
+        opacity: 1,
+        clipPath: 'circle(150% at 50% 50%)'
+      });
+      gsap.to(overlay, {
+        opacity: 0,
+        clipPath: 'circle(0% at 15% 85%)',
+        duration: 0.65,
+        ease: 'power3.out',
+        onComplete: () => {
+          overlay.style.display = 'none';
+          overlay.style.pointerEvents = 'none';
+        }
+      });
+    } else {
+      overlay.style.opacity = '0';
+      overlay.style.display = 'none';
+      overlay.style.pointerEvents = 'none';
+    }
+  };
+
   const hidePreloader = () => {
     if (!preloader) return;
     preloader.style.opacity = '0';
@@ -211,27 +303,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. Gestion de l'Overlay de Navigation
     if (overlay) {
-      // Fade out à l'arrivée
-      gsap.to(overlay, {
-        opacity: 0,
-        duration: 0.4,
-        onComplete: () => { overlay.style.display = 'none'; }
-      });
+      hideOverlay();
 
       document.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', (e) => {
           const href = link.getAttribute('href');
-          if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || link.getAttribute('target') === '_blank') return;
+          if (e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+          if (!isTransitionableLink(link, href)) return;
 
           e.preventDefault();
-          overlay.style.display = 'block';
-          gsap.fromTo(overlay, { opacity: 0 }, {
-            opacity: 1,
-            duration: 0.4,
-            ease: 'power2.inOut',
-            onComplete: () => {
-              window.location.href = href;
-            }
+          revealOverlay(() => {
+            window.location.href = href;
           });
         });
       });
@@ -243,6 +325,10 @@ document.addEventListener('DOMContentLoaded', () => {
       hidePreloader();
     }
   }
+
+  window.addEventListener('pageshow', () => {
+    if (overlay) hideOverlay();
+  });
 
   /* ═══════════════════════════════════════════════════════
    HERO CAROUSEL — Auto-play crossfade + dots

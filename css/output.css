@@ -223,6 +223,9 @@
   .pointer-events-none {
     pointer-events: none;
   }
+  .invisible {
+    visibility: hidden;
+  }
   .visible {
     visibility: visible;
   }
@@ -1036,8 +1039,8 @@
   .bg-dark\/95 {
     background-color: color-mix(in oklab, #0D0D0D 95%, transparent);
   }
-  .bg-dark\/\[\.97\] {
-    background-color: color-mix(in oklab, #0D0D0D 97%, transparent);
+  .bg-dark\/\[\.94\] {
+    background-color: color-mix(in oklab, #0D0D0D 94%, transparent);
   }
   .bg-gold {
     background-color: #F9A825;
@@ -1165,10 +1168,6 @@
   }
   .from-dark\/80 {
     --tw-gradient-from: color-mix(in oklab, #0D0D0D 80%, transparent);
-    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
-  }
-  .from-dark\/95 {
-    --tw-gradient-from: color-mix(in oklab, #0D0D0D 95%, transparent);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
   .from-gold\/20 {
@@ -1342,9 +1341,6 @@
   }
   .pt-20 {
     padding-top: calc(var(--spacing) * 20);
-  }
-  .pt-28 {
-    padding-top: calc(var(--spacing) * 28);
   }
   .pt-32 {
     padding-top: calc(var(--spacing) * 32);
@@ -1716,6 +1712,10 @@
   .shadow-lg {
     --tw-shadow: 0 10px 15px -3px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 4px 6px -4px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
   }
   .blur {
     --tw-blur: blur(8px);
@@ -2823,13 +2823,43 @@ body {
 #page-transition-overlay {
   position: fixed;
   inset: 0;
-  background-color: #0D0D0D;
+  --transition-sheen-x: -120%;
   z-index: 10000;
   display: none;
   opacity: 0;
   align-items: center;
   justify-content: center;
   pointer-events: none;
+  overflow: hidden;
+}
+#page-transition-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 18% 22%, rgba(194, 24, 91, 0.22), transparent 32%), radial-gradient(circle at 82% 78%, rgba(249, 168, 37, 0.12), transparent 28%), linear-gradient(135deg, rgba(13, 13, 13, 0.96), rgba(13, 13, 13, 0.99));
+}
+#page-transition-overlay::after {
+  content: '';
+  position: absolute;
+  inset: -20%;
+  background: linear-gradient(110deg, transparent 0%, rgba(255, 255, 255, 0.04) 44%, rgba(255, 255, 255, 0.09) 50%, transparent 56%);
+  transform: translateX(var(--transition-sheen-x)) rotate(8deg);
+  opacity: 0.8;
+}
+#page-transition-overlay .page-transition-wordmark {
+  position: relative;
+  z-index: 1;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3.5rem, 14vw, 8rem);
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.1);
+  user-select: none;
+}
+#page-transition-overlay .page-transition-dot {
+  color: #C2185B;
+  text-shadow: 0 0 24px rgba(194, 24, 91, 0.35);
 }
 .rose-loader {
   width: 200px;
@@ -2880,7 +2910,7 @@ body {
     background: #C2185B;
     border-radius: 50%;
     pointer-events: none;
-    z-index: 9999;
+    z-index: 10001;
     transform: translate(-50%, -50%);
     transition: width .25s ease, height .25s ease, background .25s ease;
     mix-blend-mode: difference;
@@ -3355,8 +3385,42 @@ button[type="submit"]:active {
 .faq-content {
   transition: max-height 0.45s cubic-bezier(0.25, 1, 0.5, 1);
 }
+.mobile-menu-panel {
+  clip-path: circle(0% at calc(100% - 2rem) 2.5rem);
+  transition: opacity 0.45s ease, visibility 0.45s ease, transform 0.45s ease, clip-path 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.mobile-menu-panel.open {
+  clip-path: circle(150% at calc(100% - 2rem) 2.5rem);
+}
+.mobile-menu-watermark {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(4.5rem, 24vw, 9rem);
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  color: rgba(255, 255, 255, 0.045);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
+.mobile-nav-link {
+  color: rgba(250, 249, 246, 0.92);
+  transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+}
+.mobile-nav-link:hover, .mobile-nav-link:focus-visible {
+  color: rgba(250, 249, 246, 1);
+  transform: translateY(-2px);
+  text-shadow: 0 0 22px rgba(194, 24, 91, 0.2);
+  outline: none;
+}
+.mobile-nav-link.is-active, .mobile-nav-link[aria-current="page"] {
+  color: #C2185B;
+  text-shadow: 0 0 28px rgba(194, 24, 91, 0.28);
+}
 @media (prefers-reduced-motion: reduce) {
-  .particle, .hero-slide, .scroll-bounce, .hero-filigrane, .btn-shimmer::before, .galerie-item img {
+  .particle, .hero-slide, .scroll-bounce, .hero-filigrane, .btn-shimmer::before, .galerie-item img, .mobile-menu-panel, .mobile-nav-link {
     animation: none !important;
     transform: none !important;
     transition: none !important;
@@ -3586,6 +3650,11 @@ p a:hover, .font-body a:not([class*="btn"]):not([class*="nav"]):not(.lightbox-cl
   inherits: false;
   initial-value: 0 0 #0000;
 }
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
 @property --tw-blur {
   syntax: "*";
   inherits: false;
@@ -3747,6 +3816,7 @@ p a:hover, .font-body a:not([class*="btn"]):not([class*="nav"]):not(.lightbox-cl
       --tw-ring-offset-width: 0px;
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-outline-style: solid;
       --tw-blur: initial;
       --tw-brightness: initial;
       --tw-contrast: initial;
